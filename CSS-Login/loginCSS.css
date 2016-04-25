@@ -1,19 +1,26 @@
 #login-window{
+background-color: darkorange;
     position: fixed;
-    top: 40%;
-    left:35%;
+    top: 50%;
+    left:50%;
     display: inline;
     text-align: right;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: -36px;
+    margin-left: -125px;
 }
 
 
 .login-label{
 display: inline;
+font-family: "Times New Roman";
+
 }
 
 .login-input{
 display: inline;
-
-
+    border-radius: 4px;
+    border:none;
 
 }
