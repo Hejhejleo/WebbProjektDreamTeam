@@ -10,13 +10,28 @@ text-align: center;
 text-align: right;
 }
 
+#ar3{
+border-style: solid;
+border-color: black;
+border-width: 2px;
+height: 200px;
+overflow: scroll;
+}
+
+
+#s1{
+text-align: center;
+}
+
 h1{
 font-size: 60px;
 }
 
 h2{
-
+font-size: 40px;
 }
+
+
 
 .student-status{
 font-size: 20px;
@@ -26,4 +41,16 @@ font-size: 20px;
 text-align: center;
 width: auto;
 height: auto;
+}
+
+.test-div{
+text-align: left;
+padding: 10px;
+font-size: 20px;
+font-weight: bold;
+}
+
+.button-div{
+text-align: right;
+margin-top: 8px;
 }
