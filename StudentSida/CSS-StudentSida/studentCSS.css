@@ -1,0 +1,29 @@
+header{
+text-align: center;
+}
+
+#ar1{
+
+}
+
+#ar2{
+text-align: right;
+}
+
+h1{
+font-size: 60px;
+}
+
+h2{
+
+}
+
+.student-status{
+font-size: 20px;
+}
+
+#logout-button{
+text-align: center;
+width: auto;
+height: auto;
+}
