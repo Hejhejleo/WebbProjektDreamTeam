@@ -1,31 +1,19 @@
 #login-window{
     position: fixed;
     top: 40%;
-    left:40%;
+    left:35%;
     display: inline;
-}
-
-#login-labels{
-position: relative;
-    float: left;
     text-align: right;
-    margin: 10px;
 }
 
-#login-inputs{
-position: relative;
-float: left;
-margin: 10px;
-
-}
 
 .login-label{
-display: block;
+display: inline;
 }
 
 .login-input{
-display: block;
-border-radius: 5px;
+display: inline;
+
 
 
 }
