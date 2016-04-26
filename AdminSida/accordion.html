@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/css-accordion.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<!-- Utskriften är ungefär rätt, men det finns många fel i koden -->
+
+<button class="accordion">Fråga 1</button>
+<div class="panel">
+    <div ng-app="">
+        <form name="createQuestion">
+            <label for="questionText">Frågetext</label><br/>
+            <textarea rows="6" cols="50" id="questionText"></textarea>
+            <br/> <br/>
+
+            <label for="typeId">Välj typ av fråga</label><br/>
+            <select ng-model="typeOfQuestion" id="typeId">
+                <option value=""></option>
+                <option value="singleChoice">Flervalsfråga med ett rätt svarsalternativ</option>
+                <option value="multiChoice">Flervalsfråga med flera rätta svarsalternativ</option>
+                <option value="open">Fritext</option>
+            </select>
+            <br/> <br/>
+            <div ng-switch="typeOfQuestion">
+                <div ng-switch-when="singleChoice">
+                    <label for="numberOfAnswersSC">Välj antal svarsalternativ</label><br/>
+                    <select ng-model="numOfAnswersSC" id="numberOfAnswersSC">
+                        <option value=""></option>
+                        <option value="twoSC">2</option>
+                        <option value="threeSC">3</option>
+                        <option value="fourSC">4</option>
+                    </select>
+                    <div ng-switch="numOfAnswersSC">
+                        <div ng-switch-when="twoSC">
+                            <label for="answerSC">Ange svarsalternativ</label><br/>
+                            <p>a) <input type=”text” id="answerSC1" name="answerCB" maxlength="50">
+                                <input type="radio" name="radio2" ng-model="correctAnswer2sc" value="a"></p>
+                            <p>b) <input type=”text” id="answerSC2" name="answerCB" maxlength="50">
+                                <input type="radio" name="radio2" ng-model="correctAnswer2sc" value="b"></p>
+                            <div ng-switch="correctAnswer2sc">
+                                <div ng-switch-when="a">
+                                    <p>Svar a) är rätt</p>
+                                </div>
+                            </div>
+                            <div ng-switch="correctAnswer2sc">
+                                <div ng-switch-when="b">
+                                    <p>Svar b) är rätt</p>
+                                </div>
+                            </div>
+                            <!--koll av att bara ett svar kan vara rätt TODO-->
+
+                        </div>
+                    </div>
+                    <div ng-switch="numOfAnswersSC">
+                        <div ng-switch-when="threeSC">
+                            <label for="answerSC">Ange svarsalternativ</label><br/>
+                            <p>a) <input type=”text” id="answerSC1" name="answerCB" maxlength="50">
+                                <input type="radio" name="radio3" ng-model="correctAnswer3sc" value="a"></p>
+                            <p>b) <input type=”text” id="answerSC2" name="answerCB" maxlength="50">
+                                <input type="radio" name="radio3" ng-model="correctAnswer3sc" value="b"></p>
+                            <p>c) <input type=”text” id="answerSC3" name="answerCB" maxlength="50">
+                                <input type="radio" name="radio3" ng-model="correctAnswer3sc" value="c"></p>
+                            <div ng-switch="correctAnswer3sc">
+                                <div ng-switch-when="a">
+                                    <p>Svar a) är rätt</p>
+                                </div>
+                            </div>
+                            <div ng-switch="correctAnswer3sc">
+                                <div ng-switch-when="b">
+                                    <p>Svar b) är rätt</p>
+                                </div>
+                            </div>
+                            <div ng-switch="correctAnswer3sc">
+                                <div ng-switch-when="c">
+                                    <p>Svar c) är rätt</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-switch="numOfAnswersSC">
+                        <div ng-switch-when="fourSC">
+                            <label for="answerSC">Ange svarsalternativ</label><br/>
+                            <p>a) <input type=”text” id="answerSC1" name="answerCB" maxlength="50">
+                                <input type="radio" name="radio4" ng-model="correctAnswer4sc" value="a"></p>
+                            <p>b) <input type=”text” id="answerSC2" name="answerCB" maxlength="50">
+                                <input type="radio" name="radio4" ng-model="correctAnswer4sc" value="b"></p>
+                            <p>c) <input type=”text” id="answerSC3" name="answerCB" maxlength="50">
+                                <input type="radio" name="radio4" ng-model="correctAnswer4sc" value="c"></p>
+                            <p>d) <input type=”text” id="answerSC4" name="answerCB" maxlength="50">
+                                <input type="radio" name="radio4" ng-model="correctAnswer4sc" value="d"></p>
+                            <div ng-switch="correctAnswer4sc">
+                                <div ng-switch-when="a">
+                                    <p>Svar a) är rätt</p>
+                                </div>
+                            </div>
+                            <div ng-switch="correctAnswer4sc">
+                                <div ng-switch-when="b">
+                                    <p>Svar b) är rätt</p>
+                                </div>
+                            </div>
+                            <div ng-switch="correctAnswer4sc">
+                                <div ng-switch-when="c">
+                                    <p>Svar c) är rätt</p>
+                                </div>
+                            </div>
+                            <div ng-switch="correctAnswer4sc">
+                                <div ng-switch-when="d">
+                                    <p>Svar d) är rätt</p>
+                                </div>
+                            </div>
+                            <!--koll av att bara ett svar kan vara rätt TODO-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-switch="typeOfQuestion">
+                <div ng-switch-when="multiChoice">
+                    <label for="numberOfAnswersMC">Välj antal svarsalternativ</label><br/>
+                    <select ng-model="numOfAnswersMC" id="numOfAnswerMCId">
+                        <option value=""></option>
+                        <option value="twoMC">2</option>
+                        <option value="threeMC">3</option>
+                        <option value="fourMC">4</option>
+                        <option value="fiveMC">5</option>
+                        <option value="sixMC">6</option>
+                    </select>
+                    <div ng-switch="numOfAnswersMC">
+                        <div ng-switch-when="twoMC">
+                            <label for="answerMC">Ange svarsalternativ</label><br/>
+                            <p>a) <input type=”text” id="answerMC1" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerAmc"></p>
+                            <p>b) <input type=”text” id="answerMC2" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerBmc"></p>
+                            <p ng-show="correctAnswerAmc">Svar a) är rätt</p>
+                            <p ng-show="correctAnswerBmc">Svar b) är rätt</p>
+                        </div>
+                    </div>
+                    <div ng-switch="numOfAnswersMC">
+                        <div ng-switch-when="threeMC">
+                            <label for="answerMC">Ange svarsalternativ</label><br/>
+                            <p>a) <input type=”text” id="answerMC1" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerAmc"></p>
+                            <p>b) <input type=”text” id="answerMC2" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerBmc"></p>
+                            <p>c) <input type=”text” id="answerMC3" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerCmc"></p>
+                            <p ng-show="correctAnswerAmc">Svar a) är rätt</p>
+                            <p ng-show="correctAnswerBmc">Svar b) är rätt</p>
+                            <p ng-show="correctAnswerCmc">Svar c) är rätt</p>
+                        </div>
+                    </div>
+                    <div ng-switch="numOfAnswersMC">
+                        <div ng-switch-when="fourMC">
+                            <label for="answerMC">Ange svarsalternativ</label><br/>
+                            <p>a) <input type=”text” id="answerMC1" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerAmc"></p>
+                            <p>b) <input type=”text” id="answerMC2" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerBmc"></p>
+                            <p>c) <input type=”text” id="answerMC3" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerCmc"></p>
+                            <p>d) <input type=”text” id="answerMC4" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerDmc"></p>
+                            <p ng-show="correctAnswerAmc">Svar a) är rätt</p>
+                            <p ng-show="correctAnswerBmc">Svar b) är rätt</p>
+                            <p ng-show="correctAnswerCmc">Svar c) är rätt</p>
+                            <p ng-show="correctAnswerDmc">Svar d) är rätt</p>
+                        </div>
+                    </div>
+                    <div ng-switch="numOfAnswersMC">
+                        <div ng-switch-when="fiveMC">
+                            <label for="answerMC">Ange svarsalternativ</label><br/>
+                            <p>a) <input type=”text” id="answerMC1" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerAmc"></p>
+                            <p>b) <input type=”text” id="answerMC2" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerBmc"></p>
+                            <p>c) <input type=”text” id="answerMC3" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerCmc"></p>
+                            <p>d) <input type=”text” id="answerMC4" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerDmc"></p>
+                            <p>e) <input type=”text” id="answerMC5" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerEmc"></p>
+                            <p ng-show="correctAnswerAmc">Svar a) är rätt</p>
+                            <p ng-show="correctAnswerBmc">Svar b) är rätt</p>
+                            <p ng-show="correctAnswerCmc">Svar c) är rätt</p>
+                            <p ng-show="correctAnswerDmc">Svar d) är rätt</p>
+                            <p ng-show="correctAnswerEmc">Svar e) är rätt</p>
+                        </div>
+                    </div>
+                    <div ng-switch="numOfAnswersMC">
+                        <div ng-switch-when="sixMC">
+                            <label for="answerMC">Ange svarsalternativ</label><br/>
+                            <p>a) <input type=”text” id="answerMC1" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerAmc"></p>
+                            <p>b) <input type=”text” id="answerMC2" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerBmc"></p>
+                            <p>c) <input type=”text” id="answerMC3" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerCmc"></p>
+                            <p>d) <input type=”text” id="answerMC4" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerDmc"></p>
+                            <p>e) <input type=”text” id="answerMC5" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerEmc"></p>
+                            <p>f) <input type=”text” id="answerMC6" name="answerCB" maxlength="50">
+                                <input type="checkbox" ng-model="correctAnswerFmc"></p>
+                            <p ng-show="correctAnswerAmc">Svar a) är rätt</p>
+                            <p ng-show="correctAnswerBmc">Svar b) är rätt</p>
+                            <p ng-show="correctAnswerCmc">Svar c) är rätt</p>
+                            <p ng-show="correctAnswerDmc">Svar d) är rätt</p>
+                            <p ng-show="correctAnswerEmc">Svar e) är rätt</p>
+                            <p ng-show="correctAnswerFmc">Svar f) är rätt</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-switch="typeOfQuestion">
+                <div ng-switch-when="open">
+                    <label for="answerOpen">Anteckningar om svar</label><br/>
+                    <!-- Här kan admin t.ex. skriva vilka element som ska ingå i svaret -->
+                    <!-- den här typen av frågor ingår inte i automatisk rättning -->
+                    <textarea rows="6" cols="50" id="answerOpen"></textarea>
+                    <br/><br/>
+                </div>
+            </div>
+            <br/>
+            <label>Maxpoäng på frågan</label><br/>
+            <input type="number" id="maxPoint">
+            <br/><br/>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+<button class="accordion">Fråga 2</button>
+<div class="panel">
+    <p>Nästa fråga.</p>
+</div>
+
+
+<script src="js/js-accordion.js"></script>
+</body>
+</html>
