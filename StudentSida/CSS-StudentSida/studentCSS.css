@@ -89,3 +89,15 @@ outline: none;
 background-color: gray;
 cursor: pointer;
 }
+
+#test-info{
+    resize: none;
+    height: 90%;
+    width: 90%;
+    border:none;
+    font-size: 16px;
+}
+
+#test-info:focus{
+outline: none;
+}
