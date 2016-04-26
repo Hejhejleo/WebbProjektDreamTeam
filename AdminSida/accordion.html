@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/css-accordion.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<!-- Utskriften är ungefär rätt, men det finns fel i koden -->
+
+<button class="accordion">Fråga 1</button>
+<div class="panel">
+    <div ng-app="">
+        <form name="createQuestion">
+            <label for="questionText">Frågetext</label><br/>
+            <input type="text" id="questionText" name="questionText" maxlength="300">
+        </form>
+        <form name="typeQuestionForm">
+            <label for="typeId">Välj typ av fråga</label><br/>
+            <select ng-model="typeOfQuestion" id="typeId">
+                <option value=""></option>
+                <option value="radioBtn">Flervalsfråga med ett rätt svarsalternativ</option>
+                <option value="checkBox">Flervalsfråga med flera rätta svarsalternativ</option>
+                <option value="open">Fritext</option>
+            </select>
+        </form>
+        <br/>
+        <div ng-switch="typeOfQuestion">
+            <div ng-switch-when="radioBtn">
+                <label for="answerRB">Ange svarsalternativ</label><br/>
+                <!--kunna ange antal svaralternativ TODO-->
+                <p>a) <input type=”text” id="answerRB1" name="answerRB" maxlength="50"></p>
+                <p>b) <input type=”text” id="answerRB2" name="answerRB" maxlength="50"></p>
+                <p>c) <input type=”text” id="answerRB3" name="answerRB" maxlength="50"></p>
+            </div>
+        </div>
+        <div ng-switch="typeOfQuestion">
+            <div ng-switch-when="checkBox">
+                <label for="answerCB">Ange svaralternativ</label><br/>
+                <!--kunna ange antal svaralternativ TODO-->
+                <p>a) <input type=”text” id="answerCB1" name="answerCB" maxlength="50"></p>
+                <p>b) <input type=”text” id="answerCB2" name="answerCB" maxlength="50"></p>
+                <p>c) <input type=”text” id="answerCB3" name="answerCB" maxlength="50"></p>
+                <p>d) <input type=”text” id="answerCB4" name="answerCB" maxlength="50"></p>
+                <p>e) <input type=”text” id="answerCB5" name="answerCB" maxlength="50"></p>
+            </div>
+        </div>
+        <div ng-switch="typeOfQuestion">
+            <div ng-switch-when="open">
+                <label for="answerOpen">Rätt svar</label><br/>
+                <input type=”text” id="answerOpen" name="answerOpen" maxlength="250">
+                <br/>
+                <br/>
+            </div>
+        </div>
+
+        <label for="maxPoints_qX">Maxpoäng på frågan</label><br/>
+        <select id="maxPoints_qX" name="pointItem">
+            <option value="zeroPoints">0</option>
+            <option value="zerofivePoints">0,5</option>
+            <option value="onePoints">1</option>
+            <option value="onefivePoints">1,5</option>
+            <option value="twoPoints">2</option>
+            <option value="twofivePoints">2,5</option>
+            <option value="threePoints">3</option>
+            <option value="threefivePoints">3,5</option>
+            <option value="fourPoints">4</option>
+            <option value="fourfivePoints">4,5</option>
+            <option value="fivePoints">5</option>
+        </select>
+        <br/>
+        <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+<button class="accordion">Fråga 2</button>
+<div class="panel">
+    <p>Nästa fråga.</p>
+</div>
+
+
+
+<script src="js/js-accordion.js"></script>
+</body>
+</html>
