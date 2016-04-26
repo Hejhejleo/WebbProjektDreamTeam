@@ -1,0 +1,28 @@
+.userButton {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    color: #ffffff;
+    background: darkorange;
+    padding: 10px 20px 10px 20px;
+    border-style: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+.userButton:hover {
+    background: orange;
+    text-decoration: none;
+}
+
+.userA{
+    font-size: 16px;
+    margin-left: 3px;
+}
+
+.tab-panel{
+    display: none;
+}
+.tab-panel.active{
+    display: block;
+}

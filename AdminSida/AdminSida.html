@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="angularAdmin">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Webbprojekt</title>
+    <script type="text/javascript" src="../Javascript-Login/jquery-1.12.3.min.js"></script>
+
+    <script type="text/javascript" src="Javascript-AdminSida/angular.min.js"></script>
+    <script type="text/javascript" src="Javascript-AdminSida/angular-route.min.js"></script>
+
+    <script type="text/javascript" src="angularPage.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="CSS-AdminSida/adminCSS.css">
+    <link rel="stylesheet" type="text/css" href="../CSS-Login/unsemantic-grid-responsive-tablet.css">
 </head>
-<body>
+
+<body class="grid-container" ng-controller="mainController">
+
+<header class="grid-100">
+
+    <h1 class="grid-15 suffix-85">Newton<span id="tradeId">&trade;</span></h1><hr>
+
+    <div class="grid-40 imgDiv">
+        <img src="http://www.newton.se/content/themes/newton/assets/img/pngs/logo-icon.png">
+        <p id="headerP">NEWTON Webbprojekt</p>
+    </div>
+
+    <nav>
+        <ul class="grid-100" id="adminUl">
+            <li class="grid-20 liLeft"><a href="#framsida"><span>Framsida</span></a></li>
+            <li class="grid-25 liLeft"><a href="#skapa"><span>Skapa / redigera prov</span></a></li>
+            <li class="grid-20 liLeft"><a href="#statistik"><span>Se statistik</span></a></li>
+            <li class="grid-30 liLeft"><a href="#användare"><span>Skapa / hantera användare</span></a></li>
+            <li class="grid-10 liLeft"><a href="#logout"><span>Logout</span></a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<section class="grid-100">
+    <div id="main">
+
+        <div ng-view></div>
+    </div>
+</section>
 
 </body>
+
 </html>
