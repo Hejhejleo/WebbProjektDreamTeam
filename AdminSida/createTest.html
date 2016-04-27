@@ -7,7 +7,17 @@
     <title>Title</title>
 </head>
 <body>
-
+<form name="testHeader">
+    <label for="testName">Testets namn</label><br/>
+    <input type="text" size="30" maxlength="50" id="testName" name="testName"><br/>
+    <label for="testTime">Tid för testet i minuter</label><br/>
+    <input type="number" min="0" max="99999" id="testTime" name="testTime"><br/>
+    <label for="gPercent">Procentgräns för godkänt</label><br/>
+    <input type="number" min="0" max="100" id="gPercent" name="gPercent"><br/>
+    <label for="vgPercent">Procentgräns för väl godkänt</label><br/>
+    <input type="number" min="0" max="100" id="vgPercent" name="vgPercent"><br/>
+</form>
+<br/>
 <button class="accordion">Fråga 1</button>
 <div class="panel">
     <div ng-app="">
