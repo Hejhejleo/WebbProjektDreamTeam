@@ -8,19 +8,19 @@ $( document ).ready(function () {
     var $hr = $("<hr>");
 
 
-    for(i=0;i<userTest.mail.length();i++){
+    for(i=0;i<userTest.mail.length;i++){
 
     if(userTest.mail[i]==user){
     availableTests =(userTest.testName[i]);
     }
     }
-
+    $div = $("<div>", {id: availableTests[i], class: "grid-100 test-div"});
     for(i=0;i<availableTests.length;i++){
         if(i==0){
             $("#ar3").append($hr);
         }
-        $div = $("<div>", {id: availableTests[i], class: "grid-100 test-div"});
         $("#ar3").append($div);
+        $("#ar3").append($hr);
 
 
     }
