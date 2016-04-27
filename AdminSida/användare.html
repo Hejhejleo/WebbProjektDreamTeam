@@ -23,7 +23,7 @@
 
     <section class="grid-100 tab-panel grid-parent" id="skapaAnvändare">
 
-        <form class="grid-30" name="myForm">
+        <form class="grid-30" name="myForm" id="myForm">
 
             <section class="formSection">
             <label for="firstname">Förnamn</label>
@@ -73,27 +73,27 @@
             </ul>
             </section>
 
-            <form class="grid-100" name="myForm">
+            <form class="grid-100" name="Form" id="form">
 
                 <section class="grid-90 prefix-5 handleForm">
-                <section class="formSection" id="input1">
+                <section class="formSection">
                     <label for="handleFirstname">Förnamn:</label>
                     <input type="text" id="handleFirstname" class="handleInput" name="myName" ng-model="myName" required/>
                 </section>
 
-                <section class="formSection" id="input2">
+                <section class="formSection">
                     <label for="handleLastname">Efternamn:</label>
                     <input type="text" id="handleLastname" class="handleInput" name="myLastname" ng-model="myLastname" required>
                 </section>
                 </section>
 
                 <section class="grid-90 prefix-5 handleForm">
-                <section class="formSection" id="input3">
+                <section class="formSection">
                     <label for="handleEmail">Email:</label>
                     <input type="text" id="handleEmail" class="handleInput" name="myEmail" ng-model="myEmail" required>
                 </section>
 
-                <section class="formSection" id="input4">
+                <section class="formSection" id="labelPw">
                     <label for="handlePassword">Lösenord:</label>
                     <input type="text" id="handlePassword" class="handleInput" name="myPassword" ng-model="myPassword" required>
                 </section>
@@ -101,13 +101,13 @@
 
                 <section class="grid-90 prefix-5 handleForm">
                 <section class="formSection">
-                    <label for="handleKlass">Klasser</label>
+                    <label for="handleKlass">Klasser:</label>
                     <select name="Klasser" id="handleKlass">
                         <option value="java">Java</option>
                         <option value="net">.Net</option>
                     </select>
                 </section>
-                    <button>Uppdatera uppgifter</button>
+                    <button id="handleButton">Uppdatera uppgifter</button>
                 </section>
 
                 </form>
