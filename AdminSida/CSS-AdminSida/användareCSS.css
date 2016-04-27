@@ -19,11 +19,37 @@ label{
 }
 
 .formSection {
-    display: block;
+    display: inline-block;
+    margin-left: 23px;
+}
+
+.formSection2{
+    margin-left: 0px;
 }
 
 .validationLabel{
     color: red;
+}
+
+.handleForm{
+    display: inline-block;
+}
+
+#handleUl{
+    width: 800px;
+    height: 350px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    overflow: scroll;
+}
+
+#ulSection{
+    margin-left: 150px;
+}
+
+.handleInput{
+    margin-left: 20px;
 }
 
 

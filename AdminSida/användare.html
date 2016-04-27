@@ -21,7 +21,7 @@
 
     </div>
 
-    <section class="grid-100 tab-panel" id="skapaAnvändare">
+    <section class="grid-100 tab-panel grid-parent" id="skapaAnvändare">
 
         <form class="grid-30" name="myForm">
 
@@ -57,14 +57,61 @@
             </select>
             </section>
 
-            <button id="createUser" onclick="createUser()"></button>
+            <button id="createUser"></button>
 
         </form>
     </section>
 
 
-    <section class="grid-100 tab-panel" id="hanteraAnvändare">
-        <p>Här ska man kunna hantera användare.</p>
+    <section class="grid-100 tab-panel grid-parent" id="hanteraAnvändare">
+        <section id="centerAlign">
+
+            <section class="grid-75 prefix-10" id="ulSection">
+            <label for="handleUL">Studenter</label>
+            <ul id="handleUl">
+
+            </ul>
+            </section>
+
+            <form class="grid-100" name="myForm">
+
+                <section class="grid-90 prefix-5 handleForm">
+                <section class="formSection" id="input1">
+                    <label for="handleFirstname">Förnamn:</label>
+                    <input type="text" id="handleFirstname" class="handleInput" name="myName" ng-model="myName" required/>
+                </section>
+
+                <section class="formSection" id="input2">
+                    <label for="handleLastname">Efternamn:</label>
+                    <input type="text" id="handleLastname" class="handleInput" name="myLastname" ng-model="myLastname" required>
+                </section>
+                </section>
+
+                <section class="grid-90 prefix-5 handleForm">
+                <section class="formSection" id="input3">
+                    <label for="handleEmail">Email:</label>
+                    <input type="text" id="handleEmail" class="handleInput" name="myEmail" ng-model="myEmail" required>
+                </section>
+
+                <section class="formSection" id="input4">
+                    <label for="handlePassword">Lösenord:</label>
+                    <input type="text" id="handlePassword" class="handleInput" name="myPassword" ng-model="myPassword" required>
+                </section>
+                </section>
+
+                <section class="grid-90 prefix-5 handleForm">
+                <section class="formSection">
+                    <label for="handleKlass">Klasser</label>
+                    <select name="Klasser" id="handleKlass">
+                        <option value="java">Java</option>
+                        <option value="net">.Net</option>
+                    </select>
+                </section>
+                    <button>Uppdatera uppgifter</button>
+                </section>
+
+                </form>
+        </section>
     </section>
 
     <script type="text/javascript" src="Javascript-AdminSida/användareTabs.js"></script>
