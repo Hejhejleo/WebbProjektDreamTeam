@@ -1,7 +1,16 @@
-<link rel="stylesheet" type="text/css" href="../CSS-Login/unsemantic-grid-responsive-tablet.css">
-<link rel="stylesheet" type="text/css" href="CSS-AdminSida/användareCSS.css">
-<script type="text/javascript" src="Javascript-AdminSida/jquery-1.12.3.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webbprojekt</title>
+    
+    <link rel="stylesheet" type="text/css" href="../CSS-Login/unsemantic-grid-responsive-tablet.css">
+    <link rel="stylesheet" type="text/css" href="CSS-AdminSida/användareCSS.css">
+    <script type="text/javascript" src="Javascript-AdminSida/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="Javascript-AdminSida/createUser.js"></script>
 
+</head>
+<body>
 <div>
     <div class="grid-90 prefix-20 grid-parent">
 
@@ -16,28 +25,36 @@
 
         <form class="grid-30" name="myForm">
 
-            <label for="firstname">Förnamn</label>
-            <input type="text" id="firstname" name="myName" ng-model="myName" required>
+            <label for="firstname" id="lbl1">Förnamn</label>
+            <input type="text" id="firstname" name="myName" ng-model="myName" required/>
+
             <label for="lastname">Efternamn</label>
             <input type="text" id="lastname" name="myLastname" ng-model="myLastname" required>
+
             <label for="email">Email</label>
             <input type="text" id="email">
+
             <label for="password">Lösenord</label>
             <input type="text" id="password" name="myPassword" ng-model="myPassword" required>
-            <label for="pnummer">Personnummer</label>
-            <input type="text" id="pnummer" name="myPnummer" ng-model="mypNummer" required>
+
             <label for="klass">Klasser</label>
             <select name="Klasser" id="klass">
                 <option value="java">Java</option>
                 <option value="net">.Net</option>
             </select>
+
+            <button id="createUser" onclick="createUser()"></button>
+
         </form>
 
-        <section class="grid-40" id="validationSection">
-            <label class="grid-45 prefix-0 validationLabel" ng-show="myForm.myName.$touched && myForm.myName.$invalid">Du måste skriva in ett namn.</label>
-            <label class="grid-45 prefix-0 validationLabel" ng-show="myForm.myLastname.$touched && myForm.myLastname.$invalid">Du måste skriva in ett efternamn.</label>
-            <label class="grid-45 prefix-0 validationLabel" ng-show="myForm.myPassword.$touched && myForm.myPassword.$invalid">Du måste skriva in ett lösenord.</label>
-            <label class="grid-45 prefix-0 validationLabel" ng-show="myForm.myPnummer.$touched && myForm.myPnummer.$invalid">Du måste skriva in ett namn.</label>
+        <from>
+            <input type="radio" name="gender" value="male" checked> Male</input>
+        </from>
+
+        <section class="grid-30" id="validationSection">
+            <label class="grid-100 validationLabel"  ng-show="myForm.myName.$touched && myForm.myName.$invalid">Du måste skriva in ett namn.</label>
+            <label class="grid-100 validationLabel1" ng-show="myForm.myLastname.$touched && myForm.myLastname.$invalid">Du måste skriva in ett efternamn.</label>
+            <label class="grid-100 validationLabel1" ng-show="myForm.myPassword.$touched && myForm.myPassword.$invalid">Du måste skriva in ett lösenord.</label>
         </section>
     </section>
 
@@ -48,4 +65,5 @@
 
     <script type="text/javascript" src="Javascript-AdminSida/användareTabs.js"></script>
 </div>
-
+</body>
+</html>
