@@ -1,3 +1,27 @@
+form{
+    margin-top: 50px;
+}
+
+input{
+    margin-bottom: 15px;
+    width: 300px;
+    height: 30px;
+}
+
+label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+#validationSection{
+    margin-top: 60px;
+}
+
+    color: red;
+}
+
+
+
 .userButton {
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
