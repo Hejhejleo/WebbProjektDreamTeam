@@ -15,26 +15,16 @@ label{
 
 #validationSection{
     margin-top: 50px;
-    display: inline-block;
 
+}
+
+.formSection {
+    display: block;
 }
 
 .validationLabel{
     color: red;
-
 }
-
-.validationLabel1{
-    color: red;
-    margin-top: 100px;
-
-}
-
-.validationLabel2{
-    margin-top: 140px;
-    color: red;
-}
-
 
 
 .userButton {

@@ -25,33 +25,41 @@
 
         <form class="grid-30" name="myForm">
 
-            <label for="firstname" id="lbl1">Förnamn</label>
+            <section class="formSection">
+            <label for="firstname">Förnamn</label>
             <input type="text" id="firstname" name="myName" ng-model="myName" required/>
+            <label class="grid-100 validationLabel"  ng-show="myForm.myName.$touched && myForm.myName.$invalid">Du måste skriva in ett namn.</label>
+            </section>
 
+            <section class="formSection">
             <label for="lastname">Efternamn</label>
             <input type="text" id="lastname" name="myLastname" ng-model="myLastname" required>
+            <label class="grid-100 validationLabel" ng-show="myForm.myLastname.$touched && myForm.myLastname.$invalid">Du måste skriva in ett efternamn.</label>
+            </section>
 
+            <section class="formSection">
             <label for="email">Email</label>
-            <input type="text" id="email">
+            <input type="text" id="email" name="myEmail" ng-model="myEmail" required>
+            <label class="grid-100 validationLabel" ng-show="myForm.myEmail.$touched && myForm.myEmail.$invalid">Du måste skriva in en email.</label>
+            </section>
 
+            <section class="formSection">
             <label for="password">Lösenord</label>
             <input type="text" id="password" name="myPassword" ng-model="myPassword" required>
+            <label class="grid-100 validationLabel" ng-show="myForm.myPassword.$touched && myForm.myPassword.$invalid">Du måste skriva in ett lösenord.</label>
+            </section>
 
+            <section class="formSection">
             <label for="klass">Klasser</label>
             <select name="Klasser" id="klass">
                 <option value="java">Java</option>
                 <option value="net">.Net</option>
             </select>
+            </section>
 
             <button id="createUser" onclick="createUser()"></button>
 
         </form>
-        
-        <section class="grid-30" id="validationSection">
-            <label class="grid-100 validationLabel"  ng-show="myForm.myName.$touched && myForm.myName.$invalid">Du måste skriva in ett namn.</label>
-            <label class="grid-100 validationLabel1" ng-show="myForm.myLastname.$touched && myForm.myLastname.$invalid">Du måste skriva in ett efternamn.</label>
-            <label class="grid-100 validationLabel1" ng-show="myForm.myPassword.$touched && myForm.myPassword.$invalid">Du måste skriva in ett lösenord.</label>
-        </section>
     </section>
 
 
