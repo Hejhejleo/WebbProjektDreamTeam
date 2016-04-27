@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Webbprojekt</title>
-    
+
     <link rel="stylesheet" type="text/css" href="../CSS-Login/unsemantic-grid-responsive-tablet.css">
     <link rel="stylesheet" type="text/css" href="CSS-AdminSida/användareCSS.css">
     <script type="text/javascript" src="Javascript-AdminSida/jquery-1.12.3.min.js"></script>
@@ -46,11 +46,7 @@
             <button id="createUser" onclick="createUser()"></button>
 
         </form>
-
-        <from>
-            <input type="radio" name="gender" value="male" checked> Male</input>
-        </from>
-
+        
         <section class="grid-30" id="validationSection">
             <label class="grid-100 validationLabel"  ng-show="myForm.myName.$touched && myForm.myName.$invalid">Du måste skriva in ett namn.</label>
             <label class="grid-100 validationLabel1" ng-show="myForm.myLastname.$touched && myForm.myLastname.$invalid">Du måste skriva in ett efternamn.</label>
