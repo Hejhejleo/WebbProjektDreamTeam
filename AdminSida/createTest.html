@@ -3,30 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="CSS-AdminSida/css-accordion.css"/>
+    <link rel="stylesheet" type="text/css" href="CSS-AdminSida/css-createTest.css"/>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="Javascript-AdminSida/jquery-1.12.3.min.js"></script>
     <title>Title</title>
 </head>
 <body>
-<form name="testHeader">
-    <label for="testName">Testets namn</label><br/>
-    <input type="text" size="30" maxlength="50" id="testName" name="testName"><br/>
-    <label for="testTime">Tid för testet i minuter</label><br/>
-    <input type="number" min="0" max="99999" id="testTime" name="testTime"><br/>
-    <label for="gPercent">Procentgräns för godkänt</label><br/>
-    <input type="number" min="0" max="100" id="gPercent" name="gPercent"><br/>
-    <label for="vgPercent">Procentgräns för väl godkänt</label><br/>
-    <input type="number" min="0" max="100" id="vgPercent" name="vgPercent"><br/>
-</form>
+<header>
+    <form id="testHeaderForm" name="testHeader">
+        <fieldset>
+            <legend id="testLegend">Testinformation</legend>
+            <label for="testName">Testets namn: </label>
+            <input type="text" size="30" maxlength="50" id="testName" name="testName"><br/><br/>
+            <label for="testTime">Tid för testet, i minuter: </label>
+            <input type="number" min="0" max="99999" id="testTime" name="testTime"><br/><br/>
+            <label for="gPercent">Procentgräns för godkänt: </label>
+            <input type="number" min="0" max="100" id="gPercent" name="gPercent"><br/><br/>
+            <label for="vgPercent">Procentgräns för väl godkänt: </label>
+            <!--validera att mingräns för vg > gvärde TODO-->
+            <input type="number" min="0" max="100" id="vgPercent" name="vgPercent"><br/>
+            <br/>
+            <input type="button" value="Spara testinformation" id="saveTestInfoBtn" onclick="saveTestInfo()">
+        </fieldset>
+    </form>
+</header>
 <br/>
+<!--
 <button class="accordion">Fråga 1</button>
 <div class="panel">
-    <div ng-app="">
-        <form name="createQuestion">
-            <label for="questionText">Frågetext</label><br/>
+-->
+<!--testinfo måste sparas innan frågemallen blir synlig TODO-->
+<div ng-app="">
+    <form id="createQuestionForm" name="createQuestion">
+        <fieldset>
+            <legend id="questionId"></legend>
+            <label for="questionText">Frågetext: </label>
             <textarea rows="6" cols="50" id="questionText"></textarea>
             <br/> <br/>
 
-            <label for="typeId">Välj typ av fråga</label><br/>
+            <label for="typeId">Välj typ av fråga: </label>
             <select ng-model="typeOfQuestion" id="typeId">
                 <option value=""></option>
                 <option value="singleChoice">Flervalsfråga med ett rätt svarsalternativ</option>
@@ -36,7 +51,7 @@
             <br/> <br/>
             <div ng-switch="typeOfQuestion">
                 <div ng-switch-when="singleChoice">
-                    <label for="numberOfAnswersSC">Välj antal svarsalternativ</label><br/>
+                    <label for="numberOfAnswersSC">Välj antal svarsalternativ: </label>
                     <select ng-model="numOfAnswersSC" id="numberOfAnswersSC">
                         <option value=""></option>
                         <option value="twoSC">2</option>
@@ -45,7 +60,7 @@
                     </select>
                     <div ng-switch="numOfAnswersSC">
                         <div ng-switch-when="twoSC">
-                            <label>Ange svarsalternativ</label><br/>
+                            <label>Ange svarsalternativ: </label>
                             <p>a) <input type=”text” id="answerSC12text" name="answerCB" maxlength="50">
                                 <input type="radio" id="answerSC12radio" name="radio2" ng-model="correctAnswer2sc"
                                        value="a"></p>
@@ -66,7 +81,7 @@
                     </div>
                     <div ng-switch="numOfAnswersSC">
                         <div ng-switch-when="threeSC">
-                            <label>Ange svarsalternativ</label><br/>
+                            <label>Ange svarsalternativ: </label>
                             <p>a) <input type=”text” id="answerSC13text" name="answerCB" maxlength="50">
                                 <input type="radio" id="answerSC13radio" name="radio3" ng-model="correctAnswer3sc"
                                        value="a"></p>
@@ -95,7 +110,7 @@
                     </div>
                     <div ng-switch="numOfAnswersSC">
                         <div ng-switch-when="fourSC">
-                            <label>Ange svarsalternativ</label><br/>
+                            <label>Ange svarsalternativ: </label>
                             <p>a) <input type=”text” id="answerSC14text" name="answerCB" maxlength="50">
                                 <input type="radio" id="answerSC14radio" name="radio4" ng-model="correctAnswer4sc"
                                        value="a"></p>
@@ -135,7 +150,7 @@
 
             <div ng-switch="typeOfQuestion">
                 <div ng-switch-when="multiChoice">
-                    <label for="numberOfAnswersMC">Välj antal svarsalternativ</label><br/>
+                    <label for="numberOfAnswersMC">Välj antal svarsalternativ: </label>
                     <select ng-model="numOfAnswersMC" id="numberOfAnswersMC">
                         <option value=""></option>
                         <option value="twoMC">2</option>
@@ -146,7 +161,7 @@
                     </select>
                     <div ng-switch="numOfAnswersMC">
                         <div ng-switch-when="twoMC">
-                            <label>Ange svarsalternativ</label><br/>
+                            <label>Ange svarsalternativ: </label>
                             <p>a) <input type=”text” id="answerMC12text" name="answerCB" maxlength="50">
                                 <input type="checkbox" id="answerMC12check" ng-model="correctAnswerAmc"></p>
                             <p>b) <input type=”text” id="answerMC22text" name="answerCB" maxlength="50">
@@ -157,7 +172,7 @@
                     </div>
                     <div ng-switch="numOfAnswersMC">
                         <div ng-switch-when="threeMC">
-                            <label>Ange svarsalternativ</label><br/>
+                            <label>Ange svarsalternativ: </label>
                             <p>a) <input type=”text” id="answerMC13text" name="answerCB" maxlength="50">
                                 <input type="checkbox" id="answerMC13check" ng-model="correctAnswerAmc"></p>
                             <p>b) <input type=”text” id="answerMC23text" name="answerCB" maxlength="50">
@@ -171,7 +186,7 @@
                     </div>
                     <div ng-switch="numOfAnswersMC">
                         <div ng-switch-when="fourMC">
-                            <label>Ange svarsalternativ</label><br/>
+                            <label>Ange svarsalternativ: </label>
                             <p>a) <input type=”text” id="answerMC14text" name="answerCB" maxlength="50">
                                 <input type="checkbox" id="answerMC14check" ng-model="correctAnswerAmc"></p>
                             <p>b) <input type=”text” id="answerMC24text" name="answerCB" maxlength="50">
@@ -188,7 +203,7 @@
                     </div>
                     <div ng-switch="numOfAnswersMC">
                         <div ng-switch-when="fiveMC">
-                            <label>Ange svarsalternativ</label><br/>
+                            <label>Ange svarsalternativ: </label>
                             <p>a) <input type=”text” id="answerMC15text" name="answerCB" maxlength="50">
                                 <input type="checkbox" id="answerMC15check" ng-model="correctAnswerAmc"></p>
                             <p>b) <input type=”text” id="answerMC25text" name="answerCB" maxlength="50">
@@ -208,7 +223,7 @@
                     </div>
                     <div ng-switch="numOfAnswersMC">
                         <div ng-switch-when="sixMC">
-                            <label>Ange svarsalternativ</label><br/>
+                            <label>Ange svarsalternativ: </label>
                             <p>a) <input type=”text” id="answerMC16text" name="answerCB" maxlength="50">
                                 <input type="checkbox" id="answerMC16check" ng-model="correctAnswerAmc"></p>
                             <p>b) <input type=”text” id="answerMC26text" name="answerCB" maxlength="50">
@@ -233,7 +248,7 @@
             </div>
             <div ng-switch="typeOfQuestion">
                 <div ng-switch-when="open">
-                    <label for="answerOpen">Noteringar om svar</label><br/>
+                    <label for="answerOpen">Noteringar om svar: </label>
                     <!-- Här kan admin t.ex. skriva vilka element som ska ingå i svaret -->
                     <!-- den här typen av frågor ingår inte i automatisk rättning -->
                     <textarea rows="6" cols="50" id="answerOpen" name="answerOpen"></textarea>
@@ -241,18 +256,24 @@
                 </div>
             </div>
             <br/>
-            <label>Maxpoäng på frågan</label><br/>
+            <label>Maxpoäng på frågan: </label>
             <input type="number" min="0" max="5" id="maxPoint">
             <br/><br/>
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+            <input type="button" value="Spara fråga" id="saveQuestionBtn" onclick="saveQuestion()">
+            <br/>
+        </fieldset>
+    </form>
+    <br/>
+    <button id="saveTestBtn" onclick="saveTest()">Spara test</button>
 </div>
+</div>
+<!--
 <button class="accordion">Fråga 2</button>
 <div class="panel">
     <p>Nästa fråga.</p>
 </div>
-
+-->
+<script src="Javascript-AdminSida/js-createTest.js"></script>
 <script src="Javascript-AdminSida/js-accordion.js"></script>
 </body>
 </html>

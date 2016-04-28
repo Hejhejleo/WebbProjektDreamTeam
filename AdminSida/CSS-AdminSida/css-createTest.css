@@ -1,0 +1,21 @@
+fieldset{
+    width:750px;
+    border:3px solid;
+    border-radius:10px;
+    padding:20px;
+    text-align: right;
+}
+legend{
+    background-color: #4a69ff ;
+    border:3px;
+    border-radius:10px;
+    padding:10px 20px;
+    text-align:left;
+    text-transform: uppercase;
+}
+
+#questionText {
+    vertical-align: top;
+}
+
+
