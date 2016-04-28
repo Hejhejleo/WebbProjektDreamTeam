@@ -23,6 +23,7 @@ $(document).ready(function () {
             if (users.mail[i] == id) {
             userindex=i;
                 $("#handleFirstname").val(users.firstName[userindex]);
+                console.log( $("#handleFirstname").val());
                 $("#handleLastname").val(users.lastName[userindex]);
                 $("#handleEmail").val(users.mail[userindex]);
                 $("#handlePassword").val(users.password[userindex]);
@@ -35,16 +36,24 @@ $(document).ready(function () {
         $("#handleButton").click(function () {
             if ( $("#handleEmail").val().indexOf('@') != -1) {
                 if ($("#handleEmail").val().indexOf('.') != -1) {
-
-                    users.firstName[userindex]=$("#handleFirstname").val();
+                   var FNameA=[$("#handleFirstname").val()];
+                    users.firstName[userindex]=FNameA;
                     console.log($("#handleFirstname").val());
-                    users.lastName[userindex]=$("#handleLastname").val();
+
+                    var LNameA=[$("#handleLastname").val()];
+                    users.lastName[userindex]=LNameA;
                     console.log($("#handleLastname").val());
-                    users.mail[userindex]=$("#handleEmail").val();
+
+                    var mailA=[$("#handleEmail").val()];
+                    users.mail[userindex]=mailA;
                     console.log($("#handleEmail").val());
-                    users.password[userindex]=$("#handlePassword").val();
+
+                    var passwordA=[$("#handlePassword").val()];
+                    users.password[userindex]=passwordA;
                     console.log($("#handlePassword").val());
-                    users.className[userindex]=$("#handleKlass").val();
+
+                    var classnameA=[$("#handlePassword").val()];
+                    users.className[userindex]=classnameA;
                     console.log($("#handleKlass").val());
 
                     localStorage.setItem("users",JSON.stringify(users));
