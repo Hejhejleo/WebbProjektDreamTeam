@@ -1,6 +1,6 @@
 $( document ).ready(function () {
 
-    var user = document.cookie;
+    var user = sessionStorage.getItem("loggedInAs");
     var tests = JSON.parse(localStorage.getItem("tests"));
     var userTest = JSON.parse(localStorage.getItem("usertests"));
     var availableTests = new Array();

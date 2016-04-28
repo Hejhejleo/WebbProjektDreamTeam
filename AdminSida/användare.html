@@ -8,6 +8,8 @@
     <script type="text/javascript" src="Javascript-AdminSida/jquery-1.12.3.min.js"></script>
     <script type="text/javascript" src="Javascript-AdminSida/createUser.js"></script>
     <script src="Javascript-AdminSida/editUser.js"></script>
+    <script src="Javascript-AdminSida/createUser.js"></script>
+    <script src="Javascript-AdminSida/drawList.js"></script>
 
 
 </head>
@@ -16,8 +18,8 @@
     <div class="grid-90 prefix-20 grid-parent">
 
         <ul class="tab-list">
-            <li class="grid-20 prefix-5 userButton"><a href="#skapaAnvändare" class="userA tab-control"><span>Skapa Användare</span></a></li>
-            <li class="grid-20 prefix-5 userButton"><a href="#hanteraAnvändare" class="userA tab-control"><span>Hantera Användare</span></a></li>
+            <li class="grid-20 prefix-5 userButton"><a  href="#skapaAnvändare" class="userA tab-control"><span>Skapa Användare</span></a></li>
+            <li class="grid-20 prefix-5 userButton"><a  href="#hanteraAnvändare" class="userA tab-control"><span class="reload-list">Hantera Användare</span></a></li>
         </ul>
 
     </div>
@@ -58,7 +60,7 @@
             </select>
             </section>
 
-            <button id="createUser"></button>
+            <button id="createUser">Skapa användare</button>
 
         </form>
     </section>
@@ -104,11 +106,11 @@
                 <section class="formSection">
                     <label for="handleKlass">Klasser:</label>
                     <select name="Klasser" id="handleKlass">
-                        <option value="java">Java</option>
-                        <option value="net">.Net</option>
+                        <option value="Java">Java</option>
+                        <option value=".Net">.Net</option>
                     </select>
                 </section>
-                    <button id="handleButton">Uppdatera uppgifter</button>
+                    <button id="handleButton" class="reload-list">Uppdatera uppgifter</button>
                 </section>
 
                 </form>

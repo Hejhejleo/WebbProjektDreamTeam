@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var cMail = document.cookie;
+    var cMail = sessionStorage.getItem("loggedInAs");
     var users = JSON.parse(localStorage.getItem("users"));
 
     for(var i=0;i<users.mail.length;i++){

@@ -12,6 +12,10 @@ $(document).ready(function () {
         $("#handleUl").append($li);
 
     }
+    /*for (var i=0;i<classes.length();i++){
+    $select=$("<option value='"+classes[i]+"'>"+classes[i]+"</option>")
+    }
+    $("#handleKlass").append($select);*/
 
     $(".handle-item").click(function () {
         var id = $(this).attr('id');
@@ -22,11 +26,39 @@ $(document).ready(function () {
                 $("#handleLastname").val(users.lastName[userindex]);
                 $("#handleEmail").val(users.mail[userindex]);
                 $("#handlePassword").val(users.password[userindex]);
+                $("#handleKlass").val(users.className[userindex]);
                 console.log("transer compete");
             }
         }
 
     });
+        $("#handleButton").click(function () {
+            if ( $("#handleEmail").val().indexOf('@') != -1) {
+                if ($("#handleEmail").val().indexOf('.') != -1) {
+
+                    users.firstName[userindex]=$("#handleFirstname").val();
+                    console.log($("#handleFirstname").val());
+                    users.lastName[userindex]=$("#handleLastname").val();
+                    console.log($("#handleLastname").val());
+                    users.mail[userindex]=$("#handleEmail").val();
+                    console.log($("#handleEmail").val());
+                    users.password[userindex]=$("#handlePassword").val();
+                    console.log($("#handlePassword").val());
+                    users.className[userindex]=$("#handleKlass").val();
+                    console.log($("#handleKlass").val());
+
+                    localStorage.setItem("users",JSON.stringify(users));
+
+                }else {
+                    alert("A valid emails need a '.'");
+                }
+            }else{
+            alert("A valid emails need a '@'");
+            }
+
+    });
 
 });
+
+
 
