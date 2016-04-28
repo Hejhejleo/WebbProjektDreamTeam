@@ -10,10 +10,10 @@ $(document).ready(function () {
 
 function saveTestInfo() {
     // validera att vg-gräns > g-gräns
-    var g = document.getElementById("gPercent").value;
-    var vg = document.getElementById("vgPercent").value;
+    var g = +document.getElementById("gPercent").value;
+    var vg = +document.getElementById("vgPercent").value;
     if (vg <= g) {
-        alert("Gränsen för VG måste vara högre än för G.");
+        alert("Gränsen för VG måste vara högre än för G." + "\nG-gräns: " + g + "\nVG-gräns: " + vg);
     } else {
         document.getElementById("createQuestionForm").style.visibility = "visible";
         document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
