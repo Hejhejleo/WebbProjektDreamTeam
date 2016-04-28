@@ -101,3 +101,19 @@ form{
 .tab-panel.active{
     display: block;
 }
+
+.handle-item{
+background-color: black;
+}
+
+.handle-span{
+    font-family: "Comic Sans MS";
+}
+
+.white{
+background-color: white;
+}
+
+.grey{
+background-color: lightgray;
+}

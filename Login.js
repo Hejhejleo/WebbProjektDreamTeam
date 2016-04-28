@@ -14,7 +14,7 @@ function login(username, password) {
         if (users.mail[i] == username) {
             if (users.password[i] == password) {
                 saveUser(users.mail[i]);
-                if ("admin@admin.se"==username) {
+                if (username=="admin@admin.se") {
                     location.href = "AdminSida/AdminSida.html"
                 } else {
                     location.href = "StudentSida/StudentPage.html";

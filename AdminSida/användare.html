@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Webbprojekt</title>
-
-    <link rel="stylesheet" type="text/css" href="CSS-AdminSida/unsemantic-grid-responsive-tablet.css">
     <link rel="stylesheet" type="text/css" href="CSS-AdminSida/användareCSS.css">
+    <link rel="stylesheet" type="text/css" href="CSS-AdminSida/unsemantic-grid-responsive-tablet.css">
     <script type="text/javascript" src="Javascript-AdminSida/jquery-1.12.3.min.js"></script>
     <script type="text/javascript" src="Javascript-AdminSida/createUser.js"></script>
+    <script src="Javascript-AdminSida/editUser.js"></script>
+
 
 </head>
 <body>
@@ -68,9 +69,9 @@
 
             <section class="grid-75 prefix-10" id="ulSection">
             <label for="handleUL">Studenter</label>
-            <ul id="handleUl">
+            <div id="handleUl" class="grid-100">
 
-            </ul>
+            </div>
             </section>
 
             <form class="grid-100" name="Form" id="form">
