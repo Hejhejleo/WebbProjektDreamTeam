@@ -103,11 +103,12 @@ form{
 }
 
 .handle-item{
-background-color: black;
+padding: 8px;
+cursor: pointer;
 }
 
-.handle-span{
-    font-family: "Comic Sans MS";
+.handle-div{
+
 }
 
 .white{
