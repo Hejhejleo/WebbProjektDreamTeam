@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tilldela</title>
+    <link rel="stylesheet" type="text/css" href="CSS-AdminSida/tilldela.css">
+    <link href='https://fonts.googleapis.com/css?family=Chivo' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="CSS-AdminSida/unsemantic-grid-responsive-tablet.css">
+    <script type="text/javascript" src="Javascript-AdminSida/jquery-1.12.3.min.js"></script>
+</head>
+<body>
+
+
+    <div class="grid-90 prefix-20 grid-parent">
+        <ul class="tab-list">
+            <li class="grid-20 prefix-5 userButton"><a href="#tilldelaProv" class="userA tab-control">Tilldela prov</a></li>
+            <li class="grid-20 prefix-5 userButton"><a href="#rättaProv" class="userA tab-control">Rätta prov</a></li>
+        </ul>
+    </div>
+</section>
+
+
+<section class="grid-100 tab-panel" id="tilldelaProv">
+    <form>
+        <section class="grid-35 prefix-30 selectProv">
+            <label for="selectProv">Prov</label>
+            <select name="prov" id="selectProv">
+                <option>Sveriges städer</option>
+            </select>
+        </section>
+
+    <section class="grid-75 prefix-10" id="tilldelaSection">
+        <label for="studenter">Studenter</label>
+        <div id="studenter" class="grid-100">
+
+        </div>
+    </section>
+
+        <section class="grid-70 prefix-15 inlineSection">
+            <label for="selectKlass">Tilldela prov eller ta bort tilldelning av prov:</label>
+            <select name="tilldelaKlass" id="selectKlass">
+                <option>Java</option>
+            </select>
+            <button id="tilldelaButton">Tilldela prov till klass</button>
+            <button id="deleteButton">Ta bort tilldelning av prov till klass</button>
+        </section>
+
+
+    </form>
+</section>
+
+<section class="grid-100 tab-panel" id="rättaProv">
+
+
+
+</section>
+
+
+    <script type="text/javascript" src="Javascript-AdminSida/användareTabs.js"></script>
+
+</body>
+</html>

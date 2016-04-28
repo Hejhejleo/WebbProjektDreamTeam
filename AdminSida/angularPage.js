@@ -28,7 +28,12 @@ angularAdmin.config(function($routeProvider) {
         .when('/användare', {
             templateUrl : 'användare.html',
             controller  : 'användareController'
-        });
+        })
+        
+        .when('/tilldela', {
+        templateUrl : 'tilldela.html',
+        controller  : 'tilldelaController'
+    });
 
 });
 
@@ -46,6 +51,10 @@ angularAdmin.controller('statistikController', function($scope) {
 });
 
 angularAdmin.controller('användareController', function($scope) {
+
+});
+
+angularAdmin.controller('tilldelaController', function($scope) {
 
 });
 
