@@ -1,21 +1,77 @@
-fieldset{
-    width:750px;
-    border:3px solid;
-    border-radius:10px;
-    padding:20px;
-    text-align: right;
-}
-legend{
-    background-color: #4a69ff ;
-    border:3px;
-    border-radius:10px;
-    padding:10px 20px;
-    text-align:left;
-    text-transform: uppercase;
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+fieldset {
+    width: 800px;
+    border: 3px solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+legend {
+    background-color: darkorange;
+    border: 3px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+.answersSC {
+    float: right;
+}
 #questionText {
     vertical-align: top;
 }
 
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    float: left;
+    text-align: right;
+    width: 300px;
+    padding-right: 10px;
+}
+
+p, option, select, .answerBoxes {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    height: 26px;
+}
+
+input[type=text], input[type=number], input[type=radio] {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    height: 22px;
+
+}
+
+p input[type=text] {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    height: 22px;
+}
+
+input[type=button] {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    color: #ffffff;
+    background: darkorange;
+    padding: 10px 20px 10px 20px;
+    border-style: none;
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+input[type=button]:hover {
+    background: orange;
+    text-decoration: none;
+}
 
