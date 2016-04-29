@@ -4,26 +4,14 @@
 var n = 0;
 
 function myFunction() {
-    var obj = {
-        "testName": ['test1'],
-        "testTime": [40],
-        "questionString": [[["huvudstad?"], ["Städer?"], ["Frukt"], ["Beskriv en dörr"]]],
-        "answerType": [[["singleChoice"], ["multiChoice"], ["singleChoice"], ["freeText"]]],
-        "points": [[1], [2], [2], [4]],
-        "answer": [[["Stockholm", "Göteborg", "Malmö", "Luleå"], ["Göteborg", "Stenköping", "London"], ["Sten", "Apelsin", "Kärra"], []]],
-        "correctAnswers": [["Stockholm"], [["Göteborg"], ["London"]], ["Apelsin"], []],
-        "gProcent": [60],
-        "vgProcent": [80],
-        "autoCorrect": [1]
-    };
-    var obe = JSON.stringify(obj);
-    localStorage.setItem('accrd', obe);
+
     //loading tests from localstorage
-    var parsed = JSON.parse(localStorage.getItem('accrd'));
+    var parsed = JSON.parse(localStorage.getItem('testdata'));
 
+    var testindex = 1;
 
-    console.log(parsed.questionString[0].length);
-    for (var k = 0; k < parsed.questionString[0].length; k++) {
+    console.log(parsed.questionString[testindex].length);
+    for (var k = 0; k < parsed.questionString[testindex].length; k++) {
         //Creating the button element
         var btn = document.createElement("BUTTON");
 
@@ -40,21 +28,21 @@ function myFunction() {
         pane.setAttributeNode(attpan);
 
         //Handling singlechoice questions
-        if (parsed.answerType[0][n] == "singleChoice") {
+        if (parsed.answerType[testindex][n] == "singleChoice") {
 
             var form = document.createElement("form");
 
-            for (var e = 0; e < parsed.answer[0][n].length; e++) {
+            for (var e = 0; e < parsed.answers[testindex][n].length; e++) {
                 var inputform = document.createElement("input");
                 var lbl = document.createElement("label");
-                inputform.setAttribute("id", parsed.answer[0][n][e] + e);
-                lbl.setAttribute("for", parsed.answer[0][n][e] + e);
+                inputform.setAttribute("id", parsed.answers[testindex][n][e] + e);
+                lbl.setAttribute("for", parsed.answers[testindex][n][e] + e);
                 inputform.setAttribute("type", "radio");
                 //console.log(parsed.answer[n][e]);
                 inputform.setAttribute("name", "answer");
-                inputform.setAttribute("value", parsed.answer[0][n][e]);
+                inputform.setAttribute("value", parsed.answers[testindex][n][e]);
                 lbl.setAttribute("class", "answers");
-                var anstext = document.createTextNode(parsed.answer[0][n][e]);
+                var anstext = document.createTextNode(parsed.answers[testindex][n][e]);
                 lbl.appendChild(inputform);
                 lbl.appendChild(anstext);
                 form.appendChild(lbl);
@@ -63,19 +51,19 @@ function myFunction() {
             pane.appendChild(form);
 
         }//handling multiple choice questions
-        else if (parsed.answerType[0][n] == "multiChoice") {
+        else if (parsed.answerType[testindex][n] == "multiChoice") {
             var chkform = document.createElement("form");
 
-            for (var t = 0; t < parsed.answer[0][n].length; t++) {
+            for (var t = 0; t < parsed.answers[testindex][n].length; t++) {
                 var inputchk = document.createElement("input");
                 inputchk.setAttribute("type", "checkbox");
                 inputchk.setAttribute("name", "answer" + t);
-                inputchk.setAttribute("value", parsed.answer[0][n][t]);
-                inputchk.setAttribute("id", parsed.answer[0][n][t] + t);
+                inputchk.setAttribute("value", parsed.answers[testindex][n][t]);
+                inputchk.setAttribute("id", parsed.answers[testindex][n][t] + t);
                 var lblchk = document.createElement("label");
                 lblchk.setAttribute("class", "answers");
-                lblchk.setAttribute("for", parsed.answer[0][n][t] + t);
-                var chktext = document.createTextNode(parsed.answer[0][n][t]);
+                lblchk.setAttribute("for", parsed.answers[testindex][n][t] + t);
+                var chktext = document.createTextNode(parsed.answers[testindex][n][t]);
                 chkform.appendChild(lblchk);
                 lblchk.appendChild(inputchk);
                 lblchk.appendChild(chktext);
@@ -84,7 +72,7 @@ function myFunction() {
             }
             pane.appendChild(chkform);
         }//handling open answer questions
-        else if (parsed.answerType[0][n] == "freeText") {
+        else if (parsed.answerType[testindex][n] == "open") {
             var freeArea = document.createElement("textarea");
             freeArea.setAttribute("class", "freeTexts");
             freeArea.setAttribute("cols", "60");
@@ -93,7 +81,7 @@ function myFunction() {
         }
 
         //creating main buttons text
-        var t = document.createTextNode(parsed.questionString[0][n]);
+        var t = document.createTextNode(parsed.questionString[testindex][n]);
         //console.log(n);
         n++;
         //adding maintext to mainbutton
