@@ -2,24 +2,30 @@ $(document).ready(function () {
 
     var userindex;
     var users = JSON.parse(localStorage.getItem("users"));
-    for (var i = 0; i < users.mail.length; i++) {
-        if (i % 2 == 0) {
-            $li = $("<li class='grid-100 handle-item grey' id='" + users.mail[i] + "'><div class='grid-33 handle-div'>" + users.firstName[i] + "</div><div class='grid-33 handle-div'>" + users.lastName[i] + "</div><div class='grid-33 handle-div'>" + users.mail[i] + "</div></li>");
-        } else {
-            $li = $("<li class='grid-100 handle-item white' id='" + users.mail[i] + "'><div class='grid-33 handle-div'>" + users.firstName[i] + "</div><div class='grid-33 handle-div'>" + users.lastName[i] + "</div><div class='grid-33 handle-div'>" + users.mail[i] + "</div></li>");
+
+    $(".reload-list").on('click',function () {
+        var users = JSON.parse(localStorage.getItem("users"));
+        $("#handleUl").empty();
+        $(".handle-item").remove();
+        for (var i = 0; i < users.mail.length; i++) {
+            if (i % 2 == 0) {
+                $li = $("<li class='grid-100 handle-item grey' id='" + users.mail[i]+"'><div class='grid-33 handle-div'>" + users.firstName[i] + "</div><div class='grid-33 handle-div'>" + users.lastName[i] + "</div><div class='grid-33 handle-div'>" + users.mail[i] + "</div></li>");
+            } else {
+                $li = $("<li class='grid-100 handle-item white' id='" + users.mail[i]+ "'><div class='grid-33 handle-div'>" + users.firstName[i] + "</div><div class='grid-33 handle-div'>" + users.lastName[i] + "</div><div class='grid-33 handle-div'>" + users.mail[i] + "</div></li>");
+            }
+
+            $("#handleUl").append($li);
         }
-
-        $("#handleUl").append($li);
-
-    }
+    });
     /*for (var i=0;i<classes.length();i++){
     $select=$("<option value='"+classes[i]+"'>"+classes[i]+"</option>")
     }
     $("#handleKlass").append($select);*/
 
-    $(".handle-item").click(function () {
+        $("#handleUl").on("click","li.handle-item", function(){
         var id = $(this).attr('id');
         for (var i = 0; i < users.mail.length; i++) {
+            console.log("for");
             if (users.mail[i] == id) {
             userindex=i;
                 $("#handleFirstname").val(users.firstName[userindex]);
