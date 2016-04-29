@@ -31,6 +31,7 @@ var answer1Chb, answer2Chb, answer3Chb, answer4Chb, answer5Chb, answer6Chb ;
 var correctAnswer;
 var corrAnsCheckArray = [];
 var points;
+var autoCorrect = [];
 
 var out = document.getElementById('output');
 
@@ -314,11 +315,13 @@ function saveQuestion(){
 
         }
 
+        else if(questionType === 'open'){
+
+            autoCorrect.push(0);
+        }
 
     }
-    else if(questionType === 'open'){
 
-    }
 
     answerArray.push(answers);
 
@@ -379,13 +382,24 @@ function saveTest() {
     parsed.testTime.push(testTimeArray);
     parsed.gProcent.push(gProcentArray);
     parsed.vgProcent.push(vgProcentArray);
-    parsed.autoCorrect.push('yes');
+
+    var temp;
+
+    for (i=0 ; i<parsed.questionString.length ; i++){
+        if(autoCorrect[i] == 0){
+            temp = 0;
+            break;
+        }
+        else{
+            temp = 1;
+        }
+    }
+
+    parsed.autoCorrect.push(temp);
 
     var data = JSON.stringify(parsed);
     localStorage.setItem(testStorageName, data);
 
 
-    var test = JSON.parse(localStorage.getItem(testStorageName));
-    //out.innerHTML = test.testName[2];
 
 }
