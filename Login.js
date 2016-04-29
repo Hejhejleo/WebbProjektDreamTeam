@@ -1,13 +1,44 @@
 var username="";
 var password="";
 var users;
+var test;
 var seesion;
 var correctLogin=false;
 
 $(document).ready(function () {
     users = JSON.parse(localStorage.getItem("users"));
+    test = JSON.parse(localStorage.getItem("testdata"));
     sessionStorage.setItem("loggedInAs","");
     seesion = sessionStorage.getItem("loggedInAs");
+    
+    if(users == null){
+        var admin = {
+            "firstName": [["admin"]],
+            "lastName": [["admin"]],
+            "className": [[""]],
+            "mail": [["admin@admin.se"]],
+            "password": [["password"]]
+        };
+        localStorage.setItem("users",JSON.stringify(admin));
+        users = JSON.parse(localStorage.getItem("users"));
+    }
+
+    if(test == null) {
+        var obj = {
+            "testName": [["test1"]],
+            "testTime": [[40]],
+            "questionString": [[["huvudstad?"], ["Städer?"]]],
+            "answerType": [[["singleChoice"], ["multiChoice"]]],
+            "points": [[1],[2]],
+            "answers": [[["Stockholm", "Göteborg", "Malmö", "Luleå"], ["Göteborg", "Stenköping", "London"]]],
+            "correctAnswers": [["Stockholm"],[["Göteborg"],["London"]]],
+            "gProcent": [[60]],
+            "vgProcent": [[80]],
+            "autoCorrect": [[1]]
+        }
+        var objdata = JSON.stringify(obj);
+        localStorage.setItem("testdata", objdata);
+    }
 
 });
 
