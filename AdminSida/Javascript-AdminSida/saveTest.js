@@ -356,7 +356,7 @@ function saveQuestion(){
      + 'rätt svar: ' + corrAnsCheckArray[1] + '<br/>';
      */
 
-    out.innerHTML = test.testName[0];
+    //out.innerHTML = test.testName[0];
 
     document.getElementById("createQuestionForm").reset();
 
@@ -376,6 +376,6 @@ function saveTest() {
 
 
     var test = JSON.parse(localStorage.getItem(testStorageName));
-    out.innerHTML = test.testName[2];
+    //out.innerHTML = test.testName[2];
 
 }

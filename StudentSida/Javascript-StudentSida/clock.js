@@ -3,7 +3,7 @@
  */
 var paused=false;
 var second=2400;
-var parsed = JSON.parse(localStorage.getItem("accrd"));
+var parsed = JSON.parse(localStorage.getItem("testdata"));
 $( document ).ready(function() {
 
 

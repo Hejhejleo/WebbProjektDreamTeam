@@ -7,8 +7,17 @@ function myFunction() {
 
     //loading tests from localstorage
     var parsed = JSON.parse(localStorage.getItem('testdata'));
+    console.log(parsed.testName[0]);
+    var actualtestname = "testtest";
+    var testindex = 0;
+    for(var y = 0; y < parsed.testName.length;y++){
+        if (actualtestname == parsed.testName[y]){
+            console.log("Hittade test id = "+ y);
+            testindex = y;
+        }
+    }
 
-    var testindex = 1;
+
 
     console.log(parsed.questionString[testindex].length);
     for (var k = 0; k < parsed.questionString[testindex].length; k++) {
