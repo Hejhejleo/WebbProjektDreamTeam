@@ -19,7 +19,7 @@
     <div class="grid-90 prefix-20 grid-parent">
 
         <ul class="tab-list">
-            <li class="grid-20 prefix-5 userButton"><a  href="#skapaAnvändare" class="userA tab-control"><span>Skapa Användare</span></a></li>
+            <li class="grid-20 prefix-5 userButton"><a  href="#skapaAnvändare" class="userA tab-control"><span class="reload-list">Skapa Användare</span></a></li>
             <li class="grid-20 prefix-5 userButton"><a  href="#hanteraAnvändare" class="userA tab-control"><span class="reload-list">Hantera Användare</span></a></li>
         </ul>
 
@@ -55,7 +55,7 @@
 
             <section class="formSection">
             <label for="klass">Klasser</label>
-            <select name="Klasser" id="klass">
+            <select name="Klasser" id="klass" class="classList">
                 <option value="Java">Java</option>
                 <option value=".Net">.Net</option>
             </select>
@@ -67,7 +67,7 @@
         <form class="grid-30 prefix-30" id="skapaKlassForm">
             <label for="inputClass">Skapa klass</label>
             <input type="text" id="inputClass">
-            <button id="createClass">Skapa klass</button>
+            <button id="createClass" class="reload-list">Skapa klass</button>
         </form>
     </section>
 
@@ -111,7 +111,7 @@
                 <section class="grid-90 prefix-5 handleForm">
                 <section class="formSection">
                     <label for="handleKlass">Klasser:</label>
-                    <select name="Klasser" id="handleKlass">
+                    <select name="Klasser" id="handleKlass" class="classList">
                     </select>
                 </section>
                     <button id="handleButton" class="reload-list">Uppdatera uppgifter</button>
