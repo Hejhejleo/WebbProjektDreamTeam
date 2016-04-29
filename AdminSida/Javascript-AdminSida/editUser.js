@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     var userindex;
     var users = JSON.parse(localStorage.getItem("users"));
-    var classes = JSON.parse(localStorage.getItem("classes"));
 
     /*$(".reload-list").on('click', function () {
         var users = JSON.parse(localStorage.getItem("users"));
@@ -18,15 +17,7 @@ $(document).ready(function () {
             $("#handleUl").append($li);
         }
     });*/
-
-    if (classes == null) {
-    } else {
-        for (var i = 0; i < classes.className.length; i++) {
-            $select = $("<option value='" + classes.className[i] + "'>" + classes.className[i] + "</option>")
-            $("#handleKlass").append($select);
-        }
-
-    }
+    
     $("#handleUl").on("click", "li.handle-item", function () {
         var id = $(this).attr('id');
         for (var i = 0; i < users.mail.length; i++) {

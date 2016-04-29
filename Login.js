@@ -43,6 +43,7 @@ $(document).ready(function () {
 });
 
 function login(username, password) {
+
     for (var i = 0; i < users.mail.length; i++) {
         if (users.mail[i] == username) {
             if (users.password[i] == password) {
@@ -51,7 +52,7 @@ function login(username, password) {
                 if (username=="admin@admin.se") {
                     location.href = "AdminSida/AdminSida.html"
                 } else {
-                    location.href = "StudentSida/StudentPage.html";
+                    location.href = "StudentSida/StudentBeforeTest.html";
                 }
 
             }
@@ -61,6 +62,7 @@ function login(username, password) {
 
 $(document).keypress(function (e) {
     if (e.which == 13) {
+        users = JSON.parse(localStorage.getItem("users"));
         username = $("#username").val();
         password = $("#password").val();
         $("#password").val("")

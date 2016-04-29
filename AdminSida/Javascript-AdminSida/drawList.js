@@ -1,5 +1,6 @@
 $("body").on('click',".reload-list",function () {
     var users = JSON.parse(localStorage.getItem("users"));
+    var classes = JSON.parse(localStorage.getItem("classes"));
     $("#handleUl").empty();
     $(".handle-item").remove();
     for (var i = 0; i < users.mail.length; i++) {
@@ -10,5 +11,14 @@ $("body").on('click',".reload-list",function () {
         }
 
         $("#handleUl").append($li);
+    }
+    if (classes == null) {
+    } else {
+    $(".classList").empty();
+        for (var i = 0; i < classes.className.length; i++) {
+            $select = $("<option value='" + classes.className[i] + "'>" + classes.className[i] + "</option>")
+            $(".classList").append($select);
+        }
+
     }
 });
