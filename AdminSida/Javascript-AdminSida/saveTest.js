@@ -36,14 +36,15 @@ var out = document.getElementById('output');
 
 $(document).ready(function () {
     document.getElementById("createQuestionForm").style.visibility = "hidden";
+    document.getElementById("saveTest").style.visibility = "hidden";
 });
 
 function saveTestInfo(){
 
     testName = document.getElementById('testName').value;
     testTime = document.getElementById('testTime').value;
-    gPercent = document.getElementById('gPercent').value;
-    vgPercent = document.getElementById('vgPercent').value;
+    gPercent = +document.getElementById('gPercent').value;
+    vgPercent = +document.getElementById('vgPercent').value;
 
     testNameArray.push(testName);
     testTimeArray.push(testTime);
@@ -81,6 +82,7 @@ function saveTestInfo(){
 function saveQuestion(){
 
     document.getElementById("questionId").innerHTML = "Fråga " + ++questionNumber;
+    document.getElementById("saveTest").style.visibility = "visible";
 
     questionText = document.getElementById('questionText').value;
     questionType = document.getElementById('typeId').options[document.getElementById('typeId').selectedIndex].value;
@@ -361,6 +363,14 @@ function saveQuestion(){
     document.getElementById("createQuestionForm").reset();
 
 }
+
+$("#saveQuestionBtn").click(function(){
+    $('#createQuestionForm')[0].reset();
+    $("#singleC").hide();
+    $("#multiC").hide();
+    $("#open").hide();
+});
+
 
 function saveTest() {
 

@@ -20,9 +20,18 @@ legend {
     font-weight: bolder;
 }
 
+#labelAltID {
+    float: left;
+}
+
+#AltID {
+    float: right;
+}
+
 .answersSC {
     float: right;
 }
+
 #questionText {
     vertical-align: top;
 }

@@ -10,7 +10,8 @@ $(document).ready(function () {
 });
 
 function saveTestInfo() {
-    // validera att vg-gräns > g-gräns
+    // validates that value for vg-limit > g-limit
+    // if the test only is of consists of g-questions the vg-limits must be set to 101
     var g = +document.getElementById("gPercent").value;
     var vg = +document.getElementById("vgPercent").value;
     if (vg <= g) {
@@ -23,14 +24,12 @@ function saveTestInfo() {
 function saveQuestion() {
     // spara data
     document.getElementById("questionId").innerHTML = "Fråga " + ++questionNumber;
-    document.getElementById("createQuestionForm").reset();
-    // ladda om formulär/reseta tillbaka till val av frågetyp
     document.getElementById("saveTest").style.visibility = "visible";
 }
 
-var app = angular.module('createQuestion', []);
-app.controller('questionController', function($scope) {
-    $scope.resetState = function() {
-        $scope.reset();
-    }
+$("#saveQuestionBtn").click(function(){
+    $('#createQuestionForm')[0].reset();
+    $("#singleC").hide();
+    $("#multiC").hide();
+    $("#open").hide();
 });

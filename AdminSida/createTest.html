@@ -56,7 +56,7 @@
             </select>
             <br/> <br/>
             <div data-ng-switch="typeOfQuestion">
-                <div data-ng-switch-when="singleChoice">
+                <div id="singleC" data-ng-switch-when="singleChoice">
                     <label class="resetNewQuestion" for="numberOfAnswersSC">Välj antal svarsalternativ: </label>
                     <select class="resetNewQuestion" data-ng-model="numOfAnswersSC" id="numberOfAnswersSC">
                         <option value=""></option>
@@ -65,26 +65,32 @@
                         <option value="fourSC">4</option>
                     </select>
                     <div data-ng-switch="numOfAnswersSC">
-                        <div data-ng-switch-when="twoSC">
-                            <label>Ange svarsalternativ: </label>
-                            <p>a) <input type=”text” class="answerBoxes" id="answerSC12text" name="answerCB"
-                                         maxlength="50">
-                                <input type="radio" class="answerBoxes" id="answerSC12radio" name="radio2"
-                                       data-ng-model="correctAnswer2sc"
-                                       value="a"></p>
-                            <p>b) <input type=”text” class="answerBoxes" id="answerSC22text" name="answerCB"
-                                         maxlength="50">
-                                <input type="radio" class="answerBoxes" id="answerSC22radio" name="radio2"
-                                       data-ng-model="correctAnswer2sc"
-                                       value="b"></p>
-                            <div data-ng-switch="correctAnswer2sc">
-                                <div data-ng-switch-when="a">
-                                    <p>Svar a) är rätt</p>
-                                </div>
+                        <div id="positionSC12" data-ng-switch-when="twoSC">
+                            <div id="labelAltID">
+                                <label>Ange svarsalternativ: </label>
                             </div>
-                            <div data-ng-switch="correctAnswer2sc">
-                                <div data-ng-switch-when="b">
-                                    <p>Svar b) är rätt</p>
+                            <div id="AltID">
+                                <div class="inputInPosition">
+                                    <p>a) <input type=”text” class="answerBoxes" id="answerSC12text" name="answerCB"
+                                                 maxlength="50">
+                                        <input type="radio" class="answerBoxes" id="answerSC12radio" name="radio2"
+                                               data-ng-model="correctAnswer2sc"
+                                               value="a"></p>
+                                    <p>b) <input type=”text” class="answerBoxes" id="answerSC22text" name="answerCB"
+                                                 maxlength="50">
+                                        <input type="radio" class="answerBoxes" id="answerSC22radio" name="radio2"
+                                               data-ng-model="correctAnswer2sc"
+                                               value="b"></p>
+                                    <div data-ng-switch="correctAnswer2sc">
+                                        <div data-ng-switch-when="a">
+                                            <p>Svar a) är rätt</p>
+                                        </div>
+                                    </div>
+                                    <div data-ng-switch="correctAnswer2sc">
+                                        <div data-ng-switch-when="b">
+                                            <p>Svar b) är rätt</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +98,6 @@
                     <div data-ng-switch="numOfAnswersSC">
                         <div data-ng-switch-when="threeSC">
                             <label>Ange svarsalternativ: </label>
-
                             <p>a) <input type=”text” class="answerBoxes" id="answerSC13text" name="answerCB"
                                          maxlength="50">
                                 <input type="radio" class="answerBoxes" id="answerSC13radio" name="radio3"
@@ -175,7 +180,7 @@
             </div>
 
             <div data-ng-switch="typeOfQuestion">
-                <div data-ng-switch-when="multiChoice">
+                <div id="multiC" data-ng-switch-when="multiChoice">
                     <label class="resetNewQuestion" for="numberOfAnswersMC">Välj antal svarsalternativ: </label>
                     <select class="resetNewQuestion" data-ng-model="numOfAnswersMC" id="numberOfAnswersMC">
                         <option value=""></option>
@@ -318,7 +323,7 @@
                 </div>
             </div>
             <div data-ng-switch="typeOfQuestion">
-                <div data-ng-switch-when="open">
+                <div id="open" data-ng-switch-when="open">
                     <label for="answerOpen">Noteringar om svar: </label>
                     <!-- Här kan admin t.ex. skriva vilka element som ska ingå i svaret -->
                     <!-- den här typen av frågor ingår inte i automatisk rättning -->
