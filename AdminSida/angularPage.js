@@ -29,6 +29,11 @@ angularAdmin.config(function($routeProvider) {
             templateUrl : 'användare.html',
             controller  : 'användareController'
         })
+
+        .when('/createTest', {
+            templateUrl : 'createTest.html',
+            controller  : 'createController'
+        })
         
         .when('/tilldela', {
         templateUrl : 'tilldela.html',
@@ -55,6 +60,10 @@ angularAdmin.controller('användareController', function($scope) {
 });
 
 angularAdmin.controller('tilldelaController', function($scope) {
+
+});
+
+angularAdmin.controller('createController', function($scope) {
 
 });
 

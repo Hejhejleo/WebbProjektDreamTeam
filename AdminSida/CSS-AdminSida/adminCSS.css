@@ -2,7 +2,7 @@ body{
     background-color: rgba(244, 243, 244, 1);
 }
 
-header{
+#adminHeader{
     background: url("http://www.newton.se/shared/2015/01/Newton_bw-0410-p19b7cmvjd1fn444k12ae1b9dfql-e1420809104674-1440x560.jpg");
     height: 470px;
     background-size: auto 470px;
