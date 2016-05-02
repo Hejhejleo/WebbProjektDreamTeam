@@ -3,7 +3,7 @@
  */
 
 var chosenTest;
-var indexChosenTest;
+var indexChosenTest = 0;
 var userTest;
 $(document).ready(function () {
     userTest = JSON.parse(localStorage.getItem("usertest"));
@@ -28,7 +28,11 @@ $(document).ready(function () {
 function drawList() {
     userTest = JSON.parse(localStorage.getItem("usertest"));
     var users = JSON.parse(localStorage.getItem("users"));
-    indexChosenTest = userTest.testName.indexOf(chosenTest);
+    for (var i = 0; i < userTest.testName.length; i++) {
+        if (userTest.testName[i] == chosenTest) {
+            indexChosenTest = i;
+        }
+    }
     console.log(indexChosenTest);
 
     $("#studentList").empty();
@@ -66,13 +70,13 @@ $("#selectProv").change(function () {
 });
 
 $(".getClasses").click(function () {
-console.log("GetClasses");
+    console.log("GetClasses");
     var testData = JSON.parse(localStorage.getItem("testdata"));
     $("#selectProv").empty();
     console.log(testData.testName[0]);
     for (var i = 0; i < testData.testName.length; i++) {
-        var $options=null;
-        $options = $("<option> "+ testData.testName[i] + "</option>")
+        var $options = null;
+        $options = $("<option> " + testData.testName[i] + "</option>")
         $("#selectProv").append($options)
     }
     console.log($options);
