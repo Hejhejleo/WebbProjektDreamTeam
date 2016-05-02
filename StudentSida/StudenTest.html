@@ -4,13 +4,32 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="CSS-StudentSida/studenttestcss.css">
+    <link rel="stylesheet" type="text/css" href="CSS-StudentSida/unsemantic-grid-responsive-tablet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 </head>
-<body onload="myFunction()">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<button>test</button>
-<label id="counter"></label>
-<script src="Javascript-StudentSida/clock.js"></script>
-<script src="Javascript-StudentSida/studentTestJS.js"></script>
-<button>Spara test</button>
+<body class="grid-container" onload="myFunction()">
+
+<section id="backgroundSection">
+
+    <section class="grid-100" id="headSection">
+        <img class="grid-25" src="Images-StudentSida/logo-footer.png">
+        <div id="labelDiv">
+        <label class="grid-35 student-status" id="123">Inloggad som: </label><label class="student-status" id="student-name"></label>
+        </div>
+    </section>
+
+    <section class="grid-100" id="timer">
+        <button>test</button>
+        <button>Spara test</button>
+        <label id="counter"></label>
+    </section>
+
+    <section class="grid-100">
+        <script src="Javascript-StudentSida/clock.js"></script>
+        <script src="Javascript-StudentSida/studentTestJS.js"></script>
+    </section>
+
+</section>
+
 </body>
 </html>
