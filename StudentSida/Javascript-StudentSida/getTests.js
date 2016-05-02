@@ -11,7 +11,7 @@ $( document ).ready(function () {
     for(i=0;i<userTest.mail.length;i++){
 
     if(userTest.mail[i]==user){
-    availableTests =(userTest.testName[i]);
+    availableTests.push(userTest.testName[i]);
     }
     }
     $div = $("<div>", {id: availableTests[i], class: "grid-100 test-div"});

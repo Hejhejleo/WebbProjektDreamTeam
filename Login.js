@@ -85,7 +85,7 @@ $(document).ready(function () {
         }
     }
         if (!(seesion == "")) {
-            location.href = "StudentSida/StudentPage.html";
+            location.href = "StudentSida/StudentBeforeTest.html";
             alert(seesion);
         }
 

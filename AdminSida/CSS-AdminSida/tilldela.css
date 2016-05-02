@@ -50,3 +50,16 @@
 .userA{
     font-family: 'Chivo', sans-serif;
 }
+
+.white{
+background-color: white;
+}
+
+.gray{
+background-color: lightgray;
+}
+
+.handle-item{
+    padding:8px;
+    cursor: pointer;
+}
