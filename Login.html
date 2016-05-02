@@ -8,21 +8,32 @@
     <link href="CSS-Login/loginCSS.css" type="text/css" rel="stylesheet">
     <script src="Login.js"></script>
 </head>
-<body>
-<div id="login-window">
+<body class="grid-container">
+<div class="grid-60 prefix-10 suffix-15" id="login-window">
 
-<div id="login">
-    <form id="login-form">
-    <label class="login-label">Användarnamn:</label>
-    <input class="login-input" id="username" type="text">
-    <p></p>
-    <label class="login-label">Lösenord:</label>
-    <input class="login-input" id="password" type="password">
+<div id="login" class="grid-100 grid-parent">
+
+    <form id="login-form" class="grid-45">
+        <img src="Images-Login/logo-footer.png">
+        <section id="section1">
+            <label for="username" id="usernameLabel">Email adress</label>
+            <input class="login-input" id="username" type="text" placeholder="Email@email.se">
+        </section>
+
+    <section id="section2">
+        <label for="password" id="passwordLabel">Lösenord</label>
+        <input class="login-input" id="password" type="password" placeholder="Lösenord">
+    </section>
+
+        <input id="button" type="button" value="Logga in"> </input>
     </form>
+
+    <aside class="grid-55">
+        <h2>Information</h2>
+        <textarea id="loginTextarea"></textarea>
+    </aside>
+
 </div>
 </div>
-
-
-</form>
 </body>
 </html>

@@ -1,26 +1,109 @@
+body{
+
+background-color: rgb(255, 52, 0);
+
+}
+
+
+img{
+    width: 400px;
+    height: 150px;
+}
+
+label{
+    display: block;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #EE7202;
+}
+
+form{
+    margin-top: 15px;
+}
+
+aside{
+    text-align: center;
+}
+
+textarea{
+    width: 400px;
+    height: 375px;
+    resize: none;
+    border-color: lightgrey;
+}
+
+h2{
+    font-family: Sans-serif;
+    color: #EE7202;
+}
+
+
+#button{
+    width: 400px;
+    margin-top: 40px;
+    background-color: #EE7202;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 #login-window{
-background-color: darkorange;
-    position: fixed;
-    top: 50%;
-    left:50%;
-    display: inline;
-    text-align: right;
+    -webkit-box-shadow: 0 0 17px 13px rgba(238,50,2,0.75);
+    -moz-box-shadow: 0 0 17px 13px rgba(238,50,2,0.75);
+    box-shadow: 0 0 17px 13px rgba(238,50,2,0.75);
+    width: 1000px;
+    height: 500px;
+    margin-top: 15%;
+    background-color: white;
+    text-align: left;
     padding: 10px;
     border-radius: 10px;
-    margin-top: -36px;
-    margin-left: -125px;
 }
 
 
 .login-label{
-display: inline;
 font-family: "Times New Roman";
 
 }
 
 .login-input{
-display: inline;
-    border-radius: 4px;
-    border:none;
+
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
 
 }
+
+#usernameLabel{
+    margin-top: 10%;
+}
+
+#passwordLabel{
+    margin-top: 5%;
+}
+
+#username{
+    font-size: 20px;
+    width: 400px;
+    height: 35px;
+    background-image: url(../Images-Login/contact.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+
+}
+
+#password{
+    font-size: 20px;
+    width: 400px;
+    height: 35px;
+    background-image: url(../Images-Login/lock.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+
+}
+
+
