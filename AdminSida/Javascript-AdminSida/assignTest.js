@@ -1,39 +1,64 @@
 /**
  * Created by LeoAsp on 2016-04-29.
  */
+
+var chosenTest;
+var indexChosenTest;
+var userTest;
 $(document).ready(function () {
-    drawList();
+    userTest = JSON.parse(localStorage.getItem("userTest"));
 
-    $("#handleUl").on("click","li.handle-item",function () {
-        var id = this.attr("id");
-        var $checkboxId =$(id);
-        if($checkboxId.val()==true){
-            document.getElementById(id).checked = false;
-        }
-
-        if($checkboxId.val()==false){
-            document.getElementById(id).checked = true;
+    $("#tilldelaSection").on("click", "li.handle-item", function () {
+        console.log("Clicked");
+        var id = $(this).attr("id");
+        console.log(id);
+        var checkboxId = id + "checkbox";
+        console.log(checkboxId);
+        if (document.getElementById(checkboxId).checked) {
+            document.getElementById(checkboxId).checked = false;
+        } else {
+            document.getElementById(checkboxId).checked = true;
         }
     });
-
 
 
 });
 
 
- function drawList() {
+function drawList() {
     var users = JSON.parse(localStorage.getItem("users"));
+    indexChosenTest = userTest.testName.indexOf(chosenTest);
 
-    
     $("#studentList").empty();
     for (var i = 0; i < users.mail.length; i++) {
-        var $li="";
+        var $li = "";
+        var checked = false;
+        for (var j = 0; j < userTest.mail[indexChosenTest].length; i++) {
+            if (userTest.mail[i][j] == users.mail[i]) {
+                checked = true;
+            }
+        }
         if (i % 2 == 0) {
-            $li = $("<li class='grid-100 handle-item gray' id='" + users.mail[i]+"'><div class='grid-10'><input id="+users.mail[i]+"'checkbox' type='checkbox'></div><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-25 handle-div'>" + users.className[i] + "</div><div class='grid-25 handle-div'>" + users.mail[i] + "</div></li>");
+            if (checked) {
+                $li = $("<li class='grid-100 handle-item gray' id='" + users.mail[i] + "'><div class='grid-10'><input id=" + users.mail[i] + "checkbox type='checkbox' checked></div><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-25 handle-div'>" + users.className[i] + "</div><div class='grid-25 handle-div'>" + users.mail[i] + "</div></li>");
+            } else {
+                $li = $("<li class='grid-100 handle-item gray' id='" + users.mail[i] + "'><div class='grid-10'><input id=" + users.mail[i] + "checkbox type='checkbox'></div><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-25 handle-div'>" + users.className[i] + "</div><div class='grid-25 handle-div'>" + users.mail[i] + "</div></li>");
+            }
+
         } else {
-            $li = $("<li class='grid-100 handle-item white' id='" + users.mail[i]+ "'><div class='grid-10'><input id="+users.mail[i]+"'checkbox' type='checkbox'></div><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-25 handle-div'>" + users.className[i] + "</div><div class='grid-25 handle-div'>" + users.mail[i] + "</div></li>");
+            if (checked) {
+                $li = $("<li class='grid-100 handle-item white' id='" + users.mail[i] + "'><div class='grid-10'><input id=" + users.mail[i] + "checkbox type='checkbox' checked></div><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-25 handle-div'>" + users.className[i] + "</div><div class='grid-25 handle-div'>" + users.mail[i] + "</div></li>");
+            } else {
+                $li = $("<li class='grid-100 handle-item white' id='" + users.mail[i] + "'><div class='grid-10'><input id=" + users.mail[i] + "checkbox type='checkbox'></div><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-25 handle-div'>" + users.className[i] + "</div><div class='grid-25 handle-div'>" + users.mail[i] + "</div></li>");
+            }
         }
 
         $("#studentList").append($li);
     }
 }
+
+$("#selectProv").change(function () {
+    chosenTest = $("#selectProv").val();
+    drawList();
+    console.log(chosenTest);
+});
