@@ -29,13 +29,14 @@ function drawList() {
     userTest = JSON.parse(localStorage.getItem("usertest"));
     var users = JSON.parse(localStorage.getItem("users"));
     indexChosenTest = userTest.testName.indexOf(chosenTest);
+    console.log(indexChosenTest);
 
     $("#studentList").empty();
     for (var i = 0; i < users.mail.length; i++) {
         var $li = "";
         var checked = false;
-        for (var j = 0; j < userTest.mail.length; j++) {
-            if (userTest.mail[i][j] == users.mail[i]) {
+        for (var j = 0; j < userTest.mail[indexChosenTest].length; j++) {
+            if (userTest.mail[indexChosenTest][j] == users.mail[i]) {
                 checked = true;
             }
         }
@@ -69,7 +70,6 @@ console.log("GetClasses");
     var testData = JSON.parse(localStorage.getItem("testdata"));
     $("#selectProv").empty();
     console.log(testData.testName[0]);
-    $("#selectProv").append($("<option></option>"))
     for (var i = 0; i < testData.testName.length; i++) {
         var $options=null;
         $options = $("<option> "+ testData.testName[i] + "</option>")
