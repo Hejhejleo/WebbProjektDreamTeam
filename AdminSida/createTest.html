@@ -8,7 +8,7 @@
     <script src="Javascript-AdminSida/jquery-1.12.3.min.js"></script>
     <title>Title</title>
 </head>
-<body>
+<body data-ng-app="" >
 <header>
     <h1 id="headlineCreateForm">Skapa test</h1>
     <form id="testHeaderForm" name="testHeader">
@@ -18,11 +18,16 @@
             <input type="text" size="30" maxlength="50" id="testName" name="testName"><br/><br/>
             <label for="testTime">Tid för testet, i minuter: </label>
             <input type="number" min="0" max="99999" id="testTime" name="testTime"><br/><br/>
-            <label for="gPercent">Procentgräns för godkänt: </label>
-            <input type="number" min="0" max="100" id="gPercent" name="gPercent"><br/><br/>
-            <label for="vgPercent">Procentgräns för väl godkänt: </label>
-            <input type="number" min="0" max="101" id="vgPercent" name="vgPercent"><br/>
-            <br/>
+            <div id="onlyGtest" data-ng-init="onlyGSwitch=false">
+                <label for="gPercent">Procentgräns för godkänt: </label>
+                <input type="number" min="0" max="100" id="gPercent" name="gPercent">
+                <input type="checkbox" id="onlyGId" data-ng-model="onlyGSwitch" />Testet innehåller bara
+                godkänd-frågor<br/><br/>
+                <label for="vgPercent">Procentgräns för väl godkänt: </label>
+                <input type="number" min="0" max="100" id="vgPercent" name="vgPercent"
+                       data-ng-disabled="onlyGSwitch"><br/>
+                <br/>
+            </div>
             <input type="button" value="Spara testinformation" id="saveTestInfoBtn" onclick="saveTestInfo()">
             <!--
             A test of if the value of vgPercent is larger than the value of gPercent is included in

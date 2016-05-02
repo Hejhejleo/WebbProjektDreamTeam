@@ -12,10 +12,16 @@ $(document).ready(function () {
 function saveTestInfo() {
     // validates that value for vg-limit > g-limit
     // if the test only is of consists of g-questions the vg-limits must be set to 101
-    var g = +document.getElementById("gPercent").value;
-    var vg = +document.getElementById("vgPercent").value;
-    if (vg <= g) {
-        alert("Gränsen för VG måste vara högre än för G.");
+    var gPercent = +document.getElementById("gPercent").value;
+    var vgPercent = +document.getElementById("vgPercent").value;
+    var onlyGquestions = document.getElementById('onlyGId').checked;
+
+    if (onlyGquestions) {
+        document.getElementById("createQuestionForm").style.visibility = "visible";
+        document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
+    } else if (vgPercent <= gPercent) {
+        alert("Gränsen för VG måste vara högre än för G." + "\nG-gräns: " + gPercent +
+            "\nVG-gräns: " + vgPercent);
     } else {
         document.getElementById("createQuestionForm").style.visibility = "visible";
         document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;

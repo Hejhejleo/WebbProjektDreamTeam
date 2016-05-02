@@ -10,6 +10,7 @@ var testName ;
 var testTime ;
 var gPercent ;
 var vgPercent ;
+var onlyGquestions ;
 
 var testNameArray = [];
 var testTimeArray = [];
@@ -46,14 +47,19 @@ function saveTestInfo(){
     testTime = document.getElementById('testTime').value;
     gPercent = +document.getElementById('gPercent').value;
     vgPercent = +document.getElementById('vgPercent').value;
+    onlyGquestions = document.getElementById('onlyGId').checked;
 
     testNameArray.push(testName);
     testTimeArray.push(testTime);
     gProcentArray.push(gPercent);
     vgProcentArray.push(vgPercent);
 
-    if (vgPercent <= gPercent) {
-        alert("Gränsen för VG måste vara högre än för G." + "\nG-gräns: " + gPercent + "\nVG-gräns: " + vgPercent);
+    if (onlyGquestions) {
+        document.getElementById("createQuestionForm").style.visibility = "visible";
+        document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
+    } else if (vgPercent <= gPercent) {
+        alert("Gränsen för VG måste vara högre än för G." + "\nG-gräns: " + gPercent +
+            "\nVG-gräns: " + vgPercent);
     } else {
         document.getElementById("createQuestionForm").style.visibility = "visible";
         document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
