@@ -63,14 +63,19 @@ $("#selectProv").change(function () {
     drawList();
 });
 
-$("#tilldelaProv").on("click","#tilldelaProv",function () {
+$(".getClasses").click(function () {
+console.log("GetClasses");
     var testData = JSON.parse(localStorage.getItem("testdata"));
     $("#selectProv").empty();
-    var $options = null;
+    console.log(testData.testName[0]);
+    $("#selectProv").append($("<option></option>"))
     for (var i = 0; i < testData.testName.length; i++) {
-        $options += $("<option value='" + testData.testName[i] + "'>" + testData.testName[i] + "</option>")
+        var $options=null;
+        $options = $("<option> "+ testData.testName[i] + "</option>")
+        $("#selectProv").append($options)
     }
-    $("#selectProv").html($options)
+    console.log($options);
+
 
 });
 
