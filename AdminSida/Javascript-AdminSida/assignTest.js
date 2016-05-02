@@ -25,7 +25,9 @@ $(document).ready(function () {
 });
 
 
+
 function drawList() {
+    indexChosenTest =null;
     userTest = JSON.parse(localStorage.getItem("usertest"));
     var users = JSON.parse(localStorage.getItem("users"));
     for (var i = 0; i < userTest.testName.length; i++) {
@@ -44,7 +46,10 @@ function drawList() {
         var checked = false;
         for (var j = 0; j < userTest.mail[indexChosenTest].length; j++) {
             console.log("Cheecking if user has connection");
-            if (userTest.mail[indexChosenTest][j] == users.mail[i]) {
+            console.log(users.mail[i]);
+            console.log(userTest.mail[indexChosenTest][j]);
+            if ((userTest.mail[indexChosenTest][j]) == (users.mail[i])) {
+
                 console.log("Found!")
                 checked = true;
             }else{

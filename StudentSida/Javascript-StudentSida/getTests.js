@@ -2,7 +2,7 @@ $( document ).ready(function () {
 
     var ut = {
         "testName": [["jordtest"]],
-        "mail": [[["r@r.com"]]]
+        "mail": [["r@r.com"]]
     };
     var data = JSON.stringify(ut);
     localStorage.setItem("usertest",data);
