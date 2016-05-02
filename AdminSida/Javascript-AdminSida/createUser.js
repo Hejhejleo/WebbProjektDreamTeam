@@ -9,7 +9,7 @@
         FName = ($("#firstname").val());
         LName = ($("#lastname").val());
         classname = ($("#klass").val());
-        mail = ($("#email").val());
+        mail = ($("#email").val().toLowerCase());
         password = ($("#password").val());
        console.log("get value")
         if (mail.indexOf('@') != -1) {

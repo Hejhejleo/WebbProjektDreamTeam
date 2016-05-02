@@ -3,21 +3,6 @@ $(document).ready(function () {
     var userindex;
     var users = JSON.parse(localStorage.getItem("users"));
 
-    /*$(".reload-list").on('click', function () {
-        var users = JSON.parse(localStorage.getItem("users"));
-        $("#handleUl").empty();
-        $(".handle-item").remove();
-        for (var i = 0; i < users.mail.length; i++) {
-            if (i % 2 == 0) {
-                $li = $("<li class='grid-100 handle-item grey' id='" + users.mail[i] + "'><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-20 handle-div'>" + users.className[i] + "</div><div class='grid-20 handle-div'>" + users.mail[i] + "</div></li>");
-            } else {
-                $li = $("<li class='grid-100 handle-item white' id='" + users.mail[i] + "'><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-20 handle-div'>" + users.className[i] + "</div><div class='grid-20 handle-div'>" + users.mail[i] + "</div></li>");
-            }
-
-            $("#handleUl").append($li);
-        }
-    });*/
-    
     $("#handleUl").on("click", "li.handle-item", function () {
         var id = $(this).attr('id');
         for (var i = 0; i < users.mail.length; i++) {
@@ -46,7 +31,7 @@ $(document).ready(function () {
                 users.lastName[userindex] = LNameA;
                 console.log($("#handleLastname").val());
 
-                var mailA = [$("#handleEmail").val()];
+                var mailA = [$("#handleEmail").val().toLowerCase()];
                 users.mail[userindex] = mailA;
                 console.log($("#handleEmail").val());
 

@@ -63,7 +63,7 @@ function login(username, password) {
 $(document).keypress(function (e) {
     if (e.which == 13) {
         users = JSON.parse(localStorage.getItem("users"));
-        username = $("#username").val();
+        username = $("#username").val().toLowerCase();
         password = $("#password").val();
         $("#password").val("")
         login(username, password);
