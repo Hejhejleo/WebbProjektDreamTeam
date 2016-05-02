@@ -34,7 +34,7 @@ function drawList() {
     for (var i = 0; i < users.mail.length; i++) {
         var $li = "";
         var checked = false;
-        for (var j = 0; j < userTest.mail.length; i++) {
+        for (var j = 0; j < userTest.mail.length; j++) {
             if (userTest.mail[i][j] == users.mail[i]) {
                 checked = true;
             }
