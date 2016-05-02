@@ -18,3 +18,25 @@ $('.tab-list').each(function(){
         }
     });
 });
+
+
+$(document).ready(function () {
+
+    test = JSON.parse(localStorage.getItem("testdata"));
+    var testNameArray = [];
+
+    for(var y = 0; y < test.testName.length;y++){
+        testNameArray[y] = test.testName[y];
+        //console.log(testNameArray[y]);
+    }
+
+    var combo = document.getElementById('selectProv');
+    var optionArray = [];
+
+    for(var y = 0; y < test.testName.length;y++) {
+        optionArray[y] = document.createElement("option");
+        optionArray[y].value = testNameArray[y];
+        optionArray[y].innerHTML = testNameArray[y];
+        combo.appendChild(optionArray[y]);
+    }
+})
