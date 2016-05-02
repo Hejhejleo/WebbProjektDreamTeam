@@ -8,7 +8,7 @@
     <script src="Javascript-AdminSida/jquery-1.12.3.min.js"></script>
     <title>Title</title>
 </head>
-<body data-ng-app="" >
+<body data-ng-app="">
 <header>
     <h1 id="headlineCreateForm">Skapa test</h1>
     <form id="testHeaderForm" name="testHeader">
@@ -21,7 +21,7 @@
             <div id="onlyGtest" data-ng-init="onlyGSwitch=false">
                 <label for="gPercent">Procentgräns för godkänt: </label>
                 <input type="number" min="0" max="100" id="gPercent" name="gPercent">
-                <input type="checkbox" id="onlyGId" data-ng-model="onlyGSwitch" />Testet innehåller bara
+                <input type="checkbox" id="onlyGId" data-ng-model="onlyGSwitch"/>Testet innehåller bara
                 godkänd-frågor<br/><br/>
                 <label for="vgPercent">Procentgräns för väl godkänt: </label>
                 <input type="number" min="0" max="100" id="vgPercent" name="vgPercent"
@@ -70,39 +70,33 @@
                         <option value="fourSC">4</option>
                     </select>
                     <div data-ng-switch="numOfAnswersSC">
-                        <div id="positionSC12" data-ng-switch-when="twoSC">
-                            <div id="labelAltID">
-                                <label>Ange svarsalternativ: </label>
+                        <div data-ng-switch-when="twoSC">
+                            <label>Ange svarsalternativ och vilket som är rätt svar: </label>
+                            <p>a) <input type=”text” class="answerBoxes" id="answerSC12text" name="answerCB"
+                                         maxlength="50">
+                                <input type="radio" class="answerBoxes" id="answerSC12radio" name="radio2"
+                                       data-ng-model="correctAnswer2sc"
+                                       value="a"></p>
+                            <p>b) <input type=”text” class="answerBoxes" id="answerSC22text" name="answerCB"
+                                         maxlength="50">
+                                <input type="radio" class="answerBoxes" id="answerSC22radio" name="radio2"
+                                       data-ng-model="correctAnswer2sc"
+                                       value="b"></p>
+                            <div data-ng-switch="correctAnswer2sc">
+                                <div data-ng-switch-when="a">
+                                    <p>Svar a) är rätt</p>
+                                </div>
                             </div>
-                            <div id="AltID">
-                                <div class="inputInPosition">
-                                    <p>a) <input type=”text” class="answerBoxes" id="answerSC12text" name="answerCB"
-                                                 maxlength="50">
-                                        <input type="radio" class="answerBoxes" id="answerSC12radio" name="radio2"
-                                               data-ng-model="correctAnswer2sc"
-                                               value="a"></p>
-                                    <p>b) <input type=”text” class="answerBoxes" id="answerSC22text" name="answerCB"
-                                                 maxlength="50">
-                                        <input type="radio" class="answerBoxes" id="answerSC22radio" name="radio2"
-                                               data-ng-model="correctAnswer2sc"
-                                               value="b"></p>
-                                    <div data-ng-switch="correctAnswer2sc">
-                                        <div data-ng-switch-when="a">
-                                            <p>Svar a) är rätt</p>
-                                        </div>
-                                    </div>
-                                    <div data-ng-switch="correctAnswer2sc">
-                                        <div data-ng-switch-when="b">
-                                            <p>Svar b) är rätt</p>
-                                        </div>
-                                    </div>
+                            <div data-ng-switch="correctAnswer2sc">
+                                <div data-ng-switch-when="b">
+                                    <p>Svar b) är rätt</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div data-ng-switch="numOfAnswersSC">
                         <div data-ng-switch-when="threeSC">
-                            <label>Ange svarsalternativ: </label>
+                            <label>Ange svarsalternativ och vilket som är rätt svar: </label>
                             <p>a) <input type=”text” class="answerBoxes" id="answerSC13text" name="answerCB"
                                          maxlength="50">
                                 <input type="radio" class="answerBoxes" id="answerSC13radio" name="radio3"
@@ -138,7 +132,7 @@
                     </div>
                     <div data-ng-switch="numOfAnswersSC">
                         <div data-ng-switch-when="fourSC">
-                            <label>Ange svarsalternativ: </label>
+                            <label>Ange svarsalternativ och vilket som är rätt svar: </label>
                             <p>a) <input type=”text” class="answerBoxes" id="answerSC14text" name="answerCB"
                                          maxlength="50">
                                 <input type="radio" class="answerBoxes" id="answerSC14radio" name="radio4"
@@ -200,7 +194,7 @@
 
                     <div data-ng-switch="numOfAnswersMC">
                         <div data-ng-switch-when="twoMC">
-                            <label>Ange svarsalternativ: </label>
+                            <label>Ange svarsalternativ och vilka de rätta svaren är: </label>
                             <p class="positioningClass">a) <input type=”text” class="answerBoxes"
                                                                   id="answerMC12text"
                                                                   name="answerCB" maxlength="50">
@@ -217,7 +211,7 @@
                     </div>
                     <div data-ng-switch="numOfAnswersMC">
                         <div data-ng-switch-when="threeMC">
-                            <label>Ange svarsalternativ: </label>
+                            <label>Ange svarsalternativ och vilka de rätta svaren är: </label>
                             <p>a) <input type=”text” class="answerBoxes" id="answerMC13text" name="answerCB"
                                          maxlength="50">
                                 <input type="checkbox" class="answerBoxes" id="answerMC13check"
@@ -237,7 +231,7 @@
                     </div>
                     <div data-ng-switch="numOfAnswersMC">
                         <div data-ng-switch-when="fourMC">
-                            <label>Ange svarsalternativ: </label>
+                            <label>Ange svarsalternativ och vilka de rätta svaren är: </label>
                             <p>a) <input type=”text” class="answerBoxes" id="answerMC14text" name="answerCB"
                                          maxlength="50">
                                 <input type="checkbox" class="answerBoxes" id="answerMC14check"
@@ -262,7 +256,7 @@
                     </div>
                     <div data-ng-switch="numOfAnswersMC">
                         <div data-ng-switch-when="fiveMC">
-                            <label>Ange svarsalternativ: </label>
+                            <label>Ange svarsalternativ och vilka de rätta svaren är: </label>
                             <p>a) <input type=”text” class="answerBoxes" id="answerMC15text" name="answerCB"
                                          maxlength="50">
                                 <input type="checkbox" class="answerBoxes" id="answerMC15check"
@@ -292,7 +286,7 @@
                     </div>
                     <div data-ng-switch="numOfAnswersMC">
                         <div data-ng-switch-when="sixMC">
-                            <label>Ange svarsalternativ: </label>
+                            <label>Ange svarsalternativ och vilka de rätta svaren är: </label>
                             <p>a) <input type=”text” class="answerBoxes" id="answerMC16text" name="answerCB"
                                          maxlength="50">
                                 <input type="checkbox" class="answerBoxes" id="answerMC16check"
@@ -347,7 +341,9 @@
         </fieldset>
     </form>
     <br/>
-    <input type="button" value="Spara test" id="saveTest" onclick="saveTest()">
+    <div id="saveTestBtnAlign">
+        <input type="button" value="Spara test" id="saveTest" onclick="saveTest()">
+    </div>
 </div>
 </div>
 <!--
