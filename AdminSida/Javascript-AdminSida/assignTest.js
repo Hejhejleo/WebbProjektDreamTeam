@@ -59,6 +59,19 @@ function drawList() {
 
 $("#selectProv").change(function () {
     chosenTest = $("#selectProv").val();
-    drawList();
     console.log(chosenTest);
+    drawList();
 });
+
+$("#tilldelaProv").on("click","#tilldelaProv",function () {
+    var testData = JSON.parse(localStorage.getItem("testdata"));
+    $("#selectProv").empty();
+    var $options = null;
+    for (var i = 0; i < testData.testName.length; i++) {
+        $options += $("<option value='" + testData.testName[i] + "'>" + testData.testName[i] + "</option>")
+    }
+    $("#selectProv").html($options)
+
+});
+
+
