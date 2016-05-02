@@ -52,7 +52,7 @@ function login(username, password) {
                 if (username=="admin@admin.se") {
                     location.href = "AdminSida/AdminSida.html"
                 } else {
-                    location.href = "StudentSida/StudentBeforeTest.html";
+                    location.href = "StudentSida/StudentPage.html";
                 }
 
             }
