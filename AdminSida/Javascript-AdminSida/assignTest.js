@@ -29,19 +29,26 @@ function drawList() {
     userTest = JSON.parse(localStorage.getItem("usertest"));
     var users = JSON.parse(localStorage.getItem("users"));
     for (var i = 0; i < userTest.testName.length; i++) {
+    console.log("Looking for correct Test: "+i);
         if (userTest.testName[i] == chosenTest) {
+        console.log("found it on: "+i);
             indexChosenTest = i;
         }
     }
-    console.log(indexChosenTest);
+    console.log("Chosen index: "+indexChosenTest);
 
     $("#studentList").empty();
     for (var i = 0; i < users.mail.length; i++) {
+    console.log("Starting on user: "+i);
         var $li = "";
         var checked = false;
         for (var j = 0; j < userTest.mail[indexChosenTest].length; j++) {
+            console.log("Cheecking if user has connection");
             if (userTest.mail[indexChosenTest][j] == users.mail[i]) {
+                console.log("Found!")
                 checked = true;
+            }else{
+                console.log("Not found")
             }
         }
         if (i % 2 == 0) {
