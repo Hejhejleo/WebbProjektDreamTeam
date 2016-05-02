@@ -6,7 +6,7 @@ var chosenTest;
 var indexChosenTest;
 var userTest;
 $(document).ready(function () {
-    userTest = JSON.parse(localStorage.getItem("userTest"));
+    userTest = JSON.parse(localStorage.getItem("usertest"));
 
     $("#tilldelaSection").on("click", "li.handle-item", function () {
         console.log("Clicked");
@@ -26,6 +26,7 @@ $(document).ready(function () {
 
 
 function drawList() {
+    userTest = JSON.parse(localStorage.getItem("usertest"));
     var users = JSON.parse(localStorage.getItem("users"));
     indexChosenTest = userTest.testName.indexOf(chosenTest);
 
@@ -33,7 +34,7 @@ function drawList() {
     for (var i = 0; i < users.mail.length; i++) {
         var $li = "";
         var checked = false;
-        for (var j = 0; j < userTest.mail[indexChosenTest].length; i++) {
+        for (var j = 0; j < userTest.mail.length; i++) {
             if (userTest.mail[i][j] == users.mail[i]) {
                 checked = true;
             }
