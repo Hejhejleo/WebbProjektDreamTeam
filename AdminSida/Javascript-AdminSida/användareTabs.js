@@ -19,7 +19,7 @@ $('.tab-list').each(function(){
     });
 });
 
-
+/*
 $(document).ready(function () {
 
     test = JSON.parse(localStorage.getItem("testdata"));
@@ -40,3 +40,4 @@ $(document).ready(function () {
         combo.appendChild(optionArray[y]);
     }
 })
+    */
