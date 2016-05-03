@@ -370,7 +370,7 @@ function saveQuestion(){
 
     //out.innerHTML = test.testName[0];
 
-    document.getElementById("createQuestionForm").reset();
+//    document.getElementById("createQuestionForm").reset();
 
 }
 
@@ -417,4 +417,15 @@ function saveTest() {
 
     alert("Testet är sparat");
 
+    $('#testHeaderForm')[0].reset();
+    $("#createQuestionForm").hide();
+    $("#saveTest").hide();
+
 }
+
+/*$("#saveTest").click(function(){
+    $('#testHeaderForm')[0].reset();
+    $("#createQuestionForm").hide();
+    $("#saveTest").hide();
+});*/
+
