@@ -53,6 +53,7 @@ function saveTestInfo(){
     testTimeArray.push(testTime);
     gProcentArray.push(gPercent);
     vgProcentArray.push(vgPercent);
+    // onlyGquestions TODO variabeln används 
 
     if (onlyGquestions) {
         document.getElementById("createQuestionForm").style.visibility = "visible";
@@ -380,7 +381,7 @@ $("#saveQuestionBtn").click(function(){
     $("#open").hide();
 });
 
-
+$("")
 function saveTest() {
 
 

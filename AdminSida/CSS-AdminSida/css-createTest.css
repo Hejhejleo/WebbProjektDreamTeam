@@ -40,10 +40,15 @@ label {
     padding-right: 10px;
 }
 
-#onlyGtest {
+#twoSCid, #threeSCid, #fourSCid, #twoMCid, #threeMCid, #fourMCid, #fiveMCid, #sixMCid{
+    margin-left: 320px;
+}
+
+#onlyGtest, textarea{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
 }
+
 p, option, select, .answerBoxes {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;

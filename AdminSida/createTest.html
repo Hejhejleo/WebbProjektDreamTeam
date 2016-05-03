@@ -72,24 +72,26 @@
                     <div data-ng-switch="numOfAnswersSC">
                         <div data-ng-switch-when="twoSC">
                             <label>Ange svarsalternativ och vilket som är rätt svar: </label>
-                            <p>a) <input type=”text” class="answerBoxes" id="answerSC12text" name="answerCB"
-                                         maxlength="50">
-                                <input type="radio" class="answerBoxes" id="answerSC12radio" name="radio2"
-                                       data-ng-model="correctAnswer2sc"
-                                       value="a"></p>
-                            <p>b) <input type=”text” class="answerBoxes" id="answerSC22text" name="answerCB"
-                                         maxlength="50">
-                                <input type="radio" class="answerBoxes" id="answerSC22radio" name="radio2"
-                                       data-ng-model="correctAnswer2sc"
-                                       value="b"></p>
-                            <div data-ng-switch="correctAnswer2sc">
-                                <div data-ng-switch-when="a">
-                                    <p>Svar a) är rätt</p>
+                            <div id="twoSCid">
+                                <p>a) <input type=”text” class="answerBoxes" id="answerSC12text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="radio" class="answerBoxes" id="answerSC12radio" name="radio2"
+                                           data-ng-model="correctAnswer2sc"
+                                           value="a"></p>
+                                <p>b) <input type=”text” class="answerBoxes" id="answerSC22text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="radio" class="answerBoxes" id="answerSC22radio" name="radio2"
+                                           data-ng-model="correctAnswer2sc"
+                                           value="b"></p>
+                                <div data-ng-switch="correctAnswer2sc">
+                                    <div data-ng-switch-when="a">
+                                        <p>Svar a) är rätt</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div data-ng-switch="correctAnswer2sc">
-                                <div data-ng-switch-when="b">
-                                    <p>Svar b) är rätt</p>
+                                <div data-ng-switch="correctAnswer2sc">
+                                    <div data-ng-switch-when="b">
+                                        <p>Svar b) är rätt</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -97,80 +99,83 @@
                     <div data-ng-switch="numOfAnswersSC">
                         <div data-ng-switch-when="threeSC">
                             <label>Ange svarsalternativ och vilket som är rätt svar: </label>
-                            <p>a) <input type=”text” class="answerBoxes" id="answerSC13text" name="answerCB"
-                                         maxlength="50">
-                                <input type="radio" class="answerBoxes" id="answerSC13radio" name="radio3"
-                                       data-ng-model="correctAnswer3sc"
-                                       value="a"></p>
-                            <p>b) <input type=”text” class="answerBoxes" id="answerSC23text" name="answerCB"
-                                         maxlength="50">
-                                <input type="radio" class="answerBoxes" id="answerSC23radio" name="radio3"
-                                       data-ng-model="correctAnswer3sc"
-                                       value="b"></p>
-                            <p>c) <input type=”text” class="answerBoxes" id="answerSC33text" name="answerCB"
-                                         maxlength="50">
-                                <input type="radio" class="answerBoxes" id="answerSC33radio" name="radio3"
-                                       data-ng-model="correctAnswer3sc"
-                                       value="c"></p>
-                            <div data-ng-switch="correctAnswer3sc">
-                                <div data-ng-switch-when="a">
-                                    <p>Svar a) är rätt</p>
+                            <div id="threeSCid">
+                                <p>a) <input type=”text” class="answerBoxes" id="answerSC13text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="radio" class="answerBoxes" id="answerSC13radio" name="radio3"
+                                           data-ng-model="correctAnswer3sc"
+                                           value="a"></p>
+                                <p>b) <input type=”text” class="answerBoxes" id="answerSC23text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="radio" class="answerBoxes" id="answerSC23radio" name="radio3"
+                                           data-ng-model="correctAnswer3sc"
+                                           value="b"></p>
+                                <p>c) <input type=”text” class="answerBoxes" id="answerSC33text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="radio" class="answerBoxes" id="answerSC33radio" name="radio3"
+                                           data-ng-model="correctAnswer3sc"
+                                           value="c"></p>
+                                <div data-ng-switch="correctAnswer3sc">
+                                    <div data-ng-switch-when="a">
+                                        <p>Svar a) är rätt</p>
+                                    </div>
+                                </div>
+                                <div data-ng-switch="correctAnswer3sc">
+                                    <div data-ng-switch-when="b">
+                                        <p>Svar b) är rätt</p>
+                                    </div>
+                                </div>
+                                <div data-ng-switch="correctAnswer3sc">
+                                    <div data-ng-switch-when="c">
+                                        <p>Svar c) är rätt</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div data-ng-switch="correctAnswer3sc">
-                                <div data-ng-switch-when="b">
-                                    <p>Svar b) är rätt</p>
-                                </div>
-                            </div>
-                            <div data-ng-switch="correctAnswer3sc">
-                                <div data-ng-switch-when="c">
-                                    <p>Svar c) är rätt</p>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                     <div data-ng-switch="numOfAnswersSC">
                         <div data-ng-switch-when="fourSC">
                             <label>Ange svarsalternativ och vilket som är rätt svar: </label>
-                            <p>a) <input type=”text” class="answerBoxes" id="answerSC14text" name="answerCB"
-                                         maxlength="50">
-                                <input type="radio" class="answerBoxes" id="answerSC14radio" name="radio4"
-                                       data-ng-model="correctAnswer4sc"
-                                       value="a"></p>
-                            <p>b) <input type=”text” class="answerBoxes" id="answerSC24text" name="answerCB"
-                                         maxlength="50">
-                                <input type="radio" class="answerBoxes" id="answerSC24radio" name="radio4"
-                                       data-ng-model="correctAnswer4sc"
-                                       value="b"></p>
-                            <p>c) <input type=”text” class="answerBoxes" id="answerSC34text" name="answerCB"
-                                         maxlength="50">
-                                <input type="radio" class="answerBoxes" id="answerSC34radio" name="radio4"
-                                       data-ng-model="correctAnswer4sc"
-                                       value="c"></p>
-                            <p>d) <input type=”text” class="answerBoxes" id="answerSC44text" name="answerCB"
-                                         maxlength="50">
-                                <input type="radio" class="answerBoxes" id="answerSC44radio" name="radio4"
-                                       data-ng-model="correctAnswer4sc"
-                                       value="d"></p>
-                            <div data-ng-switch="correctAnswer4sc">
-                                <div data-ng-switch-when="a">
-                                    <p>Svar a) är rätt</p>
+                            <div id="fourSCid">
+                                <p>a) <input type=”text” class="answerBoxes" id="answerSC14text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="radio" class="answerBoxes" id="answerSC14radio" name="radio4"
+                                           data-ng-model="correctAnswer4sc"
+                                           value="a"></p>
+                                <p>b) <input type=”text” class="answerBoxes" id="answerSC24text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="radio" class="answerBoxes" id="answerSC24radio" name="radio4"
+                                           data-ng-model="correctAnswer4sc"
+                                           value="b"></p>
+                                <p>c) <input type=”text” class="answerBoxes" id="answerSC34text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="radio" class="answerBoxes" id="answerSC34radio" name="radio4"
+                                           data-ng-model="correctAnswer4sc"
+                                           value="c"></p>
+                                <p>d) <input type=”text” class="answerBoxes" id="answerSC44text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="radio" class="answerBoxes" id="answerSC44radio" name="radio4"
+                                           data-ng-model="correctAnswer4sc"
+                                           value="d"></p>
+                                <div data-ng-switch="correctAnswer4sc">
+                                    <div data-ng-switch-when="a">
+                                        <p>Svar a) är rätt</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div data-ng-switch="correctAnswer4sc">
-                                <div data-ng-switch-when="b">
-                                    <p>Svar b) är rätt</p>
+                                <div data-ng-switch="correctAnswer4sc">
+                                    <div data-ng-switch-when="b">
+                                        <p>Svar b) är rätt</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div data-ng-switch="correctAnswer4sc">
-                                <div data-ng-switch-when="c">
-                                    <p>Svar c) är rätt</p>
+                                <div data-ng-switch="correctAnswer4sc">
+                                    <div data-ng-switch-when="c">
+                                        <p>Svar c) är rätt</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div data-ng-switch="correctAnswer4sc">
-                                <div data-ng-switch-when="d">
-                                    <p>Svar d) är rätt</p>
+                                <div data-ng-switch="correctAnswer4sc">
+                                    <div data-ng-switch-when="d">
+                                        <p>Svar d) är rätt</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -195,128 +200,138 @@
                     <div data-ng-switch="numOfAnswersMC">
                         <div data-ng-switch-when="twoMC">
                             <label>Ange svarsalternativ och vilka de rätta svaren är: </label>
-                            <p class="positioningClass">a) <input type=”text” class="answerBoxes"
-                                                                  id="answerMC12text"
-                                                                  name="answerCB" maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC12check"
-                                       data-ng-model="correctAnswerAmc"></p>
-                            <p class="positioningClass">b) <input type=”text” class="answerBoxes"
-                                                                  id="answerMC22text"
-                                                                  name="answerCB" maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC22check"
-                                       data-ng-model="correctAnswerBmc"></p>
-                            <p class="positioningClass" data-ng-show="correctAnswerAmc">Svar a) är rätt</p>
-                            <p class="positioningClass" data-ng-show="correctAnswerBmc">Svar b) är rätt</p>
+                            <div id="twoMCid">
+                                <p>a) <input type=”text” class="answerBoxes"
+                                                                      id="answerMC12text"
+                                                                      name="answerCB" maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC12check"
+                                           data-ng-model="correctAnswerAmc"></p>
+                                <p>b) <input type=”text” class="answerBoxes"
+                                                                      id="answerMC22text"
+                                                                      name="answerCB" maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC22check"
+                                           data-ng-model="correctAnswerBmc"></p>
+                                <p data-ng-show="correctAnswerAmc">Svar a) är rätt</p>
+                                <p data-ng-show="correctAnswerBmc">Svar b) är rätt</p>
+                            </div>
                         </div>
                     </div>
                     <div data-ng-switch="numOfAnswersMC">
                         <div data-ng-switch-when="threeMC">
                             <label>Ange svarsalternativ och vilka de rätta svaren är: </label>
-                            <p>a) <input type=”text” class="answerBoxes" id="answerMC13text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC13check"
-                                       data-ng-model="correctAnswerAmc"></p>
-                            <p>b) <input type=”text” class="answerBoxes" id="answerMC23text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC23check"
-                                       data-ng-model="correctAnswerBmc"></p>
-                            <p>c) <input type=”text” class="answerBoxes" id="answerMC33text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC33check"
-                                       data-ng-model="correctAnswerCmc"></p>
-                            <p data-ng-show="correctAnswerAmc">Svar a) är rätt</p>
-                            <p data-ng-show="correctAnswerBmc">Svar b) är rätt</p>
-                            <p data-ng-show="correctAnswerCmc">Svar c) är rätt</p>
+                            <div id="threeMCid">
+                                <p>a) <input type=”text” class="answerBoxes" id="answerMC13text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC13check"
+                                           data-ng-model="correctAnswerAmc"></p>
+                                <p>b) <input type=”text” class="answerBoxes" id="answerMC23text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC23check"
+                                           data-ng-model="correctAnswerBmc"></p>
+                                <p>c) <input type=”text” class="answerBoxes" id="answerMC33text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC33check"
+                                           data-ng-model="correctAnswerCmc"></p>
+                                <p data-ng-show="correctAnswerAmc">Svar a) är rätt</p>
+                                <p data-ng-show="correctAnswerBmc">Svar b) är rätt</p>
+                                <p data-ng-show="correctAnswerCmc">Svar c) är rätt</p>
+                            </div>
                         </div>
                     </div>
                     <div data-ng-switch="numOfAnswersMC">
                         <div data-ng-switch-when="fourMC">
                             <label>Ange svarsalternativ och vilka de rätta svaren är: </label>
-                            <p>a) <input type=”text” class="answerBoxes" id="answerMC14text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC14check"
-                                       data-ng-model="correctAnswerAmc"></p>
-                            <p>b) <input type=”text” class="answerBoxes" id="answerMC24text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC24check"
-                                       data-ng-model="correctAnswerBmc"></p>
-                            <p>c) <input type=”text” class="answerBoxes" id="answerMC34text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC34check"
-                                       data-ng-model="correctAnswerCmc"></p>
-                            <p>d) <input type=”text” class="answerBoxes" id="answerMC44text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC44check"
-                                       data-ng-model="correctAnswerDmc"></p>
-                            <p data-ng-show="correctAnswerAmc">Svar a) är rätt</p>
-                            <p data-ng-show="correctAnswerBmc">Svar b) är rätt</p>
-                            <p data-ng-show="correctAnswerCmc">Svar c) är rätt</p>
-                            <p data-ng-show="correctAnswerDmc">Svar d) är rätt</p>
+                            <div id="fourMCid">
+                                <p>a) <input type=”text” class="answerBoxes" id="answerMC14text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC14check"
+                                           data-ng-model="correctAnswerAmc"></p>
+                                <p>b) <input type=”text” class="answerBoxes" id="answerMC24text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC24check"
+                                           data-ng-model="correctAnswerBmc"></p>
+                                <p>c) <input type=”text” class="answerBoxes" id="answerMC34text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC34check"
+                                           data-ng-model="correctAnswerCmc"></p>
+                                <p>d) <input type=”text” class="answerBoxes" id="answerMC44text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC44check"
+                                           data-ng-model="correctAnswerDmc"></p>
+                                <p data-ng-show="correctAnswerAmc">Svar a) är rätt</p>
+                                <p data-ng-show="correctAnswerBmc">Svar b) är rätt</p>
+                                <p data-ng-show="correctAnswerCmc">Svar c) är rätt</p>
+                                <p data-ng-show="correctAnswerDmc">Svar d) är rätt</p>
+                            </div>
                         </div>
                     </div>
                     <div data-ng-switch="numOfAnswersMC">
                         <div data-ng-switch-when="fiveMC">
                             <label>Ange svarsalternativ och vilka de rätta svaren är: </label>
-                            <p>a) <input type=”text” class="answerBoxes" id="answerMC15text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC15check"
-                                       data-ng-model="correctAnswerAmc"></p>
-                            <p>b) <input type=”text” class="answerBoxes" id="answerMC25text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC25check"
-                                       data-ng-model="correctAnswerBmc"></p>
-                            <p>c) <input type=”text” class="answerBoxes" id="answerMC35text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC35check"
-                                       data-ng-model="correctAnswerCmc"></p>
-                            <p>d) <input type=”text” class="answerBoxes" id="answerMC45text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC45check"
-                                       data-ng-model="correctAnswerDmc"></p>
-                            <p>e) <input type=”text” class="answerBoxes" id="answerMC55text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC55check"
-                                       data-ng-model="correctAnswerEmc"></p>
-                            <p data-ng-show="correctAnswerAmc">Svar a) är rätt</p>
-                            <p data-ng-show="correctAnswerBmc">Svar b) är rätt</p>
-                            <p data-ng-show="correctAnswerCmc">Svar c) är rätt</p>
-                            <p data-ng-show="correctAnswerDmc">Svar d) är rätt</p>
-                            <p data-ng-show="correctAnswerEmc">Svar e) är rätt</p>
+                            <div id="fiveMCid">
+                                <p>a) <input type=”text” class="answerBoxes" id="answerMC15text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC15check"
+                                           data-ng-model="correctAnswerAmc"></p>
+                                <p>b) <input type=”text” class="answerBoxes" id="answerMC25text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC25check"
+                                           data-ng-model="correctAnswerBmc"></p>
+                                <p>c) <input type=”text” class="answerBoxes" id="answerMC35text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC35check"
+                                           data-ng-model="correctAnswerCmc"></p>
+                                <p>d) <input type=”text” class="answerBoxes" id="answerMC45text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC45check"
+                                           data-ng-model="correctAnswerDmc"></p>
+                                <p>e) <input type=”text” class="answerBoxes" id="answerMC55text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC55check"
+                                           data-ng-model="correctAnswerEmc"></p>
+                                <p data-ng-show="correctAnswerAmc">Svar a) är rätt</p>
+                                <p data-ng-show="correctAnswerBmc">Svar b) är rätt</p>
+                                <p data-ng-show="correctAnswerCmc">Svar c) är rätt</p>
+                                <p data-ng-show="correctAnswerDmc">Svar d) är rätt</p>
+                                <p data-ng-show="correctAnswerEmc">Svar e) är rätt</p>
+                            </div>
                         </div>
                     </div>
                     <div data-ng-switch="numOfAnswersMC">
                         <div data-ng-switch-when="sixMC">
                             <label>Ange svarsalternativ och vilka de rätta svaren är: </label>
-                            <p>a) <input type=”text” class="answerBoxes" id="answerMC16text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC16check"
-                                       data-ng-model="correctAnswerAmc"></p>
-                            <p>b) <input type=”text” class="answerBoxes" id="answerMC26text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC26check"
-                                       data-ng-model="correctAnswerBmc"></p>
-                            <p>c) <input type=”text” class="answerBoxes" id="answerMC36text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC36check"
-                                       data-ng-model="correctAnswerCmc"></p>
-                            <p>d) <input type=”text” class="answerBoxes" id="answerMC46text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC46check"
-                                       data-ng-model="correctAnswerDmc"></p>
-                            <p>e) <input type=”text” class="answerBoxes" id="answerMC56text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC56check"
-                                       data-ng-model="correctAnswerEmc"></p>
-                            <p>f) <input type=”text” class="answerBoxes" id="answerMC66text" name="answerCB"
-                                         maxlength="50">
-                                <input type="checkbox" class="answerBoxes" id="answerMC66check"
-                                       data-ng-model="correctAnswerFmc"></p>
-                            <p data-ng-show="correctAnswerAmc">Svar a) är rätt</p>
-                            <p data-ng-show="correctAnswerBmc">Svar b) är rätt</p>
-                            <p data-ng-show="correctAnswerCmc">Svar c) är rätt</p>
-                            <p data-ng-show="correctAnswerDmc">Svar d) är rätt</p>
-                            <p data-ng-show="correctAnswerEmc">Svar e) är rätt</p>
-                            <p data-ng-show="correctAnswerFmc">Svar f) är rätt</p>
+                            <div id="sixMCid">
+                                <p>a) <input type=”text” class="answerBoxes" id="answerMC16text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC16check"
+                                           data-ng-model="correctAnswerAmc"></p>
+                                <p>b) <input type=”text” class="answerBoxes" id="answerMC26text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC26check"
+                                           data-ng-model="correctAnswerBmc"></p>
+                                <p>c) <input type=”text” class="answerBoxes" id="answerMC36text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC36check"
+                                           data-ng-model="correctAnswerCmc"></p>
+                                <p>d) <input type=”text” class="answerBoxes" id="answerMC46text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC46check"
+                                           data-ng-model="correctAnswerDmc"></p>
+                                <p>e) <input type=”text” class="answerBoxes" id="answerMC56text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC56check"
+                                           data-ng-model="correctAnswerEmc"></p>
+                                <p>f) <input type=”text” class="answerBoxes" id="answerMC66text" name="answerCB"
+                                             maxlength="50">
+                                    <input type="checkbox" class="answerBoxes" id="answerMC66check"
+                                           data-ng-model="correctAnswerFmc"></p>
+                                <p data-ng-show="correctAnswerAmc">Svar a) är rätt</p>
+                                <p data-ng-show="correctAnswerBmc">Svar b) är rätt</p>
+                                <p data-ng-show="correctAnswerCmc">Svar c) är rätt</p>
+                                <p data-ng-show="correctAnswerDmc">Svar d) är rätt</p>
+                                <p data-ng-show="correctAnswerEmc">Svar e) är rätt</p>
+                                <p data-ng-show="correctAnswerFmc">Svar f) är rätt</p>
+                            </div>
                         </div>
                     </div>
                 </div>
