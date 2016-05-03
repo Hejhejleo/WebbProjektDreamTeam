@@ -407,6 +407,14 @@ function saveTest() {
     var data = JSON.stringify(parsed);
     localStorage.setItem(testStorageName, data);
 
+    userTest = JSON.parse(localStorage.getItem("usertest"));
+    userTest.testName.push(testNameArray);
+
+
+    var objdata = JSON.stringify(userTest);
+    localStorage.setItem("usertest", objdata);
+
+
     alert("Testet är sparat");
 
 }
