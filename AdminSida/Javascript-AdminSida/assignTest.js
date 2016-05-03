@@ -25,23 +25,22 @@ $(document).ready(function () {
 });
 
 
-
 function drawList() {
-    indexChosenTest =null;
+    indexChosenTest = null;
     userTest = JSON.parse(localStorage.getItem("usertest"));
     var users = JSON.parse(localStorage.getItem("users"));
     for (var i = 0; i < userTest.testName.length; i++) {
-    console.log("Looking for correct Test: "+i);
+        console.log("Looking for correct Test: " + i);
         if (userTest.testName[i] == chosenTest) {
-        console.log("found it on: "+i);
+            console.log("found it on: " + i);
             indexChosenTest = i;
         }
     }
-    console.log("Chosen index: "+indexChosenTest);
+    console.log("Chosen index: " + indexChosenTest);
 
     $("#studentList").empty();
     for (var i = 0; i < users.mail.length; i++) {
-    console.log("Starting on user: "+i);
+        console.log("Starting on user: " + i);
         var $li = "";
         var checked = false;
         for (var j = 0; j < userTest.mail[indexChosenTest].length; j++) {
@@ -52,7 +51,7 @@ function drawList() {
 
                 console.log("Found!")
                 checked = true;
-            }else{
+            } else {
                 console.log("Not found")
             }
         }

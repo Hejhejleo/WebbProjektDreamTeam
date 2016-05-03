@@ -6,6 +6,7 @@ $(document).ready(function () {
     $("#createClass").click(function () {
 
         var inputValue = $("#inputClass").val();
+        $("#inputClass").val("");
         var classes = JSON.parse(localStorage.getItem("classes"));
         var className = new Array();
         var boolean = true;

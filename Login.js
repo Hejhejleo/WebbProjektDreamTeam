@@ -75,7 +75,7 @@ function login(username, password) {
                 if (username=="admin@admin.se") {
                     location.href = "AdminSida/AdminSida.html"
                 } else {
-                    location.href = "StudentSida/StudentPage.html";
+                    location.href = "StudentSida/StudentLoginPage.html";
                 }
 
             }
@@ -108,7 +108,7 @@ $(document).ready(function () {
         }
     }
         if (!(seesion == "")) {
-            location.href = "StudentSida/StudentBeforeTest.html";
+            location.href = "StudentSida/StudentLoginPage.html";
             alert(seesion);
         }
 
