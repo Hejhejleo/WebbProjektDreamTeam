@@ -1,3 +1,7 @@
+.userButton{
+   text-align: center;
+}
+
 #studenter{
     width: 800px;
     height: 350px;
@@ -26,7 +30,6 @@
 
 .userA{
     font-size: 16px;
-    margin-left: 3px;
 }
 
 .tab-panel{
@@ -41,14 +44,11 @@
 }
 
 .inlineSection{
- margin-left: 0px;
+ margin-left: 0;
 }
 
 .selectProv{
     margin-top: 20px;
-}
-.userA{
-    font-family: 'Chivo', sans-serif;
 }
 
 .white{

@@ -25,6 +25,18 @@ body{
     text-align: center;
 }
 
+.student-status{
+    font-size: 20px;
+}
+
+#student-name{
+    padding-left: 20px;
+}
+
+#123{
+    margin-left: 200px;
+}
+
 button.accordion {
     background-color: #eee;
     color: #444;

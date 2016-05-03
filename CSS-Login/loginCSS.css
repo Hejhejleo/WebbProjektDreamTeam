@@ -5,9 +5,9 @@ background-color: rgb(255, 52, 0);
 }
 
 
-img{
+#imageId{
+    text-align: center;
     width: 400px;
-    height: 150px;
 }
 
 label{
