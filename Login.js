@@ -15,7 +15,7 @@ $(document).ready(function () {
         var admin = {
             "firstName": [["admin"]],
             "lastName": [["admin"]],
-            "className": [[""]],
+            "className": [["Ingen klass"]],
             "mail": [["admin@admin.se"]],
             "password": [["password"]]
         };
@@ -39,6 +39,29 @@ $(document).ready(function () {
         var objdata = JSON.stringify(obj);
         localStorage.setItem("testdata", objdata);
     }
+
+    userTest = JSON.parse(localStorage.getItem("usertest"));
+
+    if(userTest == null){
+        var ut = {
+            "testName": [["test1"]],
+            "mail": [["r@r.com","leoasp96@gmail.com"]]
+        };
+        var objdata = JSON.stringify(ut);
+        localStorage.setItem("usertest", objdata);
+    }
+
+    classes = JSON.parse(localStorage.getItem("classes"));
+
+    if(classes == null){
+        var cl = {
+            "className": [["Ingen klass"]]
+
+        };
+        var objdata = JSON.stringify(cl);
+        localStorage.setItem("classes", objdata);
+    }
+
 
 });
 

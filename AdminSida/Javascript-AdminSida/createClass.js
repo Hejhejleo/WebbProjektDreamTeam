@@ -9,12 +9,7 @@ $(document).ready(function () {
         var classes = JSON.parse(localStorage.getItem("classes"));
         var className = new Array();
         var boolean = true;
-        if (classes == null) {
-            console.log("Classes Is Null");
-            var emptyClass = {"className": [["Ingen Klass"]]};
-            localStorage.setItem("classes", JSON.stringify(emptyClass));
-            var classes = JSON.parse(localStorage.getItem("classes"));
-        }
+
         console.log("Create class");
         console.log(classes.className.length);
         for (var i = 0; i < classes.className.length; i++) {

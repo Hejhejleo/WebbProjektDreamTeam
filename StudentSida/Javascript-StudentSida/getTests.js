@@ -1,11 +1,5 @@
 $( document ).ready(function () {
-
-    var ut = {
-        "testName": [["jordtest"]],
-        "mail": [["r@r.com"]]
-    };
-    var data = JSON.stringify(ut);
-    localStorage.setItem("usertest",data);
+    
 
     var user = sessionStorage.getItem("loggedInAs");
     var tests = JSON.parse(localStorage.getItem("testdata"));
