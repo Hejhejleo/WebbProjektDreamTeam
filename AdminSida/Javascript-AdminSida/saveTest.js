@@ -53,7 +53,7 @@ function saveTestInfo(){
     testTimeArray.push(testTime);
     gProcentArray.push(gPercent);
     vgProcentArray.push(vgPercent);
-    // onlyGquestions TODO variabeln används inte vidare i koden, behöver inte sparas
+    // TODO onlyGquestions används inte vidare i koden, om vgpercent = null bara G-frågor?
 
     if (onlyGquestions) {
         document.getElementById("createQuestionForm").style.visibility = "visible";
