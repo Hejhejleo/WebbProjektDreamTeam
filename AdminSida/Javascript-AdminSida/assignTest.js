@@ -96,3 +96,9 @@ $(".getClasses").click(function () {
 });
 
 
+function update() {
+    userTest = JSON.parse(localStorage.getItem("usertest"));
+    
+
+}
+
