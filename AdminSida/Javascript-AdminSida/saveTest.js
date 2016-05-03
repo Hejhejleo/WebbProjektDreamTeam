@@ -53,7 +53,7 @@ function saveTestInfo(){
     testTimeArray.push(testTime);
     gProcentArray.push(gPercent);
     vgProcentArray.push(vgPercent);
-    // onlyGquestions TODO variabeln används 
+    // onlyGquestions TODO variabeln används inte vidare i koden, behöver inte sparas
 
     if (onlyGquestions) {
         document.getElementById("createQuestionForm").style.visibility = "visible";
@@ -407,6 +407,7 @@ function saveTest() {
     var data = JSON.stringify(parsed);
     localStorage.setItem(testStorageName, data);
 
+    alert("Testet är sparat");
 
 
 }
