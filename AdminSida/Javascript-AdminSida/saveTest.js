@@ -409,7 +409,8 @@ function saveTest() {
 
     userTest = JSON.parse(localStorage.getItem("usertest"));
     userTest.testName.push(testNameArray);
-
+    var emptyArray = [];
+    userTest.mail.push(emptyArray);
 
     var objdata = JSON.stringify(userTest);
     localStorage.setItem("usertest", objdata);
