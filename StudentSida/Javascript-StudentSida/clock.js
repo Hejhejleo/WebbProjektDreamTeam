@@ -1,61 +1,70 @@
-/**
- * Created by JRW on 2016-04-28.
- */
-var paused=false;
-var second=2400;
-var parsed = JSON.parse(localStorage.getItem("testdata"));
-var actualtestname = "testtest";
-var testindex = 0;
-for(var y = 0; y < parsed.testName.length;y++){
-    if (actualtestname == parsed.testName[y]){
-        console.log("Hittade test id = "+ y);
-        testindex = y;
-        break;
-    }
-}
-second = parsed.testTime[testindex]*60;
+$(document).ready(function () {
+    var second;
+    var tests = JSON.parse(localStorage.getItem("testdata"));
+    var chosenTestName = localStorage.getItem("chosenTest");
+    var testIndex;
+    var user = localStorage.getItem("loggedInAs");
+    var timestamp;
+    var secondForTest;
 
-$( document ).ready(function() {
+    getTimeForTest();
+    if (localStorage.getItem(user + chosenTestName) == null) {
+        setTimestamp();
+        getTimestamp();
+    } else {
+        getTimestamp();
+    }
+    setSecond();
 
 
     function count() {
-        if (!paused) {
-            second--;
-            secondsToHours(second);
-            if (second == 0){
-                paused = true;
-            }
+        second--;
+        secondsToHours(second);
+        if (second <= 0) {
+            alert("Nu är testet slut!")
         }
     }
 
-    setInterval(function() {
+
+    setInterval(function () {
         count();
-    },1000);
+    }, 1000);
 
-    $("#start").click(function () {
-        paused=false;
-    });
 
-    $("#pause").click(function () {
-        paused=true;
-    });
+    function getTimeForTest() {
+        for (var i = 0; i < tests.testName.length; i++) {
+            if (chosenTestName == tests.testName[i]) {
+                console.log("Hittade test index = " + i);
+                testIndex = i;
+                break;
+            }
+        }
+        secondForTest = tests.testTime[testIndex] * 60;
+    }
 
-    $("#reset").click(function () {
-        second=0;
-        secondsToHours(second)
-        paused=true;
-    });
+    function setTimestamp() {
+        var date = new Date();
+        localStorage.setItem(user + chosenTestName, date.now());
+    }
+
+    function getTimestamp() {
+        timestamp = localStorage.getItem(user + chosenTestName);
+    }
 
 
     function secondsToHours(totalSec) {
-        var hours   = Math.floor(totalSec / 3600);
+        var hours = Math.floor(totalSec / 3600);
         var minutes = Math.floor((totalSec - (hours * 3600)) / 60);
         var seconds = totalSec - (hours * 3600) - (minutes * 60);
 
-        var result = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
+        var result = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
 
-        $("#counter").html(result);
+        console.log(result)
+    }
 
+    function setSecond() {
+        var date = new Date();
+        second = secondForTest - (Math.round(date.now() - timestamp) / 1000);
     }
 
 });
