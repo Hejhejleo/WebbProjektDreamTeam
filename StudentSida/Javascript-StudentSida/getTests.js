@@ -17,11 +17,11 @@ $(document).ready(function () {
 
     for (var i = 0; i < availableTests.length; i++) {
         if (i == 0) {
-            $("#ar3").append($("<hr>"));
+
         }
-        $div = $("<div id='" + availableTests[i] + "' class='grid-100 test-div'>"+availableTests[i]+"</div>");
+        $div = $("<div id='inlineDiv'><div class='grid-15 listStyle'><i class='fa fa-file fa-2x' aria-hidden='"+true+"'></i></div><div class='grid-100 getTestDiv test-div' id='" + availableTests[i] + "'>"+availableTests[i]+"</div></div>");
         $("#ar3").append($div);
-        $("#ar3").append($("<hr>"));
+
 
 
     }

@@ -6,7 +6,51 @@ header{
     text-align: center;
     margin-top: 10%;
     margin-left: 20%;
+}
 
+
+label{
+    color: white;
+    text-align: right;
+}
+
+h1{
+    font-size: 60px;
+    font-family: "Times New Roman";
+    background-color: rgba(232,220,4,.8);
+    border-radius: 10px;
+}
+
+h2{
+    font-size: 40px;
+    background-color: rgba(232,220,4,.8);
+    border-radius: 10px;
+}
+
+#inlineDiv{
+    display: flex;
+}
+
+.getTestDiv{
+    text-align: left;
+    padding-top: 10px;
+    margin-top: 10px;
+    background-color: lightgrey;
+    font-size: 20px;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+.listStyle{
+    margin-right: 10px;
+    margin-top: 10px;
+    max-width: 60px;
+    padding-top: 10px;
+    zoom: 0.9;
+    background-color: darkorange;
+}
+
+i{
+    opacity: 0.5;
 }
 
 #headSection{
@@ -15,26 +59,15 @@ header{
     border-top-right-radius: 10px;
 }
 
-label{
-    color: white;
-    text-align: right;
-}
-
-div{
+#pageDiv{
     margin-top: 30px;
 }
 
 
 #ar1{
-text-align: center;
-background-color: rgba(232,220,4,.8);
-border-radius: 10px;
-}
-
-
-
-#ar2{
-text-align: right;
+    text-align: center;
+    background-color: rgba(232,220,4,.8);
+    border-radius: 10px;
 }
 
 #ar3{
@@ -42,38 +75,20 @@ text-align: right;
     border-color: black;
     border-width: 1px;
     height: 400px;
-    width: 400px;
     margin-top: 5%;
-
     overflow: scroll;
     background-color: white;
 }
 
 
 #s1{
-text-align: center;
     background-color: white;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
-h1{
-font-size: 60px;
-font-family: "Times New Roman";
-    background-color: rgba(232,220,4,.8);
-    border-radius: 10px;
-}
-
-h2{
-font-size: 40px;
-    background-color: rgba(232,220,4,.8);
-    border-radius: 10px;
-}
-
-
-
 .student-status{
-font-size: 20px;
+    font-size: 20px;
 }
 
 #logout-button, #start-test{
@@ -95,19 +110,16 @@ font-size: 20px;
 }
 
 .test-div{
-text-align: left;
-padding: 10px;
-font-size: 20px;
-font-weight: bold;
+    padding: 10px;
 }
 
 .test-div:hover{
-cursor: pointer;
+    cursor: pointer;
 }
 
 .button-div{
-text-align: right;
-margin-top: 8px;
+    text-align: right;
+    margin-top: 8px;
 }
 
 .button{
@@ -117,12 +129,12 @@ margin-top: 8px;
 }
 
 .button:focus{
-outline: none;
+    outline: none;
 }
 
 .button:hover{
-background-color: gray;
-cursor: pointer;
+    background-color: gray;
+    cursor: pointer;
 }
 
 #test-info{
@@ -134,5 +146,5 @@ cursor: pointer;
 }
 
 #test-info:focus{
-outline: none;
+    outline: none;
 }
