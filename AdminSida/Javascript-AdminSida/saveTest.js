@@ -6,11 +6,11 @@ var parsed;
 var testStorageName = 'testdata';
 var questionNumber = 1;
 
-var testName ;
-var testTime ;
-var gPercent ;
-var vgPercent ;
-var onlyGquestions ;
+var testName;
+var testTime;
+var gPercent;
+var vgPercent;
+var onlyGquestions;
 
 var testNameArray = [];
 var testTimeArray = [];
@@ -21,6 +21,8 @@ var answerArray = [];
 var pointsArray = [];
 var correctAnswersArray = [];
 var questionTypeArray = [];
+var isChecked = false;
+var answerNotChecked = false;
 
 var questionText;
 var questionType;
@@ -28,7 +30,7 @@ var numberOfAnswers;
 var answers = [];
 var answer1, answer2, answer3, answer4, answer5, answer6;
 var answer1Radio, answer2Radio, answer3Radio, answer4Radio;
-var answer1Chb, answer2Chb, answer3Chb, answer4Chb, answer5Chb, answer6Chb ;
+var answer1Chb, answer2Chb, answer3Chb, answer4Chb, answer5Chb, answer6Chb;
 var correctAnswer;
 var corrAnsCheckArray = [];
 var points;
@@ -41,7 +43,8 @@ $(document).ready(function () {
     document.getElementById("saveTest").style.visibility = "hidden";
 });
 
-function saveTestInfo(){
+// TODO saveTestInfo
+function saveTestInfo() {
 
     testName = document.getElementById('testName').value;
     testTime = document.getElementById('testTime').value;
@@ -68,15 +71,15 @@ function saveTestInfo(){
 
     parsed = JSON.parse(localStorage.getItem(testStorageName));
 
-    if(parsed == null) {
+    if (parsed == null) {
         var obj = {
             "testName": [["test1"]],
             "testTime": [[40]],
             "questionString": [[["huvudstad?"], ["Städer?"]]],
             "answerType": [[["singleChoice"], ["multiChoice"]]],
-            "points": [[1],[2]],
+            "points": [[1], [2]],
             "answers": [[["Stockholm", "Göteborg", "Malmö", "Luleå"], ["Göteborg", "Stenköping", "London"]]],
-            "correctAnswers": [["Stockholm"],[["Göteborg"],["London"]]],
+            "correctAnswers": [["Stockholm"], [["Göteborg"], ["London"]]],
             "gProcent": [[60]],
             "vgProcent": [[80]],
             "autoCorrect": [[1]]
@@ -86,64 +89,63 @@ function saveTestInfo(){
     }
 
 }
-
-function saveQuestion(){
-
-    document.getElementById("questionId").innerHTML = "Fråga " + ++questionNumber;
-    document.getElementById("saveTest").style.visibility = "visible";
+// TODO saveQuestion
+function saveQuestion() {
 
     questionText = document.getElementById('questionText').value;
     questionType = document.getElementById('typeId').options[document.getElementById('typeId').selectedIndex].value;
     points = document.getElementById('maxPoint').value;
-
+    isChecked = false;
 
     questionArray.push(questionText);
     questionTypeArray.push(questionType);
     pointsArray.push(points);
 
-    if(questionType === 'singleChoice'){
+
+    if (questionType === 'singleChoice') {
         numberOfAnswers = document.getElementById('numberOfAnswersSC').value;
-        if(numberOfAnswers === 'twoSC'){
+        if (numberOfAnswers === 'twoSC') {
             answer1 = document.getElementById('answerSC12text').value;
             answer2 = document.getElementById('answerSC22text').value;
             answer1Radio = document.getElementById('answerSC12radio');
             answer2Radio = document.getElementById('answerSC22radio');
-            if(answer1Radio.checked){
+            if (answer1Radio.checked) {
                 correctAnswer = answer1;
+                isChecked = true;
             }
-            else if (answer2Radio.checked){
+            else if (answer2Radio.checked) {
                 correctAnswer = answer2;
+                isChecked = true;
             }
             answers.push(answer1);
             answers.push(answer2);
             correctAnswersArray.push(correctAnswer);
-
         }
-        else if(numberOfAnswers === 'threeSC'){
+        else if (numberOfAnswers === 'threeSC') {
             answer1 = document.getElementById('answerSC13text').value;
             answer2 = document.getElementById('answerSC23text').value;
             answer3 = document.getElementById('answerSC33text').value;
             answer1Radio = document.getElementById('answerSC13radio');
             answer2Radio = document.getElementById('answerSC23radio');
             answer3Radio = document.getElementById('answerSC33radio');
-
-            if(answer1Radio.checked){
+            if (answer1Radio.checked) {
                 correctAnswer = answer1;
+                isChecked = true;
             }
-            else if (answer2Radio.checked){
+            else if (answer2Radio.checked) {
                 correctAnswer = answer2;
+                isChecked = true;
             }
-            else if (answer3Radio.checked){
+            else if (answer3Radio.checked) {
                 correctAnswer = answer3;
+                isChecked = true;
             }
-
             answers.push(answer1);
             answers.push(answer2);
             answers.push(answer3);
             correctAnswersArray.push(correctAnswer);
-
         }
-        else if(numberOfAnswers === 'fourSC'){
+        else if (numberOfAnswers === 'fourSC') {
             answer1 = document.getElementById('answerSC14text').value;
             answer2 = document.getElementById('answerSC24text').value;
             answer3 = document.getElementById('answerSC34text').value;
@@ -152,71 +154,76 @@ function saveQuestion(){
             answer2Radio = document.getElementById('answerSC24radio');
             answer3Radio = document.getElementById('answerSC34radio');
             answer4Radio = document.getElementById('answerSC44radio');
-
-            if(answer1Radio.checked){
+            if (answer1Radio.checked) {
                 correctAnswer = answer1;
+                isChecked = true;
             }
-            else if (answer2Radio.checked){
+            else if (answer2Radio.checked) {
                 correctAnswer = answer2;
+                isChecked = true;
             }
-            else if (answer3Radio.checked){
+            else if (answer3Radio.checked) {
                 correctAnswer = answer3;
+                isChecked = true;
             }
-            else if (answer4Radio.checked){
+            else if (answer4Radio.checked) {
                 correctAnswer = answer4;
+                isChecked = true;
             }
             answers.push(answer1);
             answers.push(answer2);
             answers.push(answer3);
             answers.push(answer4);
             correctAnswersArray.push(correctAnswer);
-
         }
     }
-    else if(questionType === 'multiChoice'){
+    else if (questionType === 'multiChoice') {
         numberOfAnswers = document.getElementById('numberOfAnswersMC').value;
 
-        if(numberOfAnswers === 'twoMC'){
+        if (numberOfAnswers === 'twoMC') {
             answer1 = document.getElementById('answerMC12text').value;
             answer2 = document.getElementById('answerMC22text').value;
             answer1Chb = document.getElementById('answerMC12check');
             answer2Chb = document.getElementById('answerMC22check');
-            if(answer1Chb.checked){
+            if (answer1Chb.checked) {
                 corrAnsCheckArray.push(answer1);
+                isChecked = true;
             }
-            if (answer2Chb.checked){
+            if (answer2Chb.checked) {
                 corrAnsCheckArray.push(answer2);
+                isChecked = true;
             }
-
             answers.push(answer1);
             answers.push(answer2);
             correctAnswersArray.push(corrAnsCheckArray);
 
         }
-        else if(numberOfAnswers === 'threeMC'){
+        else if (numberOfAnswers === 'threeMC') {
             answer1 = document.getElementById('answerMC13text').value;
             answer2 = document.getElementById('answerMC23text').value;
             answer3 = document.getElementById('answerMC33text').value;
             answer1Chb = document.getElementById('answerMC13check');
             answer2Chb = document.getElementById('answerMC23check');
             answer3Chb = document.getElementById('answerMC33check');
-            if(answer1Chb.checked){
+            if (answer1Chb.checked) {
                 corrAnsCheckArray.push(answer1);
+                isChecked = true;
             }
-            if (answer2Chb.checked){
+            if (answer2Chb.checked) {
                 corrAnsCheckArray.push(answer2);
+                isChecked = true;
             }
-            if (answer3Chb.checked){
+            if (answer3Chb.checked) {
                 corrAnsCheckArray.push(answer3);
+                isChecked = true;
             }
-
             answers.push(answer1);
             answers.push(answer2);
             answers.push(answer3);
             correctAnswersArray.push(corrAnsCheckArray);
 
         }
-        else if(numberOfAnswers === 'fourMC'){
+        else if (numberOfAnswers === 'fourMC') {
             answer1 = document.getElementById('answerMC14text').value;
             answer2 = document.getElementById('answerMC24text').value;
             answer3 = document.getElementById('answerMC34text').value;
@@ -225,27 +232,30 @@ function saveQuestion(){
             answer2Chb = document.getElementById('answerMC24check');
             answer3Chb = document.getElementById('answerMC34check');
             answer4Chb = document.getElementById('answerMC44check');
-            if(answer1Chb.checked){
+            if (answer1Chb.checked) {
                 corrAnsCheckArray.push(answer1);
+                isChecked = true;
             }
-            if (answer2Chb.checked){
+            if (answer2Chb.checked) {
                 corrAnsCheckArray.push(answer2);
+                isChecked = true;
             }
-            if (answer3Chb.checked){
+            if (answer3Chb.checked) {
                 corrAnsCheckArray.push(answer3);
+                isChecked = true;
             }
-            if (answer4Chb.checked){
+            if (answer4Chb.checked) {
                 corrAnsCheckArray.push(answer4);
+                isChecked = true;
             }
-
+            isChecked = (answer1Chb || answer2Chb || answer3Chb || answer4Chb);
             answers.push(answer1);
             answers.push(answer2);
             answers.push(answer3);
             answers.push(answer4);
-            correctAnswersArray.push(corrAnsCheckArray);
 
         }
-        else if(numberOfAnswers === 'fiveMC'){
+        else if (numberOfAnswers === 'fiveMC') {
             answer1 = document.getElementById('answerMC15text').value;
             answer2 = document.getElementById('answerMC25text').value;
             answer3 = document.getElementById('answerMC35text').value;
@@ -256,22 +266,26 @@ function saveQuestion(){
             answer3Chb = document.getElementById('answerMC35check');
             answer4Chb = document.getElementById('answerMC45check');
             answer5Chb = document.getElementById('answerMC55check');
-            if(answer1Chb.checked){
+            if (answer1Chb.checked) {
                 corrAnsCheckArray.push(answer1);
+                isChecked = true;
             }
-            if (answer2Chb.checked){
+            if (answer2Chb.checked) {
                 corrAnsCheckArray.push(answer2);
+                isChecked = true;
             }
-            if (answer3Chb.checked){
+            if (answer3Chb.checked) {
                 corrAnsCheckArray.push(answer3);
+                isChecked = true;
             }
-            if (answer4Chb.checked){
+            if (answer4Chb.checked) {
                 corrAnsCheckArray.push(answer4);
+                isChecked = true;
             }
-            if (answer5Chb.checked){
+            if (answer5Chb.checked) {
                 corrAnsCheckArray.push(answer5);
+                isChecked = true;
             }
-
             answers.push(answer1);
             answers.push(answer2);
             answers.push(answer3);
@@ -280,7 +294,7 @@ function saveQuestion(){
             correctAnswersArray.push(corrAnsCheckArray);
 
         }
-        else if(numberOfAnswers === 'sixMC'){
+        else if (numberOfAnswers === 'sixMC') {
             answer1 = document.getElementById('answerMC16text').value;
             answer2 = document.getElementById('answerMC26text').value;
             answer3 = document.getElementById('answerMC36text').value;
@@ -293,25 +307,30 @@ function saveQuestion(){
             answer4Chb = document.getElementById('answerMC46check');
             answer5Chb = document.getElementById('answerMC56check');
             answer6Chb = document.getElementById('answerMC66check');
-            if(answer1Chb.checked){
+            if (answer1Chb.checked) {
                 corrAnsCheckArray.push(answer1);
+                isChecked = true;
             }
-            if (answer2Chb.checked){
+            if (answer2Chb.checked) {
                 corrAnsCheckArray.push(answer2);
+                isChecked = true;
             }
-            if (answer3Chb.checked){
+            if (answer3Chb.checked) {
                 corrAnsCheckArray.push(answer3);
+                isChecked = true;
             }
-            if (answer4Chb.checked){
+            if (answer4Chb.checked) {
                 corrAnsCheckArray.push(answer4);
+                isChecked = true;
             }
-            if (answer5Chb.checked){
+            if (answer5Chb.checked) {
                 corrAnsCheckArray.push(answer5);
+                isChecked = true;
             }
-            if (answer6Chb.checked){
+            if (answer6Chb.checked) {
                 corrAnsCheckArray.push(answer6);
+                isChecked = true;
             }
-
             answers.push(answer1);
             answers.push(answer2);
             answers.push(answer3);
@@ -322,66 +341,69 @@ function saveQuestion(){
 
         }
 
-        else if(questionType === 'open'){
+        else if (questionType === 'open') {
 
             autoCorrect.push(0);
         }
 
     }
+    answerNotChecked = ((!isChecked) && (questionType !== 'open'));
 
+    if (answerNotChecked) {
+        alert("Ange det rätta svaret på frågan");
+    } else {
+        answerArray.push(answers);
 
-    answerArray.push(answers);
+        parsed = JSON.parse(localStorage.getItem(testStorageName));
 
-    parsed = JSON.parse(localStorage.getItem(testStorageName));
+        parsed.questionString.push(questionArray);
+        parsed.answerType.push(questionTypeArray);
+        parsed.points.push(pointsArray);
+        parsed.answers.push(answerArray);
+        parsed.correctAnswers.push(correctAnswersArray);
 
-    parsed.questionString.push(questionArray);
-    parsed.answerType.push(questionTypeArray);
-    parsed.points.push(pointsArray);
-    parsed.answers.push(answerArray);
-    parsed.correctAnswers.push(correctAnswersArray);
+        answers = [];
+        /*
+         parsed = JSON.parse(localStorage.getItem('test2'));
 
-    answers = [];
-    /*
-     parsed = JSON.parse(localStorage.getItem('test2'));
+         parsed.testName.push(testNameArray);
+         parsed.testTime.push(testTimeArray);
+         parsed.questionString.push(questionArray);
+         parsed.answerType.push(questionTypeArray);
+         parsed.points.push(pointsArray);
+         parsed.answers.push(answerArray);
+         parsed.correctAnswers.push(correctAnswersArray);
+         parsed.gProcent.push(gProcentArray);
+         parsed.vgProcent.push(vgProcentArray);
 
-     parsed.testName.push(testNameArray);
-     parsed.testTime.push(testTimeArray);
-     parsed.questionString.push(questionArray);
-     parsed.answerType.push(questionTypeArray);
-     parsed.points.push(pointsArray);
-     parsed.answers.push(answerArray);
-     parsed.correctAnswers.push(correctAnswersArray);
-     parsed.gProcent.push(gProcentArray);
-     parsed.vgProcent.push(vgProcentArray);
+         var data = JSON.stringify(parsed);
+         localStorage.setItem('test2', data);
+         */
 
-     var data = JSON.stringify(parsed);
-     localStorage.setItem('test2', data);
-     */
+        var test = JSON.parse(localStorage.getItem(testStorageName));
 
-    var test = JSON.parse(localStorage.getItem(testStorageName));
+        /*
+         out.innerHTML = 'Questiontext: ' + questionText + '<br/>' + 'Questiontype: ' + questionType +  '<br/>'
+         + 'antal svar: ' + numberOfAnswers + '<br/>' + 'svar1: ' + answer1 + '<br/>'
+         + 'svar2: ' + answer2 + '<br/>' + 'svar3: ' + answer3 + '<br/>'
+         + 'svar4: ' + answer4 + '<br/>' + 'rätt svar: ' + corrAnsCheckArray[0] + '<br/>'
+         + 'rätt svar: ' + corrAnsCheckArray[1] + '<br/>';
+         */
 
-    /*
-     out.innerHTML = 'Questiontext: ' + questionText + '<br/>' + 'Questiontype: ' + questionType +  '<br/>'
-     + 'antal svar: ' + numberOfAnswers + '<br/>' + 'svar1: ' + answer1 + '<br/>'
-     + 'svar2: ' + answer2 + '<br/>' + 'svar3: ' + answer3 + '<br/>'
-     + 'svar4: ' + answer4 + '<br/>' + 'rätt svar: ' + corrAnsCheckArray[0] + '<br/>'
-     + 'rätt svar: ' + corrAnsCheckArray[1] + '<br/>';
-     */
+        //out.innerHTML = test.testName[0];
 
-    //out.innerHTML = test.testName[0];
+    document.getElementById("createQuestionForm").reset();
 
-//    document.getElementById("createQuestionForm").reset();
+            $("#singleC").hide();
+            $("#multiC").hide();
+            $("#open").hide();
 
+        document.getElementById("questionId").innerHTML = "Fråga " + ++questionNumber;
+        document.getElementById("saveTest").style.visibility = "visible";
+    }
 }
 
-$("#saveQuestionBtn").click(function(){
-    $('#createQuestionForm')[0].reset();
-    $("#singleC").hide();
-    $("#multiC").hide();
-    $("#open").hide();
-});
-
-
+// TODO saveTest
 function saveTest() {
 
 
@@ -392,12 +414,12 @@ function saveTest() {
 
     var temp;
 
-    for (i=0 ; i<parsed.questionString.length ; i++){
-        if(autoCorrect[i] == 0){
+    for (i = 0; i < parsed.questionString.length; i++) {
+        if (autoCorrect[i] == 0) {
             temp = 0;
             break;
         }
-        else{
+        else {
             temp = 1;
         }
     }
@@ -425,8 +447,8 @@ function saveTest() {
 }
 
 /*$("#saveTest").click(function(){
-    $('#testHeaderForm')[0].reset();
-    $("#createQuestionForm").hide();
-    $("#saveTest").hide();
-});*/
+ $('#testHeaderForm')[0].reset();
+ $("#createQuestionForm").hide();
+ $("#saveTest").hide();
+ });*/
 
