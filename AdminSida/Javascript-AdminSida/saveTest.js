@@ -151,7 +151,7 @@ function saveQuestion(){
             answer1Radio = document.getElementById('answerSC14radio');
             answer2Radio = document.getElementById('answerSC24radio');
             answer3Radio = document.getElementById('answerSC34radio');
-            answer4Radio = document.getElementById('answerSC34radio');
+            answer4Radio = document.getElementById('answerSC44radio');
 
             if(answer1Radio.checked){
                 correctAnswer = answer1;
@@ -381,7 +381,7 @@ $("#saveQuestionBtn").click(function(){
     $("#open").hide();
 });
 
-$("")
+
 function saveTest() {
 
 
