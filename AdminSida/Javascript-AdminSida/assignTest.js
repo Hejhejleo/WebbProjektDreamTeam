@@ -3,8 +3,10 @@
  */
 
 var chosenTest;
+var chosenClass;
 var indexChosenTest = 0;
 var userTest;
+var users;
 $(document).ready(function () {
     userTest = JSON.parse(localStorage.getItem("usertest"));
 
@@ -19,6 +21,15 @@ $(document).ready(function () {
         } else {
             document.getElementById(checkboxId).checked = true;
         }
+        update();
+    });
+
+    $("#tilldelaButton").click(function () {
+        classTilldela();
+    });
+
+    $("#deleteButton").click(function () {
+        classDelete();
     });
 
 
@@ -28,7 +39,7 @@ $(document).ready(function () {
 function drawList() {
     indexChosenTest = null;
     userTest = JSON.parse(localStorage.getItem("usertest"));
-    var users = JSON.parse(localStorage.getItem("users"));
+    users = JSON.parse(localStorage.getItem("users"));
     for (var i = 0; i < userTest.testName.length; i++) {
         console.log("Looking for correct Test: " + i);
         if (userTest.testName[i] == chosenTest) {
@@ -39,6 +50,7 @@ function drawList() {
     console.log("Chosen index: " + indexChosenTest);
 
     $("#studentList").empty();
+
     for (var i = 0; i < users.mail.length; i++) {
         console.log("Starting on user: " + i);
         var $li = "";
@@ -80,6 +92,12 @@ $("#selectProv").change(function () {
     drawList();
 });
 
+$("#selectKlass").change(function () {
+    chosenClass = $("#selectKlass").val();
+    console.log(chosenClass);
+});
+
+
 $(".getClasses").click(function () {
     console.log("GetClasses");
     var testData = JSON.parse(localStorage.getItem("testdata"));
@@ -97,8 +115,54 @@ $(".getClasses").click(function () {
 
 
 function update() {
+    console.log("Update DATABASE")
     userTest = JSON.parse(localStorage.getItem("usertest"));
-    
+    users = JSON.parse(localStorage.getItem("users"));
+
+    userTest.mail[indexChosenTest] = [];
+
+    for (var i = 0; i < users.mail.length; i++) {
+        console.log("Checking user: " + i + " - " + users.mail[i]);
+        if (document.getElementById(users.mail[i] + "checkbox").checked) {
+            console.log(i + " Checked");
+            userTest.mail[indexChosenTest].push(users.mail[i].toString());
+
+        } else {
+            console.log(i + " Uncheked");
+        }
+    }
+    localStorage.setItem("usertest", JSON.stringify(userTest));
+    userTest = JSON.parse(localStorage.getItem("usertest"));
+
 
 }
 
+
+function classTilldela() {
+    var userArray = new Array;
+    for (var i = 0; i < users.mail.length; i++) {
+        if (users.className[i] == chosenClass) {
+            userArray.push(users.mail[i]);
+        }
+    }
+    for (var i = 0; i < userArray.length; i++) {
+        document.getElementById(userArray[i] + "checkbox").checked = true;
+    }
+    update();
+
+}
+
+function classDelete() {
+    var userArray = new Array;
+    for (var i = 0; i < users.mail.length; i++) {
+        if (users.className[i] == chosenClass) {
+            userArray.push(users.mail[i]);
+        }
+    }
+
+    for (var i = 0; i < userArray.length; i++) {
+        document.getElementById(userArray[i] + "checkbox").checked = false;
+    }
+    update();
+
+}
