@@ -18,28 +18,35 @@ function getTestDoneData() {
     }
     var studentAnsArray = [];
 
+    for(var h = 0; h < parsed.answerType[testindex].length;h++) {
+        var questions = document.getElementsByClassName("question : " + h);
 
 
-    if (parsed.answerType[testindex][0] == "singleChoice") {
-        var singleChoiceAnswers = document.getElementsByClassName("singleChoiceAnswer").checked;
+        if (parsed.answerType[testindex][h] == "singleChoice") {
+            for (var k = 0; k < questions.length; k++) {
+                if (questions[k].checked == true) {
+                    console.log("checked = " + k);
+                    studentAnsArray.push(k);
 
+                }
+            }
+        }
+        if(parsed.answerType[testindex][h] == "multiChoice"){
+            var mult =[];
+            for (var t = 0 ; t < questions.length ; t++){
+                if(questions[t].checked == true){
+                    mult.push(t);
+                }
+            }
+            studentAnsArray.push(mult);
+        }
 
-        singleChoiceAnswers[0].getAttribute("value");
+        if (parsed.answerType[testindex][h] == "open") {
 
+            var test = questions[0].value;
+            studentAnsArray.push(test);
 
-        if (document.getElementById(parsed.answers[testindex][0][0]).checked != null) {
-            studentAnsArray.push([[0]]);
         }
     }
-    if (parsed.answerType[testindex][1] == "multiChoice") {
-        var multiChoiceArr = [];
-        document.getElementsByClassName("multiChoiceAnswer");
-        if(document.getElementById(parsed.answers[testindex][0][1]).checked != null){
-            multiChoiceArr.push([1]);
-        }
-        studentAnsArray.push(multiChoiceArr);
-    }
-    if (parsed.answerType[testindex][2] == "open") {
-        document.getElementsByClassName("freeTexts");
-    }
+    console.log(studentAnsArray);
 }

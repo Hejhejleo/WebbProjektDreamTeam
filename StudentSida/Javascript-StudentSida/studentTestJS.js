@@ -47,7 +47,7 @@ function myFunction() {
                 var inputform = document.createElement("input");
                 var lbl = document.createElement("label");
                 inputform.setAttribute("id", parsed.answers[testindex][n][e] + e);
-                inputform.setAttribute("class","singleChoiceAnswer");
+                inputform.setAttribute("class","question : " + n);
                 lbl.setAttribute("for", parsed.answers[testindex][n][e] + e);
                 inputform.setAttribute("type", "radio");
                 //console.log(parsed.answer[n][e]);
@@ -72,7 +72,7 @@ function myFunction() {
                 inputchk.setAttribute("name", "answer" + t);
                 inputchk.setAttribute("value", parsed.answers[testindex][n][t]);
                 inputchk.setAttribute("id", parsed.answers[testindex][n][t] + t);
-                inputchk.setAttribute("class","multiChoiceAnswer");
+                inputchk.setAttribute("class","question : " + n);
                 var lblchk = document.createElement("label");
                 lblchk.setAttribute("class", "answers");
                 lblchk.setAttribute("for", parsed.answers[testindex][n][t] + t);
@@ -87,7 +87,7 @@ function myFunction() {
         }//handling open answer questions
         else if (parsed.answerType[testindex][n] == "open") {
             var freeArea = document.createElement("textarea");
-            freeArea.setAttribute("class", "freeTexts");
+            freeArea.setAttribute("class", "question : " + n);
             freeArea.setAttribute("cols", "60");
             freeArea.setAttribute("rows", "15");
             pane.appendChild(freeArea);
