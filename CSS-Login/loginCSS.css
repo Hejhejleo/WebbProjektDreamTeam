@@ -4,12 +4,6 @@ background-color: rgb(255, 52, 0);
 
 }
 
-
-#imageId{
-    text-align: center;
-    width: 400px;
-}
-
 label{
     display: block;
     font-size: 20px;
@@ -26,10 +20,13 @@ aside{
 }
 
 textarea{
-    width: 400px;
+    text-align: center;
+    width: 450px;
     height: 375px;
     resize: none;
     border-color: lightgrey;
+    font-size: 20px;
+
 }
 
 h2{
@@ -37,6 +34,12 @@ h2{
     color: #EE7202;
 }
 
+
+
+#imageId{
+    text-align: center;
+    width: 400px;
+}
 
 #login-button{
     width: 400px;

@@ -3,12 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Webbprojekt</title>
+    <link rel="stylesheet" type="text/css" href="CSS-AdminSida/framsidan.css">
+    <link rel="stylesheet" type="text/css" href="CSS-AdminSida/unsemantic-grid-responsive-tablet.css">
+    <script type="text/javascript" src="Javascript-AdminSida/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="Javascript-AdminSida/Information.js"></script>
 </head>
-<body>
-<div>
-    <div>
-        <p>Detta är webbprojektets Framsida.</p>
-    </div>
-</div>
+<body class="grid-container">
+
+<section class="grid-100">
+    <section class="grid-50">
+        <p>Välkommen till Webbprojektets admin-sida.</p>
+        <p>
+            På denna hemsida kan man som admin lägga till nya användare och klasser,
+        </p>
+        <p>
+            redigera uppgifter om tillagda användare,
+        </p>
+        <p>
+            skapa prov samt redigera redan tillagda prov och tilldela dem skapade proven till
+        </p>
+        <p>
+            hela klasser eller enskilda elever.
+        </p>
+    </section>
+
+    <aside id="framAside" class="grid-45 prefix-5">
+        <h2>Information</h2>
+        <textarea id="info"></textarea>
+        <input type="button" id="framButton" value="Uppdatera">
+    </aside>
+</section>
+
 </body>
 </html>

@@ -1,0 +1,27 @@
+#info{
+    width: 450px;
+    height: 375px;
+    resize: none;
+    border-color: lightgrey;
+    font-size: 20px;
+}
+
+#framAside{
+    text-align: center;
+    display: inline-block;
+}
+
+#framButton {
+    margin-top: 10px;
+    color: #ffffff;
+    background: darkorange;
+    padding: 10px 20px 10px 20px;
+    border-style: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+#framButton:hover {
+    background: orange;
+    text-decoration: none;
+}
