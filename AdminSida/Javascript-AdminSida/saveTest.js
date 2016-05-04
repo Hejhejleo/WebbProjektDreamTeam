@@ -34,7 +34,7 @@ var answer1Chb, answer2Chb, answer3Chb, answer4Chb, answer5Chb, answer6Chb;
 var correctAnswer;
 var corrAnsCheckArray = [];
 var points;
-var autoCorrect = [];
+var autoCorr = 1;
 
 var out = document.getElementById('output');
 
@@ -340,18 +340,19 @@ function saveQuestion() {
             correctAnswersArray.push(corrAnsCheckArray);
 
         }
-
-        else if (questionType === 'open') {
-
-            autoCorrect.push(0);
-        }
-
     }
+    else if (questionType === 'open') {
+
+        autoCorr = 0;
+    }
+
+
     answerNotChecked = ((!isChecked) && (questionType !== 'open'));
 
     if (answerNotChecked) {
         alert("Ange det rätta svaret på frågan");
-    } else {
+    }
+    else {
         answerArray.push(answers);
 
         parsed = JSON.parse(localStorage.getItem(testStorageName));
@@ -392,11 +393,11 @@ function saveQuestion() {
 
         //out.innerHTML = test.testName[0];
 
-    document.getElementById("createQuestionForm").reset();
+        document.getElementById("createQuestionForm").reset();
 
-            $("#singleC").hide();
-            $("#multiC").hide();
-            $("#open").hide();
+        $("#singleC").hide();
+        $("#multiC").hide();
+        $("#open").hide();
 
         document.getElementById("questionId").innerHTML = "Fråga " + ++questionNumber;
         document.getElementById("saveTest").style.visibility = "visible";
@@ -414,15 +415,13 @@ function saveTest() {
 
     var temp;
 
-    for (i = 0; i < parsed.questionString.length; i++) {
-        if (autoCorrect[i] == 0) {
-            temp = 0;
-            break;
-        }
-        else {
-            temp = 1;
-        }
+    if (autoCorr == 0) {
+        temp = 0;
     }
+    else {
+        temp = 1;
+    }
+
 
     parsed.autoCorrect.push(temp);
 
