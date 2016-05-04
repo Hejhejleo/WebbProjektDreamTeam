@@ -8,17 +8,19 @@ function myFunction() {
     //loading tests from localstorage
     var parsed = JSON.parse(localStorage.getItem('testdata'));
     console.log(parsed.testName[0]);
+    //finding the the test that should be answered
     var actualtestname = "testtest";
     var testindex = 0;
     for(var y = 0; y < parsed.testName.length;y++){
         if (actualtestname == parsed.testName[y]){
             console.log("Hittade test id = "+ y);
             testindex = y;
+            break;
         }
     }
 
-
-
+    var singleChoiceAnswers = document.getElementsByClassName("singleChoiceAnswer").checked;
+    console.log(singleChoiceAnswers);
     console.log(parsed.questionString[testindex].length);
     for (var k = 0; k < parsed.questionString[testindex].length; k++) {
         //Creating the button element
@@ -45,6 +47,7 @@ function myFunction() {
                 var inputform = document.createElement("input");
                 var lbl = document.createElement("label");
                 inputform.setAttribute("id", parsed.answers[testindex][n][e] + e);
+                inputform.setAttribute("class","singleChoiceAnswer");
                 lbl.setAttribute("for", parsed.answers[testindex][n][e] + e);
                 inputform.setAttribute("type", "radio");
                 //console.log(parsed.answer[n][e]);
@@ -69,6 +72,7 @@ function myFunction() {
                 inputchk.setAttribute("name", "answer" + t);
                 inputchk.setAttribute("value", parsed.answers[testindex][n][t]);
                 inputchk.setAttribute("id", parsed.answers[testindex][n][t] + t);
+                inputchk.setAttribute("class","multiChoiceAnswer");
                 var lblchk = document.createElement("label");
                 lblchk.setAttribute("class", "answers");
                 lblchk.setAttribute("for", parsed.answers[testindex][n][t] + t);

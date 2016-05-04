@@ -4,6 +4,17 @@
 var paused=false;
 var second=2400;
 var parsed = JSON.parse(localStorage.getItem("testdata"));
+var actualtestname = "testtest";
+var testindex = 0;
+for(var y = 0; y < parsed.testName.length;y++){
+    if (actualtestname == parsed.testName[y]){
+        console.log("Hittade test id = "+ y);
+        testindex = y;
+        break;
+    }
+}
+second = parsed.testTime[testindex]*60;
+
 $( document ).ready(function() {
 
 
