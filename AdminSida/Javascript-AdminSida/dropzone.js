@@ -24,7 +24,7 @@ dropZone.addEventListener('drop', function (e) {
                 img.src = e2.target.result;
                 var dropzone = document.getElementById('dropZone');
                 dropzone.appendChild(img);
-                var imgData = document.getElementById('imgData');
+                var imgData = document.getElementById('imgData'); // data för bilden i textsträng
                 imgData.value = e2.target.result;
                 //alert(img.height);
                 img.height=100;
