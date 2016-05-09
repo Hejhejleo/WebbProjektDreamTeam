@@ -52,95 +52,45 @@ function saveTestInfo() {
     vgPercent = +document.getElementById('vgPercent').value;
     onlyGquestions = document.getElementById('onlyGId').checked;
 
-    if (testName == "") {
-        alert("Ange ett namn på testet")
-    } else if (testTime === 0) {
-        alert("Ange tid för testet")
-    } else if (gPercent === 0) {
-        alert("Ange gräns för godkänd")
-    }
-    if (onlyGquestions) {
-        document.getElementById("createQuestionForm").style.visibility = "visible";
-        document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
-    } else if (vgPercent <= gPercent) {
-        alert("Gränsen för VG måste vara högre än för G." + "\nG-gräns: " + gPercent +
-            "\nVG-gräns: " + vgPercent);
-    } else {
-        document.getElementById("createQuestionForm").style.visibility = "visible";
-        document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
-    }
-
-    parsed = JSON.parse(localStorage.getItem(testStorageName));
-
-    if (parsed == null) {
-        var obj = {
-            "testName": [["test1"]],
-            "testTime": [[40]],
-            "questionString": [[["huvudstad?"], ["Städer?"]]],
-            "answerType": [["singleChoice", "multiChoice"]],
-            "points": [[1, 2]],
-            "answers": [[["Stockholm", "Göteborg", "Malmö", "Luleå"], ["Göteborg", "Stenköping", "London"]]],
-            "correctAnswers": [[["Stockholm"], ["Göteborg", "London"]]],
-            "gProcent": [[60]],
-            "vgProcent": [[80]],
-            "autoCorrect": [[1]]
-        }
-        var objdata = JSON.stringify(obj);
-        localStorage.setItem(testStorageName, objdata);
-    }
-
-    //TODO koll om testnamnet är en dubblett
-    //TODO fel när ett prov har sparats och man vill skapa ett till
-    //TODO frågenumret nollställs inte
-
-    console.log("innan deklarationer - f" + questionNumber);
-
     var newTestName = "";
     newTestName = $("#testName").val();
     var existingTests = JSON.parse(localStorage.getItem("testdata"));
     var newTestNameArray = new Array();
     var isNewName = true;
 
-    console.log("efter deklarationer, före koll - f" + questionNumber + ", " + newTestName);
-
-    for (var i = 0; i < existingTests.testName.length; i++) {
-        if (newTestName == existingTests.testName[i]) {
-            alert("Det finns redan ett test med det namnet, välj ett annat namn");
-            isNewName = false;
+    if (testName == "") {
+        alert("Ange ett namn på testet")
+    } else {
+        for (var i = 0; i < existingTests.testName.length; i++) {
+            if (newTestName == existingTests.testName[i]) {
+                alert("Det finns redan ett test med det namnet, välj ett annat namn");
+                isNewName = false;
+            }
         }
-    }
-
-    console.log("efter koll - f" + questionNumber);
-
-    if (isNewName == true) {
-        console.log("isNewName - f" + questionNumber);
-
-        /*
-         alert("isNewName = true");
-         newTestNameArray.push(newTestName);
-         existingTests.testName.push(newTestNameArray);
-         localStorage.setItem("testdata", JSON.stringify(existingTests));
-         */
-        if (onlyGquestions) {
-            document.getElementById("createQuestionForm").style.visibility = "visible";
-            document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
-        } else if (vgPercent <= gPercent) {
-            alert("Gränsen för VG måste vara högre än för G." + "\nG-gräns: " + gPercent +
-                "\nVG-gräns: " + vgPercent);
-        } else {
-            document.getElementById("createQuestionForm").style.visibility = "visible";
-            document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
+        if (isNewName == true) {
+            console.log("isNewName - f" + questionNumber);
+            if (testTime === 0) {
+                alert("Ange tid för testet")
+            } else if (gPercent === 0) {
+                alert("Ange gräns för godkänd")
+            } else if (onlyGquestions) {
+                document.getElementById("createQuestionForm").style.visibility = "visible";
+                document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
+            } else if (vgPercent <= gPercent) {
+                alert("Gränsen för VG måste vara högre än för G." + "\nG-gräns: " + gPercent +
+                    "\nVG-gräns: " + vgPercent);
+            } else {
+                document.getElementById("createQuestionForm").style.visibility = "visible";
+                document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
+            }
         }
-        console.log("efter frågeformuläret - f" + questionNumber);
+        testNameArray.push(testName);
+        testTimeArray.push(testTime);
+        gProcentArray.push(gPercent);
+        vgProcentArray.push(vgPercent);
+        // TODO onlyGquestions används inte vidare i koden, om vgpercent = null bara G-frågor?
+
     }
-// TODO slut koll av dubblettnamn
-    testNameArray.push(testName);
-    testTimeArray.push(testTime);
-    gProcentArray.push(gPercent);
-    vgProcentArray.push(vgPercent);
-    // TODO onlyGquestions används inte vidare i koden, om vgpercent = null bara G-frågor?
-
-
 }
 
 
