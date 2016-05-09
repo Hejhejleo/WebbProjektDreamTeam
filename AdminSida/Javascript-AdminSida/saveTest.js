@@ -76,10 +76,10 @@ function saveTestInfo() {
             "testName": [["test1"]],
             "testTime": [[40]],
             "questionString": [[["huvudstad?"], ["Städer?"]]],
-            "answerType": [[["singleChoice"], ["multiChoice"]]],
-            "points": [[1], [2]],
+            "answerType": [["singleChoice", "multiChoice"]],
+            "points": [[1,2]],
             "answers": [[["Stockholm", "Göteborg", "Malmö", "Luleå"], ["Göteborg", "Stenköping", "London"]]],
-            "correctAnswers": [["Stockholm"], [["Göteborg"], ["London"]]],
+            "correctAnswers": [[["Stockholm"], ["Göteborg", "London"]]],
             "gProcent": [[60]],
             "vgProcent": [[80]],
             "autoCorrect": [[1]]
@@ -301,6 +301,7 @@ function saveQuestion() {
             answers.push(answer2);
             answers.push(answer3);
             answers.push(answer4);
+            correctAnswersArray.push(corrAnsCheckArray);
 
         }
         else if (numberOfAnswers === 'fiveMC') {
