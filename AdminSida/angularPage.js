@@ -25,9 +25,9 @@ angularAdmin.config(function($routeProvider) {
             controller  : 'statistikController'
         })
 
-        .when('/användare', {
-            templateUrl : 'användare.html',
-            controller  : 'användareController'
+        .when('/anvandare', {
+            templateUrl : 'anvandare.html',
+            controller  : 'anvandareController'
         })
 
         .when('/createTest', {
@@ -55,7 +55,7 @@ angularAdmin.controller('statistikController', function($scope) {
 
 });
 
-angularAdmin.controller('användareController', function($scope) {
+angularAdmin.controller('anvandareController', function($scope) {
 
 });
 

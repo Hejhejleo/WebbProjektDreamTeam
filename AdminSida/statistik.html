@@ -3,12 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Webbprojekt</title>
+    <link type="text/css" rel="stylesheet" href="CSS-AdminSida/unsemantic-grid-responsive-tablet.css">
 </head>
-<body>
-<div>
-    <div>
-        <p>Detta är webbprojektets statistik sida.</p>
-    </div>
-</div>
+<body class="grid-container">
+
+
+<section class="grid-35 prefix-30 selectProv">
+    <label for="selectProv">Prov</label>
+    <select name="prov" id="selectProv">
+        <option></option>
+    </select>
+</section>
+
+
+<section class="grid-100">
+
+    <section class="grid-70">
+    <label>Hur många gjorde provet</label>
+        <label id="amount"></label>
+
+        <hr>
+        <label>Max prov poäng</label>
+        <label id="maxPoints"></label>
+
+    <hr>
+    <label>Antal G</label>
+        <label id="G"></label>
+        <label id="procetG"></label>
+    <hr>
+    <label>Antal VG</label>
+        <label id="VG"></label>
+        <label id="procetVG"></label>
+    <hr>
+    <label>Medelvärde per prov</label>
+        <label id="average"></label>
+    <hr>
+    </section>
+
+    <section class="grid-100">
+
+    HÄR SKRIVER VI IN FRÅGORNA.
+
+    </section>
+
+
+</section>
+
+
+
 </body>
 </html>
