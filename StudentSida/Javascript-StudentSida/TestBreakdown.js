@@ -24,7 +24,7 @@ function getTestBreakdown() {
     for(var t = 0 ; t < parsed.questionString[testindex] ; t++) {
         var s = parsed.questionString[testindex][t];
         var stuff = document.createElement("p");
-        var text = document.createTextNode("Frågan var : " + corTest.questionString[testindex][t] + "ditt svar var : " + corTest.studentAnswers[testindex][t] + "rätt svar var " + corTest[testindex][t]);
+        var text = document.createTextNode("Frågan var : " + corTest.questionString[testindex][t] + "ditt svar var : " + corTest.studentAnswers[testindex][t] + "rätt svar var " + corTest[testindex][t] + "antal poäng du får är " + corTest.studentPointsPerQue[testindex]);
         stuff.appendChild(text);
         contain.appendChild(stuff);
 
