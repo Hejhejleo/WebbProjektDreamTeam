@@ -19,7 +19,7 @@ $(document).ready(function () {
         if (i == 0) {
 
         }
-        $div = $("<div id='inlineDiv'><div class='grid-15 listStyle'><i class='fa fa-file fa-2x' aria-hidden='"+true+"'></i></div><div class='grid-100 getTestDiv test-div' id='" + availableTests[i] + "'>"+availableTests[i]+"</div></div>");
+        $div = $("<div class='inlineDiv'><div class='grid-15 listStyle'><i class='fa fa-file fa-2x' aria-hidden='"+true+"'></i></div><div class='grid-100 getTestDiv test-div' id='" + availableTests[i] + "'>"+availableTests[i]+"</div></div>");
         $("#ar3").append($div);
 
 

@@ -27,7 +27,7 @@ h2{
     border-radius: 10px;
 }
 
-#inlineDiv{
+.inlineDiv{
     display: flex;
 }
 
