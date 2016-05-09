@@ -225,8 +225,8 @@ function correctTest() {
     answerTypeArray.push(savedTest.answerType[testindex]);
 
 
-    var pointsArray = [];
-    pointsArray.push(savedTest.points[testindex]);
+    //var pointsArray = [];
+    //pointsArray.push(savedTest.points[testindex]);
 
 
     var answersArray = [];
@@ -345,7 +345,7 @@ function correctTest() {
     parsed3.testTime.push(savedTest.testTime[savedTestIndex]);
     parsed3.questionString.push(questionArray);
     parsed3.answerType.push(answerTypeArray);
-    parsed3.points.push(pointsArray);
+    parsed3.points.push(savedTest.points[savedTestIndex]);
     parsed3.answers.push(answersArray);
     parsed3.correctAnswers.push(correctAnswersArray);
     parsed3.gProcent.push(gProcentArray);
