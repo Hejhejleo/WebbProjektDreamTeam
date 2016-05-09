@@ -52,6 +52,12 @@
             <textarea rows="6" cols="50" id="questionText"></textarea>
             <br/> <br/>
 
+            <label for="dropZone">Bild: </label>
+            <div id="dropZone" name="img"></div>
+            <label for="imgData">imgData: </label>
+            <textarea rows="6" cols="50" id="imgData"></textarea> <!-- TODO Dummy-->
+            <br/> <br/>
+
             <label for="typeId">Välj typ av fråga: </label>
             <select data-ng-model="typeOfQuestion" id="typeId">
                 <option value=""></option>
@@ -202,13 +208,13 @@
                             <label>Ange svarsalternativ och vilka de rätta svaren är: </label>
                             <div id="twoMCid">
                                 <p>a) <input type=”text” class="answerBoxes"
-                                                                      id="answerMC12text"
-                                                                      name="answerCB" maxlength="50">
+                                             id="answerMC12text"
+                                             name="answerCB" maxlength="50">
                                     <input type="checkbox" class="answerBoxes" id="answerMC12check"
                                            data-ng-model="correctAnswerAmc"></p>
                                 <p>b) <input type=”text” class="answerBoxes"
-                                                                      id="answerMC22text"
-                                                                      name="answerCB" maxlength="50">
+                                             id="answerMC22text"
+                                             name="answerCB" maxlength="50">
                                     <input type="checkbox" class="answerBoxes" id="answerMC22check"
                                            data-ng-model="correctAnswerBmc"></p>
                                 <p data-ng-show="correctAnswerAmc">Svar a) är rätt</p>
@@ -351,7 +357,7 @@
             <input type="number" min="0" max="10" id="maxPoint">
             <br/><br/>
 
-            <input type="button" value="Spara fråga" id="saveQuestionBtn" onclick="saveQuestion()">
+            <input type="button" data-ng-click="typeOfQuestion='0'" value="Spara fråga" id="saveQuestionBtn" onclick="saveQuestion()">
             <br/>
         </fieldset>
     </form>
@@ -368,6 +374,7 @@
 </div>
 -->
 <!--<script src="Javascript-AdminSida/js-createTest.js"></script>-->
+<script src="Javascript-AdminSida/dropzone.js"></script>
 <script src="Javascript-AdminSida/saveTest.js"></script>
 <!--<script src="Javascript-AdminSida/js-accordion.js"></script>-->
 </body>

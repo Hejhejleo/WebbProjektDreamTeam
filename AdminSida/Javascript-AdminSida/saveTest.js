@@ -88,7 +88,55 @@ function saveTestInfo() {
         localStorage.setItem(testStorageName, objdata);
     }
 
+    //TODO koll om testnamnet är en dubblett
+    //TODO fel när ett prov har sparats och man vill skapa ett till
+    //TODO frågenumret nollställs inte
+
+    console.log("innan deklarationer - f" + questionNumber);
+
+    var newTestName = "";
+    newTestName = $("#testName").val();
+    var existingTests = JSON.parse(localStorage.getItem("testdata"));
+    var newTestNameArray = new Array();
+    var isNewName = true;
+
+    console.log("efter deklarationer, före koll - f" + questionNumber + ", " + newTestName);
+
+    for (var i = 0; i < existingTests.testName.length; i++) {
+        if (newTestName == existingTests.testName[i]) {
+            alert("Det finns redan ett test med det namnet, välj ett annat namn");
+            isNewName = false;
+        }
+    }
+
+    console.log("efter koll - f" + questionNumber);
+
+    if (isNewName) {
+        console.log("isNewName - f" + questionNumber);
+
+        /*
+         alert("isNewName = true");
+         newTestNameArray.push(newTestName);
+         existingTests.testName.push(newTestNameArray);
+         localStorage.setItem("testdata", JSON.stringify(existingTests));
+         */
+        if (onlyGquestions) {
+            document.getElementById("createQuestionForm").style.visibility = "visible";
+            document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
+        } else if (vgPercent <= gPercent) {
+            alert("Gränsen för VG måste vara högre än för G." + "\nG-gräns: " + gPercent +
+                "\nVG-gräns: " + vgPercent);
+        } else {
+            document.getElementById("createQuestionForm").style.visibility = "visible";
+            document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
+        }
+        console.log("efter frågeformuläret - f" + questionNumber);
+    }
+// TODO slut koll av dubblettnamn
+
 }
+
+
 // TODO saveQuestion
 function saveQuestion() {
 
@@ -395,6 +443,7 @@ function saveQuestion() {
 
         document.getElementById("createQuestionForm").reset();
 
+
         $("#singleC").hide();
         $("#multiC").hide();
         $("#open").hide();
@@ -439,10 +488,10 @@ function saveTest() {
 
     alert("Testet är sparat");
 
+    $("#onlyGId").removeAttr("checked");
     $('#testHeaderForm')[0].reset();
     $("#createQuestionForm").hide();
     $("#saveTest").hide();
-
 }
 
 /*$("#saveTest").click(function(){
