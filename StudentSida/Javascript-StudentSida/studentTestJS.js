@@ -9,10 +9,10 @@ function myFunction() {
     var parsed = JSON.parse(localStorage.getItem('testdata'));
     console.log(parsed.testName[0]);
     //finding the the test that should be answered
-    var actualtestname = "testtest";
+    var chosenTest = JSON.parse(sessionStorage.getItem('chosenTest'));
     var testindex = 0;
     for(var y = 0; y < parsed.testName.length;y++){
-        if (actualtestname == parsed.testName[y]){
+        if (chosenTest == parsed.testName[y]){
             console.log("Hittade test id = "+ y);
             testindex = y;
             break;

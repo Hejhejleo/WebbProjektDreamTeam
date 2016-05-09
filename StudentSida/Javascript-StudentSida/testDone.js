@@ -9,7 +9,8 @@ var parsed;
 var studentAnsArray = [];
 var testindex = 0;
 var studentAnswerArrayAsText = [];
-var actualtestname = "test2";
+//var actualtestname = "test2";
+var chosenTest = JSON.parse(sessionStorage.getItem('chosenTest'));
 
 function getTestDoneData() {
 
@@ -19,7 +20,7 @@ function getTestDoneData() {
     //finding the the test that should be answered
 
     for (var y = 0; y < parsed.testName.length; y++) {
-        if (actualtestname == parsed.testName[y]) {
+        if (chosenTest == parsed.testName[y]) {
             console.log("Hittade test id = " + y);
             testindex = y;
             break;
@@ -254,7 +255,7 @@ function correctTest() {
 
     var savedTestIndex = -1;
     for (var y = 0; y < savedTest.testName.length; y++) {
-        if (actualtestname == savedTest.testName[y]) {
+        if (chosenTest == savedTest.testName[y]) {
             savedTestIndex = y;
             break;
         }

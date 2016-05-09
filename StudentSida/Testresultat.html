@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testresultat</title>
+    <link rel="stylesheet" type="text/css" href="CSS/unsemantic-grid-responsive-tablet.css">
+</head>
+<body onload="getTestBreakdown()">
+
+
+<section id="backgroundSection">
+
+    <section class="grid-100" id="headSection">
+        <img class="grid-25" src="Images-StudentSida/logo-footer.png">
+        <div id="labelDiv">
+            <label class="grid-35 prefix-20 student-status" id="123">Inloggad som:<label class="student-status" id="student-name"></label></label>
+        </div>
+    </section>
+
+    <section class="grid-100" id="timer">
+        <p>
+            Ditt Testresultat är <div id="res"></div>
+        </p>
+    </section>
+
+    <section class="grid-100">
+        <p id="breakdown">
+        <script src="JS/TestBreakdown.js"></script>
+
+
+        </p>
+    </section>
+
+</section>
+<div class="storres">
+
+
+
+</div>
+
+
+
+</body>
+</html>
