@@ -111,7 +111,7 @@ function saveTestInfo() {
 
     console.log("efter koll - f" + questionNumber);
 
-    if (isNewName) {
+    if (isNewName == true) {
         console.log("isNewName - f" + questionNumber);
 
         /*
