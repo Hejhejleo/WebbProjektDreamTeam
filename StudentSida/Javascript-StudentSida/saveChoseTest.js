@@ -17,12 +17,21 @@ $(document).ready(function () {
     });
 
 
-    $("#start-test").click(function () {
+    $("body").on("click","#choose-test",function () {
         if (sessionStorage.getItem("chosenTest") == null || sessionStorage.getItem("chosenTest") == "") {
             alert("Ett test måste väljas!");
         } else {
-            console.log("Starta testet: " + sessionStorage.getItem("chosenTest"));
+            console.log("Valt testet: " + sessionStorage.getItem("chosenTest"));
+            drawTestInfo();
+            $("#choose-test").val("Starta Provet")
+            $("#choose-test").attr("id","start-test");
         }
+    });
+
+    $("body").on("click","#start-test",function () {
+
+        console.log("Starta testet: "+sessionStorage.getItem("chosenTest"));
+
     });
 
 
