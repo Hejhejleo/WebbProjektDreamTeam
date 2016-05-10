@@ -40,25 +40,11 @@ label {
     padding-right: 10px;
 }
 
-#dropZone, #twoSCid, #threeSCid, #fourSCid, #twoMCid, #threeMCid, #fourMCid, #fiveMCid, #sixMCid{
+#twoSCid, #threeSCid, #fourSCid, #twoMCid, #threeMCid, #fourMCid, #fiveMCid, #sixMCid{
     margin-left: 320px;
 }
 
-#dropZone {
-    width: 100px;
-    height: 100px;
-    background-color: lightgrey;
-    border: 1px dashed;
-    /*margin-bottom: 20px;*/
-    display: block;
-}
-
-.imgClass {
-    max-width: 100%;
-    height: auto;
-}
-
-#onlyGtest, textarea{
+#imageURL, #onlyGtest, textarea{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
 }

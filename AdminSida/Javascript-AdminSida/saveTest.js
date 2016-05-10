@@ -17,6 +17,7 @@ var testTimeArray = [];
 var gProcentArray = [];
 var vgProcentArray = [];
 var questionArray = [];
+var imageURLArray = []; //TODO bildhantering
 var answerArray = [];
 var pointsArray = [];
 var correctAnswersArray = [];
@@ -26,6 +27,7 @@ var answerNotChecked = false;
 
 var questionText;
 var questionType;
+var imageURL; //TODO bildhantering
 var numberOfAnswers;
 var answers = [];
 var answer1, answer2, answer3, answer4, answer5, answer6;
@@ -77,8 +79,7 @@ function saveTestInfo() {
                 document.getElementById("createQuestionForm").style.visibility = "visible";
                 document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
             } else if (vgPercent <= gPercent) {
-                alert("Gränsen för VG måste vara högre än för G." + "\nG-gräns: " + gPercent +
-                    "\nVG-gräns: " + vgPercent);
+                alert("Gränsen för VG måste vara högre än för G.");
             } else {
                 document.getElementById("createQuestionForm").style.visibility = "visible";
                 document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
@@ -98,6 +99,7 @@ function saveQuestion() {
 
     questionText = document.getElementById('questionText').value;
     questionType = document.getElementById('typeId').options[document.getElementById('typeId').selectedIndex].value;
+    imageURL = document.getElementById('imageURL').value; //TODO bildhantering
     points = +document.getElementById('maxPoint').value;
     isChecked = false;
 
@@ -108,11 +110,6 @@ function saveQuestion() {
     } else if (points <= 0) {
         alert("Ange uppgiftens poäng");
     } else {
-        /*
-         questionArray.push(questionText);
-         questionTypeArray.push(questionType);
-         pointsArray.push(points);
-         */
         if (questionType === 'singleChoice') {
             numberOfAnswers = document.getElementById('numberOfAnswersSC').value;
             if (numberOfAnswers === 'twoSC') {
@@ -358,45 +355,39 @@ function saveQuestion() {
         else {
             answerArray.push(answers);
             questionArray.push(questionText);
+            imageURLArray.push(imageURL); //TODO bildhantering
             questionTypeArray.push(questionType);
             pointsArray.push(points);
 
             parsed = JSON.parse(localStorage.getItem(testStorageName));
-
             parsed.questionString.push(questionArray);
+            //TODO bildhantering
             parsed.answerType.push(questionTypeArray);
             parsed.points.push(pointsArray);
             parsed.answers.push(answerArray);
             parsed.correctAnswers.push(correctAnswersArray);
 
             answers = [];
-
             var test = JSON.parse(localStorage.getItem(testStorageName));
-
             document.getElementById("createQuestionForm").reset();
-
             $("#singleC").hide();
             $("#multiC").hide();
             $("#open").hide();
-      //      document.getElementById("typeId").innerHTML = '';
+            //      document.getElementById("typeId").innerHTML = ''; selectboxar ska nollställas
             document.getElementById("questionId").innerHTML = "Fråga " + ++questionNumber;
             document.getElementById("saveTest").style.visibility = "visible";
         }
     }
-
 }
 
 // TODO saveTest
 function saveTest() {
-
-
     parsed.testName.push(testNameArray);
     parsed.testTime.push(testTimeArray);
     parsed.gProcent.push(gProcentArray);
     parsed.vgProcent.push(vgProcentArray);
 
     var temp;
-
     if (autoCorr == 0) {
         temp = 0;
     }
@@ -404,12 +395,10 @@ function saveTest() {
         temp = 1;
     }
 
-
     parsed.autoCorrect.push(temp);
 
     var data = JSON.stringify(parsed);
     localStorage.setItem(testStorageName, data);
-
     userTest = JSON.parse(localStorage.getItem("usertest"));
     userTest.testName.push(testNameArray);
     var emptyArray = [];
@@ -418,10 +407,8 @@ function saveTest() {
     var objdata = JSON.stringify(userTest);
     localStorage.setItem("usertest", objdata);
 
-
     alert("Testet är sparat");
-
-    $("vgPercent").
+    // $("#vgPercent").  vg-rutan ska "ablas" när test sparas
     $("#onlyGId").removeAttr("checked");
     $('#testHeaderForm')[0].reset();
     $("#createQuestionForm").hide();
