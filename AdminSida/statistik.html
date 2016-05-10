@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <title>Webbprojekt</title>
     <link type="text/css" rel="stylesheet" href="CSS-AdminSida/unsemantic-grid-responsive-tablet.css">
+    <link type="text/css" rel="stylesheet" href="CSS-AdminSida/statistik.css">
     <script type="text/javascript" src="Javascript-AdminSida/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="Javascript-AdminSida/progressBar.min.js"></script>
     <script type="text/javascript" src="Javascript-AdminSida/statistik.js"></script>
+    <script type="text/javascript" src="Javascript-AdminSida/progressBar.js"></script>
+
 </head>
 <body class="grid-container">
 
 
-<section class="grid-35 prefix-30 selectProv">
+<section class="grid-33 prefix-40 selectProv">
     <label for="selectProv">Prov</label>
     <select name="prov" id="selectProv">
         <option></option>
@@ -20,57 +24,67 @@
 
 <section class="grid-100">
 
-    <section class="grid-70">
-    <label>Hur många gjorde provet</label>
-        <label id="amount"></label>
+    <hr>
 
-        <hr>
-
-        <label>Max prov poäng</label>
-        <label id="maxPoints"></label>
-
-        <hr>
-
-        <label>Antal IG</label>
-        <label id="IGs"></label>
-        <label id="procentIG"></label>
-
-        <hr>
-
-        <label>Antal G</label>
-        <label id="Gs"></label>
-        <label id="procentG"></label>
-
-        <hr>
-
-        <label>Antal VG</label>
-        <label id="VGs"></label>
-        <label id="procentVG"></label>
-
-        <hr>
-
-        <label>Antal Godkända</label>
-        <label id="passes"></label>
-        <label id="procentPasses"></label>
-
-        <hr>
-
-
-        <label>Medelpoäng per prov</label>
-        <label id="average"></label>
-
-        <hr>
-
+    <section class="grid-70 prefix-15 headSections">
+        <label class="grid-50 labelName2">Hur många gjorde provet</label>
+        <label id="amount" class="grid-50 labelValues"></label>
     </section>
 
-    <section class="grid-100">
 
-    HÄR SKRIVER VI IN FRÅGORNA.
 
+    <section class="grid-70 prefix-15 headSections">
+        <label class="grid-50 labelName2">Max prov poäng</label>
+        <label id="maxPoints" class="grid-50 labelValues"></label>
     </section>
 
+
+    <section class="grid-70 prefix-15 headSections">
+        <label class="grid-50 labelName2">Medelpoäng per prov</label>
+        <label id="average" class="grid-50 labelValues"></label>
+    </section>
+
+    <hr>
+
+    <section class="grid-80 statSection">
+        <label class="grid-20 labelName">Antal IG</label>
+        <label id="IGs" class="grid-10 antal"></label>
+        <div id="container" class="grid-25"></div>
+        <label id="procentIG" class="grid-25 procentValues"></label>
+    </section>
+
+    <hr>
+
+    <section class="grid-80 statSection">
+        <label class="grid-20 labelName">Antal G</label>
+        <label id="Gs" class="grid-10 antal"></label>
+        <div id="container2" class="grid-25"></div>
+        <label id="procentG" class="grid-25 procentValues"></label>
+    </section>
+
+    <hr>
+
+    <section class="grid-80 statSection">
+        <label class="grid-20 labelName">Antal VG</label>
+        <label id="VGs" class="grid-10 antal"></label>
+        <div id="container3" class="grid-25"></div>
+        <label id="procentVG" class="grid-25 procentValues"></label>
+    </section>
+
+    <hr>
+
+    <section class="grid-80 statSection">
+        <label class="grid-20 labelName" id="labelnamee">Antal Godkända</label>
+        <label id="passes" class="grid-10 antal"></label>
+        <div id="container4" class="grid-25"></div>
+        <label id="procentPasses" class="grid-25 procentValues"></label>
+    </section>
+
+    <hr>
 
 </section>
+
+
 
 
 

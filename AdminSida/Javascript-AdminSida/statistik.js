@@ -5,6 +5,54 @@
 var testData;
 var chosenTest;
 
+var bar = new ProgressBar.Circle('#container', {
+    strokeWidth: 6,
+    easing: 'easeInOut',
+    duration: 1400,
+    color: '#cc0000',
+    trailColor: '#eee',
+    trailWidth: 1,
+    svgStyle: {width: '180px', height: '180px'}
+});
+
+var bar2 = new ProgressBar.Circle('#container2', {
+    strokeWidth: 6,
+    easing: 'easeInOut',
+    duration: 1400,
+    color: '#339933',
+    trailColor: '#eee',
+    trailWidth: 1,
+    svgStyle: {width: '180px', height: '180px'}
+});
+
+var bar3 = new ProgressBar.Circle('#container3', {
+    strokeWidth: 6,
+    easing: 'easeInOut',
+    duration: 1400,
+    color: '#3366ff',
+    trailColor: '#eee',
+    trailWidth: 1,
+    svgStyle: {width: '180px', height: '180px'}
+});
+
+var bar4 = new ProgressBar.Circle('#container4', {
+    strokeWidth: 6,
+    easing: 'easeInOut',
+    duration: 1400,
+    color: '#EE7202',
+    trailColor: '#eee',
+    trailWidth: 1,
+    svgStyle: {width: '180px', height: '180px'}
+});
+
+bar.animate(0.0);
+
+bar2.animate(0.0);
+
+bar3.animate(0.0);
+
+bar4.animate(0.0);
+
 $(".getClasses2").click(function () {
     console.log("getClasses2");
     testData = JSON.parse(localStorage.getItem("testdata"));
@@ -70,6 +118,11 @@ function getStats() {
     var IGpercentLabel = document.getElementById('procentIG');
     IGpercentLabel.innerHTML = percentIG.toFixed(2) + '%';
 
+    bar.animate(percentIG / 100);
+
+
+
+
     var numberOfGs = 0;
     for(var i = 0 ; i<correctedTest.studentGrade.length ; i++) {
         if (correctedTest.testName[i] == chosenTest) {
@@ -87,6 +140,8 @@ function getStats() {
     percentG = (numberOfGs * 100) / numberOfTestsDone;
     var GpercentLabel = document.getElementById('procentG');
     GpercentLabel.innerHTML = percentG.toFixed(2) + '%';
+
+    bar2.animate(percentG / 100);
 
     var numberOfVGs = 0;
     for(var i = 0 ; i<correctedTest.studentGrade.length ; i++) {
@@ -106,8 +161,13 @@ function getStats() {
     var VGpercentLabel = document.getElementById('procentVG');
     VGpercentLabel.innerHTML = percentVG.toFixed(2) + '%';
 
+    bar3.animate(percentVG / 100);
+
     var numberOfPasses = 0;
     numberOfPasses = numberOfGs + numberOfVGs;
+    console.log(numberOfPasses);
+
+    bar4.animate(numberOfPasses / numberOfTestsDone);
 
     var passesLabel = document.getElementById('passes');
     passesLabel.innerHTML = numberOfPasses;
@@ -131,4 +191,7 @@ function getStats() {
 
 
 }
+
+
+
 

@@ -1,0 +1,63 @@
+hr{
+    background-color: lightgrey;
+}
+
+option{
+
+}
+
+#container{
+    color: green;
+}
+
+.statSection{
+    margin-left: 200px;
+}
+
+.labelName{
+    font-family: Arial, Helvetica, Sans-serif;
+    font-size: 30px;
+    margin-top: 80px
+}
+
+.labelName2{
+    font-family: Arial, Helvetica, Sans-serif;
+    font-size: 20px;
+}
+
+.procentValues{
+    font-family: Arial, Helvetica, Sans-serif;
+    font-size: 30px;
+    margin-top: 80px;
+}
+
+.antal{
+    font-family: Arial, Helvetica, Sans-serif;
+    font-size: 50px;
+    margin-top: 70px;
+}
+
+.labelValues{
+    font-family: Arial, Helvetica, Sans-serif;
+    font-size: 20px;
+}
+
+.headSections{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+#container, #container2, #container3, #container4{
+
+}
+
+#labelNamee{
+    text-align: center;
+}
+
+
+
+
+
