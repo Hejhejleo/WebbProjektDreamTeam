@@ -66,6 +66,7 @@ function getTestDoneData() {
     }
     console.log(studentAnsArray);
     saveDoneTest();
+    location.href="../Testresultat.html";
 }
 
 function saveDoneTest() {
@@ -131,7 +132,7 @@ function saveDoneTest() {
 
     var mailArray = [];
     var userMail = sessionStorage.getItem('loggedInAs');
-    mailArray.push('r@r.com');
+    mailArray.push(userMail);
 
 
     //var answerArray1 = [];
@@ -251,7 +252,7 @@ function correctTest() {
 
     var mailArray = [];
     var userMail = sessionStorage.getItem('loggedInAs');
-    mailArray.push('r@r.com');
+    mailArray.push(userMail);
 
     var savedTestIndex = -1;
     for (var y = 0; y < savedTest.testName.length; y++) {
