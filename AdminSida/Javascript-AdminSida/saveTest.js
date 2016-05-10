@@ -84,12 +84,12 @@ function saveTestInfo() {
                 document.getElementById("createQuestionForm").style.visibility = "visible";
                 document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
             }
+            testNameArray.push(testName);
+            testTimeArray.push(testTime);
+            gProcentArray.push(gPercent);
+            vgProcentArray.push(vgPercent);
+            // TODO onlyGquestions används inte vidare i koden, om vgpercent = null bara G-frågor?
         }
-        testNameArray.push(testName);
-        testTimeArray.push(testTime);
-        gProcentArray.push(gPercent);
-        vgProcentArray.push(vgPercent);
-        // TODO onlyGquestions används inte vidare i koden, om vgpercent = null bara G-frågor?
     }
 }
 
