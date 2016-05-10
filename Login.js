@@ -10,6 +10,8 @@ $(document).ready(function () {
     test = JSON.parse(localStorage.getItem("testdata"));
     sessionStorage.setItem("loggedInAs", "");
     seesion = sessionStorage.getItem("loggedInAs");
+    sessionStorage.removeItem("chosenTest");
+
 
     if (users == null) {
         var admin = {
