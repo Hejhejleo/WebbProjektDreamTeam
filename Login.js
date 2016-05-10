@@ -31,7 +31,7 @@ $(document).ready(function () {
             "answerType": [["singleChoice", "multiChoice"]],
             "points": [[1,2]],
             "answers": [[["Stockholm", "Göteborg", "Malmö", "Luleå"], ["Göteborg", "Stenköping", "London"]]],
-            "correctAnswers": [[["Stockholm"], ["Göteborg", "London"]]],
+            "correctAnswers": [["Stockholm"], ["Göteborg", "London"]],
             "gProcent": [[60]],
             "vgProcent": [[80]],
             "autoCorrect": [[1]]

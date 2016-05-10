@@ -21,16 +21,16 @@ function getTestBreakdown() {
 
     var  contain = document.createElement("div");
 
-    for(var t = 0 ; t < corTest.questionString[testindex][0].length ; t++) {
+    for(var t = 0 ; t < corTest.questionString[testindex].length ; t++) {
         //var s = corTest.questionString[testindex][t];
         var stuff = document.createElement("p");
 
         console.log('t = ' + t);
 
         var text = document.createTextNode("Frågan var : " + corTest.questionString[testindex][0][t] +
-            "ditt svar var : " + corTest.studentAnswers[testindex][t] + "rätt svar var " + corTest.correctAnswers[testindex][t] +
-            "antal poäng du får är " + corTest.studentPointsPerQue[testindex] + "bedömningen är " + 
-            corTest.correctionMessagePerQue[t]);
+            "ditt svar var : " + corTest.studentAnswers[testindex][0][t] + "rätt svar var " + corTest.correctAnswers[testindex][0][t] +
+            "antal poäng du får är " + corTest.studentPointsPerQue[testindex][t] + "bedömningen är " +
+            corTest.correctionMessagePerQue[testindex][t]);
         console.log(text);
         stuff.appendChild(text);
         contain.appendChild(stuff);

@@ -282,7 +282,7 @@ function correctTest() {
         else if(savedTest.answerType[savedTestIndex][s] == 'multiChoice'){
 
             for(var j = 0 ; j< studentAnsArray[s].length ; j++){
-                if(studentAnswerArrayAsText[s][j]== savedTest.correctAnswers[savedTestIndex][0][s][j]){
+                if(studentAnswerArrayAsText[s][j]== savedTest.correctAnswers[savedTestIndex][s][j]){
                     multiQuePoints++;
                 }
             }

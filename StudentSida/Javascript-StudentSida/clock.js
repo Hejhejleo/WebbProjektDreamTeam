@@ -22,6 +22,7 @@ $(document).ready(function () {
         secondsToHours(second);
         if (second <= 0) {
             alert("Nu är testet slut!");
+            getTestDoneData();
         }
     }
 
