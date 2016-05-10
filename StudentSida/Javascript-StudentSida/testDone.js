@@ -66,7 +66,7 @@ function getTestDoneData() {
     }
     console.log(studentAnsArray);
     saveDoneTest();
-    location.href="Testresultat.html";
+
 }
 
 function saveDoneTest() {
@@ -361,5 +361,5 @@ function correctTest() {
 
     var objdata = JSON.stringify(parsed3);
     localStorage.setItem("correctedtest", objdata);
-
+    location.href="Testresultat.html";
 }

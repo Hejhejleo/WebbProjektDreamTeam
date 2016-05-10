@@ -6,7 +6,7 @@
 function getTestBreakdown() {
 
     var chosenTest = sessionStorage.getItem('chosenTest');
-    var corTest = JSON.parse(localStorage.getItem(('correctedtest')));
+    var corTest = JSON.parse(localStorage.getItem('correctedtest'));
 
     //loading tests from localstorage
     //finding the the test that should be answered
@@ -21,15 +21,23 @@ function getTestBreakdown() {
 
     var  contain = document.createElement("div");
 
-    for(var t = 0 ; t < corTest.questionString[testindex] ; t++) {
-        var s = corTest.questionString[testindex][t];
+    for(var t = 0 ; t < corTest.questionString[testindex][0].length ; t++) {
+        //var s = corTest.questionString[testindex][t];
         var stuff = document.createElement("p");
-        var text = document.createTextNode("Frågan var : " + corTest.questionString[testindex][t] + "ditt svar var : " + corTest.studentAnswers[testindex][t] + "rätt svar var " + corTest[testindex][t] + "antal poäng du får är " + corTest.studentPointsPerQue[testindex] + "bedömningen är " + corTest.correctionMessagePerQue[t]);
+
+        console.log('t = ' + t);
+
+        var text = document.createTextNode("Frågan var : " + corTest.questionString[testindex][0][t] +
+            "ditt svar var : " + corTest.studentAnswers[testindex][t] + "rätt svar var " + corTest.correctAnswers[testindex][t] +
+            "antal poäng du får är " + corTest.studentPointsPerQue[testindex] + "bedömningen är " + 
+            corTest.correctionMessagePerQue[t]);
+        console.log(text);
         stuff.appendChild(text);
         contain.appendChild(stuff);
 
     }
 
-    document.getElementById("res").appendChild(document.createTextNode(corTest.studentGrade[testindex]));
+
+    document.getElementById("res").appendChild(document.createTextNode(corTest.studentGrade[corTest.studentGrade.length -1]));
      document.body.appendChild(contain);
 }
