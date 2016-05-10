@@ -8,6 +8,7 @@ $(document).ready(function () {
 function checkRelationship() {
     var user = sessionStorage.getItem("loggedInAs");
     var test = sessionStorage.getItem("chosenTest");
+    var userTest = JSON.parse(localStorage.getItem("usertest"));
 
     var currentTestIndex;
 

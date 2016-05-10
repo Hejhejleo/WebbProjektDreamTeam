@@ -2,7 +2,7 @@
 function removeConnection(currentUserMail, currentTestName) {
     var users = JSON.parse(localStorage.getItem("users"));
     var userTest = JSON.parse(localStorage.getItem("usertest"));
-
+    console.log(currentTestName+ " " + currentUserMail);
     localStorage.removeItem(currentUserMail+currentTestName);
 
     var currentTestIndex;
@@ -13,6 +13,7 @@ function removeConnection(currentUserMail, currentTestName) {
             for (var j = 0; j < userTest.mail[currentTestIndex].length; j++) {
                 if (currentUserMail == userTest.mail[currentTestIndex][j]) {
                     userTest.mail[i].splice(j, 1);
+                    localStorage.setItem("usertest",JSON.stringify(userTest));
 
                 }
             }
