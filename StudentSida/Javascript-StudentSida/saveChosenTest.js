@@ -28,6 +28,7 @@ $(document).ready(function () {
         }
     });
 
+    //Här ska koden för länkningen till göra provet som student stoppas in så man blir länkad till sidan där man gör provet.
     $("body").on("click","#start-test",function () {
 
         console.log("Starta testet: "+sessionStorage.getItem("chosenTest"));

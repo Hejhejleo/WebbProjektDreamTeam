@@ -21,7 +21,7 @@ $(document).ready(function () {
         second--;
         secondsToHours(second);
         if (second <= 0) {
-            alert("Nu är testet slut!")
+            alert("Nu är testet slut!");
         }
     }
 
