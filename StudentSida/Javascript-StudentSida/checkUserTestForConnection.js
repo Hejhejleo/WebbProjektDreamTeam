@@ -9,6 +9,7 @@ function checkRelationship() {
     var user = sessionStorage.getItem("loggedInAs");
     var test = sessionStorage.getItem("chosenTest");
     var userTest = JSON.parse(localStorage.getItem("usertest"));
+    var hasConnection = true;
 
     var currentTestIndex;
 
@@ -17,12 +18,20 @@ function checkRelationship() {
             currentTestIndex = i;
             for (var j = 0; j < userTest.mail[currentTestIndex].length; j++) {
                 if (user == userTest.mail[currentTestIndex][j]) {
-                    location.href="../Login.html";
-                }else{
-
+                    hasConnection = true;
+                    break;
+                } else {
+                    hasConnection = false;
                 }
+
             }
         }
     }
+    if (hasConnection) {
+
+    } else {
+        location.href = "../Login.html";
+    }
+
 
 }
