@@ -32,6 +32,7 @@ $(document).ready(function () {
     $("body").on("click","#start-test",function () {
 
         console.log("Starta testet: "+sessionStorage.getItem("chosenTest"));
+        location.href="../StudentSida/StudenTest.html";
 
     });
 

@@ -43,8 +43,8 @@ $(document).ready(function () {
     }
 
     function setTimestamp() {
-        var date = new Date();
-        localStorage.setItem(user + chosenTestName, date.now());
+        var date = Date().now;
+        localStorage.setItem(user + chosenTestName, date);
     }
 
     function getTimestamp() {
@@ -63,8 +63,8 @@ $(document).ready(function () {
     }
 
     function setSecond() {
-        var date = new Date();
-        second = secondForTest - (Math.round(date.now() - timestamp) / 1000);
+        var date = Date.now();
+        second = secondForTest - (Math.round(date - timestamp) / 1000);
     }
 
 });
