@@ -66,7 +66,7 @@ function getTestDoneData() {
     }
     console.log(studentAnsArray);
     saveDoneTest();
-    location.href="../Testresultat.html";
+    location.href="Testresultat.html";
 }
 
 function saveDoneTest() {
