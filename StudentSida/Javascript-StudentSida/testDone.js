@@ -80,7 +80,7 @@ function saveDoneTest() {
             "answerType": [["singleChoice", "multiChoice"]],
             "points": [[1,2]],
             "answers": [[["Stockholm", "Göteborg", "Malmö", "Luleå"], ["Göteborg", "Stenköping", "London"]]],
-            "correctAnswers": [[["Stockholm"], ["Göteborg", "London"]]],
+            "correctAnswers": [["Stockholm", ["Göteborg", "London"]]],
             "gProcent": [[60]],
             "vgProcent": [[80]],
             "autoCorrect": [[1]],
@@ -200,7 +200,7 @@ function correctTest() {
             "answerType": [["singleChoice", "multiChoice"]],
             "points": [[1,2]],
             "answers": [[["Stockholm", "Göteborg", "Malmö", "Luleå"], ["Göteborg", "Stenköping", "London"]]],
-            "correctAnswers": [[["Stockholm"], ["Göteborg", "London"]]],
+            "correctAnswers": [["Stockholm", ["Göteborg", "London"]]],
             "gProcent": [[60]],
             "vgProcent": [[80]],
             "autoCorrect": [[1]],
@@ -269,7 +269,7 @@ function correctTest() {
     while (s<studentAnsArray.length) {
         if(savedTest.answerType[savedTestIndex][s] == 'singleChoice'){
 
-            if(studentAnswerArrayAsText[s]== savedTest.correctAnswers[savedTestIndex][0][s]){
+            if(studentAnswerArrayAsText[s]== savedTest.correctAnswers[savedTestIndex][s]){
                 studentPointsPerQueArray.push(savedTest.points[savedTestIndex][s]);
             }
             else{
