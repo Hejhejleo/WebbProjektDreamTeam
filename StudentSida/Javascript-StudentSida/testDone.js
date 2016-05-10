@@ -361,5 +361,8 @@ function correctTest() {
 
     var objdata = JSON.stringify(parsed3);
     localStorage.setItem("correctedtest", objdata);
+
+    removeConnection(sessionStorage.getItem("loggedInAs"), sessionStorage.getItem("chosenTest"));
+    alert("something");
     location.href="Testresultat.html";
 }

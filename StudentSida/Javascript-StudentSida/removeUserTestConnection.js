@@ -1,7 +1,7 @@
 
 function removeConnection(currentUserMail, currentTestName) {
     var users = JSON.parse(localStorage.getItem("users"));
-    var userTest = JSON.parse(localStorage.getItem("userTest"));
+    var userTest = JSON.parse(localStorage.getItem("usertest"));
 
     localStorage.removeItem(currentUserMail+currentTestName);
 
