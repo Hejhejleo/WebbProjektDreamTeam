@@ -69,8 +69,8 @@ function saveTestInfo() {
                 isNewName = false;
             }
         }
+
         if (isNewName == true) {
-            console.log("isNewName - f" + questionNumber);
             if (testTime === 0) {
                 alert("Ange tid för testet")
             } else if (gPercent === 0) {
@@ -78,21 +78,26 @@ function saveTestInfo() {
             } else if (onlyGquestions) {
                 document.getElementById("createQuestionForm").style.visibility = "visible";
                 document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
+                testNameArray.push(testName);
+                testTimeArray.push(testTime);
+                gProcentArray.push(gPercent);
+                vgProcentArray.push(vgPercent);
+                // TODO onlyGquestions används inte vidare i koden, om vgpercent = null bara G-frågor?
+
             } else if (vgPercent <= gPercent) {
                 alert("Gränsen för VG måste vara högre än för G.");
             } else {
                 document.getElementById("createQuestionForm").style.visibility = "visible";
                 document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
+                testNameArray.push(testName);
+                testTimeArray.push(testTime);
+                gProcentArray.push(gPercent);
+                vgProcentArray.push(vgPercent);
+                // TODO onlyGquestions används inte vidare i koden, om vgpercent = null bara G-frågor?
             }
-            testNameArray.push(testName);
-            testTimeArray.push(testTime);
-            gProcentArray.push(gPercent);
-            vgProcentArray.push(vgPercent);
-            // TODO onlyGquestions används inte vidare i koden, om vgpercent = null bara G-frågor?
         }
     }
 }
-
 
 // TODO saveQuestion
 function saveQuestion() {
@@ -408,17 +413,6 @@ function saveTest() {
     localStorage.setItem("usertest", objdata);
 
     alert("Testet är sparat");
-    // $("#vgPercent").  vg-rutan ska "ablas" när test sparas
-    $("#onlyGId").removeAttr("checked");
-    $('#testHeaderForm')[0].reset();
-    $("#createQuestionForm").hide();
-    $("#saveTest").hide();
-    questionNumber = 1;
+    location.href = "#framsida";
 }
-
-/*$("#saveTest").click(function(){
- $('#testHeaderForm')[0].reset();
- $("#createQuestionForm").hide();
- $("#saveTest").hide();
- });*/
 
