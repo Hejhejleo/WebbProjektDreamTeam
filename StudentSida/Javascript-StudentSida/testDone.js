@@ -10,7 +10,7 @@ var studentAnsArray = [];
 var testindex = 0;
 var studentAnswerArrayAsText = [];
 //var actualtestname = "test2";
-var chosenTest = JSON.parse(sessionStorage.getItem('chosenTest'));
+var chosenTest = sessionStorage.getItem('chosenTest');
 
 function getTestDoneData() {
 
