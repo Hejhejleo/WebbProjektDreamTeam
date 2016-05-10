@@ -112,8 +112,8 @@ function saveDoneTest() {
         answersArray.push(parsed.answers[testindex][i]);
     }
 
-    var correctAnswersArray = [];
-    correctAnswersArray.push(parsed.correctAnswers[testindex]);
+    //var correctAnswersArray = [];
+    //correctAnswersArray.push(parsed.correctAnswers[testindex]);
 
     var gProcentArray = [];
     for(var i = 0 ; i<parsed.gProcent[testindex].length ; i++){
@@ -169,7 +169,7 @@ function saveDoneTest() {
     parsed2.answerType.push(answerTypeArray);
     parsed2.points.push(pointsArray);
     parsed2.answers.push(answersArray);
-    parsed2.correctAnswers.push(correctAnswersArray);
+    parsed2.correctAnswers.push(parsed.correctAnswers[testindex]);
     parsed2.gProcent.push(gProcentArray);
     parsed2.vgProcent.push(vgProcentArray);
     parsed2.autoCorrect.push(autocorrectArray);
