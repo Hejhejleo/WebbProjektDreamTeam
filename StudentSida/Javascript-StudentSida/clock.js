@@ -1,9 +1,9 @@
 $(document).ready(function () {
     var second;
     var tests = JSON.parse(localStorage.getItem("testdata"));
-    var chosenTestName = localStorage.getItem("chosenTest");
+    var chosenTestName = sessionStorage.getItem("chosenTest");
     var testIndex;
-    var user = localStorage.getItem("loggedInAs");
+    var user = sessionStorage.getItem("loggedInAs");
     var timestamp;
     var secondForTest;
 
@@ -36,19 +36,23 @@ $(document).ready(function () {
             if (chosenTestName == tests.testName[i]) {
                 console.log("Hittade test index = " + i);
                 testIndex = i;
+                console.log(testIndex);
                 break;
             }
         }
-        secondForTest = tests.testTime[testIndex] * 60;
+        secondForTest = tests.testTime[testIndex]*60;
+        console.log("Time for Test: "+secondForTest);
     }
 
     function setTimestamp() {
-        var date = Date().now;
+        var date = Date.now();
         localStorage.setItem(user + chosenTestName, date);
+        console.log(date);
     }
 
     function getTimestamp() {
         timestamp = localStorage.getItem(user + chosenTestName);
+        console.log("timestamp: "+timestamp);
     }
 
 
@@ -59,12 +63,22 @@ $(document).ready(function () {
 
         var result = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
 
-        console.log(result)
+        $("#counter").html(result);
     }
 
     function setSecond() {
         var date = Date.now();
-        second = secondForTest - (Math.round(date - timestamp) / 1000);
+        console.log("date: "+date);
+        var temp = date - timestamp;
+        console.log("temp1: "+temp);
+        temp = temp / 1000;
+        console.log("temp2: "+temp);
+        temp = Math.round(temp);
+        console.log("temp3: "+temp);
+        temp = secondForTest - temp;
+        console.log("sft: "+secondForTest);
+        second = temp;
+        console.log("second: "+second);
     }
 
 });
