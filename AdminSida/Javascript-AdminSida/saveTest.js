@@ -89,7 +89,6 @@ function saveTestInfo() {
         gProcentArray.push(gPercent);
         vgProcentArray.push(vgPercent);
         // TODO onlyGquestions används inte vidare i koden, om vgpercent = null bara G-frågor?
-
     }
 }
 
@@ -104,14 +103,16 @@ function saveQuestion() {
 
     if (questionText == "") {
         alert("Ange frågetext");
-    } else if (questionType == "") {
+    } else if (questionType == "" || questionType == 0 || questionType == '') {
         alert("Ange frågetyp");
     } else if (points <= 0) {
         alert("Ange uppgiftens poäng");
     } else {
-        questionArray.push(questionText);
-        questionTypeArray.push(questionType);
-        pointsArray.push(points);
+        /*
+         questionArray.push(questionText);
+         questionTypeArray.push(questionType);
+         pointsArray.push(points);
+         */
         if (questionType === 'singleChoice') {
             numberOfAnswers = document.getElementById('numberOfAnswersSC').value;
             if (numberOfAnswers === 'twoSC') {
@@ -350,14 +351,15 @@ function saveQuestion() {
         else if (questionType === 'open') {
             autoCorr = 0;
         }
-
         answerNotChecked = ((!isChecked) && (questionType !== 'open'));
-
         if (answerNotChecked) {
             alert("Ange det rätta svaret på frågan");
         }
         else {
             answerArray.push(answers);
+            questionArray.push(questionText);
+            questionTypeArray.push(questionType);
+            pointsArray.push(points);
 
             parsed = JSON.parse(localStorage.getItem(testStorageName));
 
@@ -376,11 +378,12 @@ function saveQuestion() {
             $("#singleC").hide();
             $("#multiC").hide();
             $("#open").hide();
-
+      //      document.getElementById("typeId").innerHTML = '';
             document.getElementById("questionId").innerHTML = "Fråga " + ++questionNumber;
             document.getElementById("saveTest").style.visibility = "visible";
         }
     }
+
 }
 
 // TODO saveTest
@@ -418,6 +421,7 @@ function saveTest() {
 
     alert("Testet är sparat");
 
+    $("vgPercent").
     $("#onlyGId").removeAttr("checked");
     $('#testHeaderForm')[0].reset();
     $("#createQuestionForm").hide();
