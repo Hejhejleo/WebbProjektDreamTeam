@@ -17,9 +17,9 @@ function checkRelationship() {
             currentTestIndex = i;
             for (var j = 0; j < userTest.mail[currentTestIndex].length; j++) {
                 if (user == userTest.mail[currentTestIndex][j]) {
-
+                    location.href="../Login.html";
                 }else{
-                location.href="../Login.html";
+
                 }
             }
         }
