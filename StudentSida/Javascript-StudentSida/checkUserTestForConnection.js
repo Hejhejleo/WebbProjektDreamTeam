@@ -9,7 +9,7 @@ function checkRelationship() {
     var user = sessionStorage.getItem("loggedInAs");
     var test = sessionStorage.getItem("chosenTest");
     var userTest = JSON.parse(localStorage.getItem("usertest"));
-    var hasConnection = true;
+    var hasConnection = false;
 
     var currentTestIndex;
 
