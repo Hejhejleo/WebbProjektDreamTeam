@@ -131,9 +131,11 @@ function saveQuestion() {
                     correctAnswer = answer2;
                     isChecked = true;
                 }
-                answers.push(answer1);
-                answers.push(answer2);
-                correctAnswersArray.push(correctAnswer);
+                if (isChecked === true) {
+                    answers.push(answer1);
+                    answers.push(answer2);
+                    correctAnswersArray.push(correctAnswer);
+                }
             }
             else if (numberOfAnswers === 'threeSC') {
                 answer1 = document.getElementById('answerSC13text').value;
@@ -154,10 +156,12 @@ function saveQuestion() {
                     correctAnswer = answer3;
                     isChecked = true;
                 }
-                answers.push(answer1);
-                answers.push(answer2);
-                answers.push(answer3);
-                correctAnswersArray.push(correctAnswer);
+                if (isChecked === true) {
+                    answers.push(answer1);
+                    answers.push(answer2);
+                    answers.push(answer3);
+                    correctAnswersArray.push(correctAnswer);
+                }
             }
             else if (numberOfAnswers === 'fourSC') {
                 answer1 = document.getElementById('answerSC14text').value;
@@ -184,11 +188,13 @@ function saveQuestion() {
                     correctAnswer = answer4;
                     isChecked = true;
                 }
-                answers.push(answer1);
-                answers.push(answer2);
-                answers.push(answer3);
-                answers.push(answer4);
-                correctAnswersArray.push(correctAnswer);
+                if (isChecked === true) {
+                    answers.push(answer1);
+                    answers.push(answer2);
+                    answers.push(answer3);
+                    answers.push(answer4);
+                    correctAnswersArray.push(correctAnswer);
+                }
             }
         }
         else if (questionType === 'multiChoice') {
@@ -207,9 +213,11 @@ function saveQuestion() {
                     corrAnsCheckArray.push(answer2);
                     isChecked = true;
                 }
-                answers.push(answer1);
-                answers.push(answer2);
-                correctAnswersArray.push(corrAnsCheckArray);
+                if (isChecked === true) {
+                    answers.push(answer1);
+                    answers.push(answer2);
+                    correctAnswersArray.push(corrAnsCheckArray);
+                }
             }
             else if (numberOfAnswers === 'threeMC') {
                 answer1 = document.getElementById('answerMC13text').value;
@@ -230,10 +238,12 @@ function saveQuestion() {
                     corrAnsCheckArray.push(answer3);
                     isChecked = true;
                 }
-                answers.push(answer1);
-                answers.push(answer2);
-                answers.push(answer3);
-                correctAnswersArray.push(corrAnsCheckArray);
+                if (isChecked === true) {
+                    answers.push(answer1);
+                    answers.push(answer2);
+                    answers.push(answer3);
+                    correctAnswersArray.push(corrAnsCheckArray);
+                }
             }
             else if (numberOfAnswers === 'fourMC') {
                 answer1 = document.getElementById('answerMC14text').value;
@@ -260,12 +270,14 @@ function saveQuestion() {
                     corrAnsCheckArray.push(answer4);
                     isChecked = true;
                 }
-                isChecked = (answer1Chb || answer2Chb || answer3Chb || answer4Chb);
-                answers.push(answer1);
-                answers.push(answer2);
-                answers.push(answer3);
-                answers.push(answer4);
-                correctAnswersArray.push(corrAnsCheckArray);
+                if (isChecked === true) {
+                    isChecked = (answer1Chb || answer2Chb || answer3Chb || answer4Chb);
+                    answers.push(answer1);
+                    answers.push(answer2);
+                    answers.push(answer3);
+                    answers.push(answer4);
+                    correctAnswersArray.push(corrAnsCheckArray);
+                }
             }
             else if (numberOfAnswers === 'fiveMC') {
                 answer1 = document.getElementById('answerMC15text').value;
@@ -298,12 +310,14 @@ function saveQuestion() {
                     corrAnsCheckArray.push(answer5);
                     isChecked = true;
                 }
-                answers.push(answer1);
-                answers.push(answer2);
-                answers.push(answer3);
-                answers.push(answer4);
-                answers.push(answer5);
-                correctAnswersArray.push(corrAnsCheckArray);
+                if (isChecked === true) {
+                    answers.push(answer1);
+                    answers.push(answer2);
+                    answers.push(answer3);
+                    answers.push(answer4);
+                    answers.push(answer5);
+                    correctAnswersArray.push(corrAnsCheckArray);
+                }
             }
             else if (numberOfAnswers === 'sixMC') {
                 answer1 = document.getElementById('answerMC16text').value;
@@ -342,13 +356,15 @@ function saveQuestion() {
                     corrAnsCheckArray.push(answer6);
                     isChecked = true;
                 }
-                answers.push(answer1);
-                answers.push(answer2);
-                answers.push(answer3);
-                answers.push(answer4);
-                answers.push(answer5);
-                answers.push(answer6);
-                correctAnswersArray.push(corrAnsCheckArray);
+                if (isChecked === true) {
+                    answers.push(answer1);
+                    answers.push(answer2);
+                    answers.push(answer3);
+                    answers.push(answer4);
+                    answers.push(answer5);
+                    answers.push(answer6);
+                    correctAnswersArray.push(corrAnsCheckArray);
+                }
             }
         }
         else if (questionType === 'open') {
