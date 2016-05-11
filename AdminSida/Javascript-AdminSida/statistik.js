@@ -62,8 +62,11 @@ $(".getClasses2").click(function () {
     $("#selectProv").append($options)
     for (var i = 0; i < testData.testName.length; i++) {
         var $options = null;
-        $options = $("<option> " + testData.testName[i] + "</option>")
-        $("#selectProv").append($options)
+        if(testData.autoCorrect[i] == 1){
+            $options = $("<option> " + testData.testName[i] + "</option>")
+            $("#selectProv").append($options)
+        }
+
     }
 
 
