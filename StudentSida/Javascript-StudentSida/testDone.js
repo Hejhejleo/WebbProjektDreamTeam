@@ -186,7 +186,8 @@ function saveDoneTest() {
         correctTest();
     }
     else{
-
+        alert("Testet är nu inlämnat. Feedback kommer!");
+        logout();
     }
 
 }
