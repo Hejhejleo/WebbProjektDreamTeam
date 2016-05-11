@@ -64,14 +64,14 @@ $(document).ready(function () {
 
     function drawStudentAnswers() {
         var savedTests = JSON.parse(localStorage.getItem("savedtest"));
-        var $question;
+        var $question="";
         for (var i = 0; i < savedTests.questionString[fbChosenTest].length; i++) {
             $question =
                 "Fråga: " + savedTests.questionString[fbChosenTest][i] + "\n" +
                 "Studentens svar: " + savedTests.studentAnswers[fbChosenTest][i] + "\n" +
                 "Rätt svar: " + savedTests.correctAnswers[fbChosenTest][i] + "\n\n" +
 
-                $("#txtResult").append()
+                $("#txtResult").append($question);
         }
     }
 
