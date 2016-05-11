@@ -76,6 +76,7 @@ function saveTestInfo() {
             } else if (gPercent === 0) {
                 alert("Ange gräns för godkänd")
             } else if (onlyGquestions) {
+                vgPercent = 101;
                 document.getElementById("createQuestionForm").style.visibility = "visible";
                 document.getElementById("questionId").innerHTML = "Fråga " + questionNumber;
                 testNameArray.push(testName);
