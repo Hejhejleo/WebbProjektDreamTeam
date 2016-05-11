@@ -75,6 +75,7 @@ $(document).ready(function () {
                 "Rätt svar: " + savedTests.correctAnswers[fbChosenTest][i] + "\n\n";
 
             $("#txtResult").append($question);
+            console.log($question);
             console.log("Append");
         }
         $("#txtcomment").val("");
@@ -92,6 +93,7 @@ $(document).ready(function () {
 
 
     $("body").on("click", "#sendMail", function () {
+    console.log("EMPTY CONTENT");
         var savedTests = JSON.parse(localStorage.getItem("savedtest"));
 
         var email = fbChosenStudent;
