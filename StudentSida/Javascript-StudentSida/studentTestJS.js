@@ -48,6 +48,8 @@ function myFunction() {
             if(parsed.questionPicture[testindex][n] != null){
                 var image = document.createElement('IMG');
                 image.setAttribute("src",parsed.questionPicture[testindex][n]);
+                image.setAttribute("width","300px");
+                image.setAttribute("heigth","auto");
                 form.appendChild(image);
 
             }
@@ -81,6 +83,8 @@ function myFunction() {
             if(parsed.questionPicture[testindex][n] != null){
                 var image = document.createElement('IMG');
                 image.setAttribute("src",parsed.questionPicture[testindex][n]);
+                image.setAttribute("width","300px");
+                image.setAttribute("heigth","auto");
                 chkform.appendChild(image);
 
             }
@@ -110,6 +114,8 @@ function myFunction() {
             if(parsed.questionPicture[testindex][n] != null){
                 var image = document.createElement('IMG');
                 image.setAttribute("src",parsed.questionPicture[testindex][n]);
+                image.setAttribute("width","300px");
+                image.setAttribute("heigth","auto");
                 freeArea.appendChild(image);
                 
             }

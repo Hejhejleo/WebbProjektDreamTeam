@@ -22,6 +22,16 @@ function getTestBreakdown() {
     console.log('testindex = ' + testindex);
 
     var  contain = document.createElement("div");
+
+    var po = document.createElement("p");
+    var maxPoints = 0;
+    for(var i = 0 ; i<corTest.points[testindex].length; i++){
+        maxPoints += corTest.points[testindex][i];
+    }
+    var pointsText = 'Du fick ' + corTest.totalStudentPoints[testindex] + ' poäng, av max ' + maxPoints  + ' poäng.' + '<br>' + '<br>';
+    po.innerHTML = pointsText;
+    contain.appendChild(po);
+
     console.log("hur många frågor " + corTest.questionString[testindex][0].length);
     for(var t = 0 ; t < corTest.questionString[testindex][0].length ; t++) {
         //var s = corTest.questionString[testindex][t];
