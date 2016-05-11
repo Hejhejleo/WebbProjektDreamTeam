@@ -75,8 +75,9 @@ $(document).ready(function () {
                 "Rätt svar: " + savedTests.correctAnswers[fbChosenTest][i] + "\n\n";
 
             $("#txtResult").append($question);
-            $("#txtcomment").val("");
+            console.log("Append");
         }
+        $("#txtcomment").val("");
     }
 
 
