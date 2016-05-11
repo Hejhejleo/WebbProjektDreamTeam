@@ -19,6 +19,7 @@ function getTestDoneData() {
     parsed = JSON.parse(localStorage.getItem('testdata'));
     //finding the the test that should be answered
 
+
     for (var y = 0; y < parsed.testName.length; y++) {
         if (chosenTest == parsed.testName[y]) {
             console.log("Hittade test id = " + y);
@@ -26,6 +27,8 @@ function getTestDoneData() {
             break;
         }
     }
+    //testindex = parsed.testName.length;
+
 
     var indexToPushSc = null;
 
@@ -217,13 +220,17 @@ function correctTest() {
     }
 
     var savedTest = JSON.parse(localStorage.getItem("savedtest"));
+    var corrTest = JSON.parse(localStorage.getItem("correctedtest"));
+
+    var savedTestIndex = -1;
+    savedTestIndex = (savedTest.testName.length)-1;
 
     var questionArray = [];
-    questionArray.push(savedTest.questionString[testindex]);
+    questionArray.push(savedTest.questionString[savedTestIndex]);
 
 
     var answerTypeArray = [];
-    answerTypeArray.push(savedTest.answerType[testindex]);
+    answerTypeArray.push(savedTest.answerType[savedTestIndex]);
 
 
     //var pointsArray = [];
@@ -231,36 +238,37 @@ function correctTest() {
 
 
     var answersArray = [];
-    answersArray.push(savedTest.answers[testindex]);
+    answersArray.push(savedTest.answers[savedTestIndex]);
 
 
     var correctAnswersArray = [];
-    correctAnswersArray.push(savedTest.correctAnswers[testindex]);
+    correctAnswersArray.push(savedTest.correctAnswers[savedTestIndex]);
 
 
     var gProcentArray = [];
-    gProcentArray.push(savedTest.gProcent[testindex]);
+    gProcentArray.push(savedTest.gProcent[savedTestIndex]);
 
 
     var vgProcentArray = [];
-    vgProcentArray.push(savedTest.vgProcent[testindex]);
+    vgProcentArray.push(savedTest.vgProcent[savedTestIndex]);
 
 
     var autocorrectArray = [];
-    autocorrectArray.push(savedTest.autoCorrect[testindex]);
+    autocorrectArray.push(savedTest.autoCorrect[savedTestIndex]);
 
 
     var mailArray = [];
     var userMail = sessionStorage.getItem('loggedInAs');
     mailArray.push(userMail);
 
-    var savedTestIndex = -1;
-    for (var y = 0; y < savedTest.testName.length; y++) {
+
+    /*for (var y = 0; y < savedTest.testName.length; y++) {
         if (chosenTest == savedTest.testName[y]) {
             savedTestIndex = y;
             break;
         }
-    }
+    }*/
+
     console.log('savedTestIndex' + savedTestIndex);
 
     var studentPointsPerQueArray = [];
@@ -282,8 +290,13 @@ function correctTest() {
         else if(savedTest.answerType[savedTestIndex][s] == 'multiChoice'){
 
             for(var j = 0 ; j< studentAnsArray[s].length ; j++){
-                if(studentAnswerArrayAsText[s][j]== savedTest.correctAnswers[savedTestIndex][s][j]){
-                    multiQuePoints++;
+                console.log('ny : ' + studentAnswerArrayAsText[s][j]);
+                console.log('ny : ' + savedTest.correctAnswers[savedTestIndex][s][j]);
+                for(var k = 0 ; k<studentAnsArray[s].length ; k++) {
+                    if (studentAnswerArrayAsText[s][j] == savedTest.correctAnswers[savedTestIndex][s][k]) {
+
+                        multiQuePoints++;
+                    }
                 }
             }
             studentPointsPerQueArray.push(multiQuePoints);
@@ -363,6 +376,6 @@ function correctTest() {
     localStorage.setItem("correctedtest", objdata);
 
     removeConnection(sessionStorage.getItem("loggedInAs"), sessionStorage.getItem("chosenTest"));
-    alert("something");
+    alert("Testet är nu inlämnat!");
     location.href="Testresultat.html";
 }

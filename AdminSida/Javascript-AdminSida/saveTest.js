@@ -366,7 +366,7 @@ function saveQuestion() {
 
             parsed = JSON.parse(localStorage.getItem(testStorageName));
             parsed.questionString.push(questionArray);
-            //TODO bildhantering
+            parsed.questionPicture.push(imageURLArray);
             parsed.answerType.push(questionTypeArray);
             parsed.points.push(pointsArray);
             parsed.answers.push(answerArray);

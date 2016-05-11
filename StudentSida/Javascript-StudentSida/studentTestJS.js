@@ -43,6 +43,16 @@ function myFunction() {
 
             var form = document.createElement("form");
 
+
+            //console.log('url= ' + parsed.questionPicture[testindex][1]);
+            if(parsed.questionPicture[testindex][n] != null){
+                var image = document.createElement('IMG');
+                image.setAttribute("src",parsed.questionPicture[testindex][n]);
+                form.appendChild(image);
+
+            }
+
+
             for (var e = 0; e < parsed.answers[testindex][n].length; e++) {
                 var inputform = document.createElement("input");
                 var lbl = document.createElement("label");
@@ -58,13 +68,22 @@ function myFunction() {
                 lbl.appendChild(inputform);
                 lbl.appendChild(anstext);
                 form.appendChild(lbl);
+                pane.appendChild(form);
+
 
             }
-            pane.appendChild(form);
+
 
         }//handling multiple choice questions
         else if (parsed.answerType[testindex][n] == "multiChoice") {
             var chkform = document.createElement("form");
+
+            if(parsed.questionPicture[testindex][n] != null){
+                var image = document.createElement('IMG');
+                image.setAttribute("src",parsed.questionPicture[testindex][n]);
+                chkform.appendChild(image);
+
+            }
 
             for (var t = 0; t < parsed.answers[testindex][n].length; t++) {
                 var inputchk = document.createElement("input");
@@ -87,6 +106,14 @@ function myFunction() {
         }//handling open answer questions
         else if (parsed.answerType[testindex][n] == "open") {
             var freeArea = document.createElement("textarea");
+
+            if(parsed.questionPicture[testindex][n] != null){
+                var image = document.createElement('IMG');
+                image.setAttribute("src",parsed.questionPicture[testindex][n]);
+                freeArea.appendChild(image);
+                
+            }
+
             freeArea.setAttribute("class", "question : " + n);
             freeArea.setAttribute("cols", "60");
             freeArea.setAttribute("rows", "15");

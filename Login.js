@@ -30,6 +30,7 @@ $(document).ready(function () {
             "testName": [["test1"]],
             "testTime": [[40]],
             "questionString": [[["huvudstad?"], ["Städer?"]]],
+            "questionPicture": [[null,"https://khalil-shreateh.com/khalil.shtml/images/articles/websites/security/url-redirection.jpg"]],
             "answerType": [["singleChoice", "multiChoice"]],
             "points": [[1,2]],
             "answers": [[["Stockholm", "Göteborg", "Malmö", "Luleå"], ["Göteborg", "Stenköping", "London"]]],

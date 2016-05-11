@@ -18,8 +18,8 @@ function getTestBreakdown() {
             break;
         }
     }*/
-    testindex = corTest.testName.length -1;
-    console.log(testindex);
+    testindex = ((corTest.testName.length) -1);
+    console.log('testindex = ' + testindex);
 
     var  contain = document.createElement("div");
     console.log("hur många frågor " + corTest.questionString[testindex][0].length);
@@ -34,7 +34,7 @@ function getTestBreakdown() {
         var text = 'Frågan nr : '  + (t+1) + ' var : ' + corTest.questionString[testindex][0][t] + '<br>' + ' Ditt svar var : ' + corTest.studentAnswers[testindex][t] + '<br>' + ' Rätt svar var : ' + corTest.correctAnswers[testindex][0][t] + '<br>' +' Antal poäng du får är : ' + corTest.studentPointsPerQue[testindex][t] + '<br>' +' Bedömningen är : ' + corTest.correctionMessagePerQue[testindex][t];
 
 
-        console.log(text);
+        //console.log(text);
         //stuff.appendChild(text);
 
         stuff.innerHTML = text;
