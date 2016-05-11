@@ -59,13 +59,13 @@ $(document).ready(function () {
     }
 
     $("#testNav").on("click", ".test", function () {
+        $("#txtResult").empty();
         fbChosenTest = $(this).attr('id');
         drawStudentAnswers();
 
     });
 
     function drawStudentAnswers() {
-        $("#txtResult").empty();
         var savedTests = JSON.parse(localStorage.getItem("savedtest"));
         var $question = "";
         for (var i = 0; i < savedTests.questionString[fbChosenTest].length; i++) {
@@ -74,11 +74,12 @@ $(document).ready(function () {
                 "Studentens svar: " + savedTests.studentAnswers[fbChosenTest][i] + "\n" +
                 "Rätt svar: " + savedTests.correctAnswers[fbChosenTest][i] + "\n\n";
 
+            console.log("appen please");
             $("#txtResult").append($question);
             console.log($question);
             console.log("Append");
         }
-        $("#txtcomment").val("");
+      //  $("#txtComment").val("");
     }
 
 
@@ -93,7 +94,7 @@ $(document).ready(function () {
 
 
     $("body").on("click", "#sendMail", function () {
-    console.log("EMPTY CONTENT");
+        console.log("EMPTY CONTENT");
         var savedTests = JSON.parse(localStorage.getItem("savedtest"));
 
         var email = fbChosenStudent;
