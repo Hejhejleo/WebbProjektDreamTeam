@@ -54,5 +54,6 @@ function getTestBreakdown() {
 
 
     document.getElementById("res").appendChild(document.createTextNode(corTest.studentGrade[corTest.studentGrade.length -1]));
-     document.body.appendChild(contain);
+    document.getElementById("breakdown").appendChild(contain);
+     //document.body.appendChild(contain);
 }
