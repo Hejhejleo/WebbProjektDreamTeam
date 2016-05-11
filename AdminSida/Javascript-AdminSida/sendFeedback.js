@@ -76,6 +76,7 @@ $(document).ready(function () {
 
             console.log("appen please");
             $("#txtResult").append($question);
+            alert("Pause");
             console.log($question);
             console.log("Append");
         }
