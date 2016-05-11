@@ -25,7 +25,6 @@ $(document).ready(function () {
     $("#studentNav").on("click", ".student", function () {
         $("#txtResult").val("");
         $("#txtComment").val("");
-
         fbChosenStudent = $(this).attr('id');
         console.log("Clicked: " + fbChosenStudent);
         drawTestList();
@@ -76,6 +75,7 @@ $(document).ready(function () {
                 "Rätt svar: " + savedTests.correctAnswers[fbChosenTest][i] + "\n\n";
 
             $("#txtResult").append($question);
+            $("#txtcomment").val("");
         }
     }
 
@@ -84,7 +84,7 @@ $(document).ready(function () {
         fbChosenStudent = "";
         fbChosenTest = "";
         drawStudentList();
-        drawTestList().empty;
+        drawTestList();
         $("#txtResult").val("");
         $("#txtComment").val("");
     }
