@@ -9,6 +9,7 @@ $(document).ready(function () {
     drawStudentList();
 
     function drawStudentList() {
+        $("#studentNav").empty();
         var users = JSON.parse(localStorage.getItem("users"));
         $("#studentNav").empty();
         for (var i = 0; i < users.mail.length; i++) {
@@ -40,7 +41,7 @@ $(document).ready(function () {
             console.log("for loop " + i);
             if (savedTests.studentmail[i] == fbChosenStudent) {
                 console.log("found test for chosen student");
-                if (savedTests.autoCorrect[i] == 0) {
+                if (!(savedTests.autoCorrect[i] == 1)) {
                     console.log("found test not auto");
                     availableTests.push(i);
                     console.log("Test #: " + i + " " + savedTests.testName[i]);
@@ -63,22 +64,40 @@ $(document).ready(function () {
     });
 
     function drawStudentAnswers() {
-    $("#txtResult").empty();
+        $("#txtResult").empty();
         var savedTests = JSON.parse(localStorage.getItem("savedtest"));
-        var $question="";
+        var $question = "";
         for (var i = 0; i < savedTests.questionString[fbChosenTest].length; i++) {
             $question =
                 "Fråga: " + savedTests.questionString[fbChosenTest][i] + "\n" +
                 "Studentens svar: " + savedTests.studentAnswers[fbChosenTest][i] + "\n" +
                 "Rätt svar: " + savedTests.correctAnswers[fbChosenTest][i] + "\n\n";
 
-                $("#txtResult").append($question);
+            $("#txtResult").append($question);
         }
     }
 
 
     function emptyContent() {
-
+        fbChosenStudent = "";
+        fbChosenTest = "";
+        drawStudentList();
+        drawTestList();
+        $("#txtResult").val("");
+        $("#txtComment").val("");
     }
+
+
+    $("body").on("click", "#sendMail", function () {
+        var savedTests = JSON.parse(localStorage.getItem("savedtest"));
+
+        var email = fbChosenStudent;
+        var subject = "Test resultat på: " + savedTests.testName[fbChosenTest];
+        var emailBody = $("#txtComment").val();
+        window.location = 'mailto:' + email + '?subject=' + subject + '&body=' + emailBody;
+
+        emptyContent();
+    });
+
 
 });
