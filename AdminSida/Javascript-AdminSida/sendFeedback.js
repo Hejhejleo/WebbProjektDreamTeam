@@ -24,8 +24,9 @@ $(document).ready(function () {
     }
 
     $("#studentNav").on("click", ".student", function () {
-    emptyContent();
-    drawStudentList();
+        $("#txtResult").val("");
+        $("#txtComment").val("");
+
         fbChosenStudent = $(this).attr('id');
         console.log("Clicked: " + fbChosenStudent);
         drawTestList();
