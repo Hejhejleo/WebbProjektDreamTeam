@@ -9,7 +9,7 @@ $(document).ready(function () {
     drawStudentList();
 
     function drawStudentList() {
-        $("#studentNav").empty();
+        emptyContent();
         var users = JSON.parse(localStorage.getItem("users"));
         $("#studentNav").empty();
         for (var i = 0; i < users.mail.length; i++) {
@@ -24,6 +24,8 @@ $(document).ready(function () {
     }
 
     $("#studentNav").on("click", ".student", function () {
+    emptyContent();
+    drawStudentList();
         fbChosenStudent = $(this).attr('id');
         console.log("Clicked: " + fbChosenStudent);
         drawTestList();
