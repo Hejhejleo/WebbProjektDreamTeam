@@ -30,6 +30,7 @@ $(document).ready(function () {
     });
 
     function drawTestList() {
+        $("#testNav").empty();
         console.log("Draw test list");
         var savedTests = JSON.parse(localStorage.getItem("savedtest"));
         var availableTests = new Array();
@@ -38,9 +39,9 @@ $(document).ready(function () {
         for (var i = 0; i < savedTests.testName.length; i++) {
             console.log("for loop " + i);
             if (savedTests.studentmail[i] == fbChosenStudent) {
-            console.log("found test for chosen student");
+                console.log("found test for chosen student");
                 if (savedTests.autoCorrect[i] == 0) {
-                console.log("found test not auto");
+                    console.log("found test not auto");
                     availableTests.push(i);
                     console.log("Test #: " + i + " " + savedTests.testName[i]);
                 }
@@ -49,7 +50,7 @@ $(document).ready(function () {
         }
 
         for (var i = 0; i < availableTests.length; i++) {
-            $div = $("<div class='inlineDiv'><div class='grid-15 listStyle'><i class='fa fa-file fa-2x' aria-hidden='" + true + "'></i></div><div class='grid-100 test' id='" + availableTests[i] + "'>" + savedTests.testName[availableTests[i]] + "</div></div>");
+            $div = $("<div class='grid-100 test' id='" + availableTests[i] + "'>" + savedTests.testName[availableTests[i]] + "</div>");
             $("#testNav").append($div);
         }
 
@@ -62,8 +63,16 @@ $(document).ready(function () {
     });
 
     function drawStudentAnswers() {
+        var savedTests = JSON.parse(localStorage.getItem("savedtest"));
+        var $question;
+        for (var i = 0; i < savedTests.questionString[fbChosenTest].length; i++) {
+            $question =
+                "Fråga: " + savedTests.questionString[fbChosenTest][i] + "\n" +
+                "Studentens svar: " + savedTests.studentAnswers[fbChosenTest][i] + "\n" +
+                "Rätt svar: " + savedTests.correctAnswers[fbChosenTest][i] + "\n\n" +
 
-
+                $("#txtResult").append()
+        }
     }
 
 

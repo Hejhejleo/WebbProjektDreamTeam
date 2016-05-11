@@ -124,3 +124,13 @@ background-color: lightgray;
 .white{
 background-color: white;
 }
+
+.test{
+margin: 5px;
+cursor: pointer;
+}
+
+.student{
+cursor: pointer;
+margin: 5px;
+}
