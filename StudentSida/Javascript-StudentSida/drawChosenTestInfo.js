@@ -30,7 +30,6 @@ function drawTestInfo() {
     }else {
         $testArea.append("Procent för VG: "+tests.vgProcent[testIndex]+"\n");
     }
-    $testArea.append("Procent för VG: "+tests.vgProcent[testIndex]+"\n");
     $testArea.append(""+"\n");
 
 
