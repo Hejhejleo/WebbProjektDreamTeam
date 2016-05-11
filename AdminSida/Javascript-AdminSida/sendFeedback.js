@@ -82,7 +82,7 @@ $(document).ready(function () {
         fbChosenStudent = "";
         fbChosenTest = "";
         drawStudentList();
-        drawTestList();
+        drawTestList().empty;
         $("#txtResult").val("");
         $("#txtComment").val("");
     }
