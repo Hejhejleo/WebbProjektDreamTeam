@@ -9,7 +9,6 @@ $(document).ready(function () {
     drawStudentList();
 
     function drawStudentList() {
-        emptyContent();
         var users = JSON.parse(localStorage.getItem("users"));
         $("#studentNav").empty();
         for (var i = 0; i < users.mail.length; i++) {
