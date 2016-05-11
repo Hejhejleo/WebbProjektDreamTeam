@@ -69,17 +69,17 @@ $(document).ready(function () {
         var savedTests = JSON.parse(localStorage.getItem("savedtest"));
         var $question = "";
         for (var i = 0; i < savedTests.questionString[fbChosenTest].length; i++) {
-            $question =
+            $question +=
                 "Fråga: " + savedTests.questionString[fbChosenTest][i] + "\n" +
                 "Studentens svar: " + savedTests.studentAnswers[fbChosenTest][i] + "\n" +
                 "Rätt svar: " + savedTests.correctAnswers[fbChosenTest][i] + "\n\n";
 
             console.log("appen please");
-            $("#txtResult").append($question);
-            alert("Pause");
+
             console.log($question);
             console.log("Append");
         }
+        $("#txtResult").val($question);
       //  $("#txtComment").val("");
     }
 

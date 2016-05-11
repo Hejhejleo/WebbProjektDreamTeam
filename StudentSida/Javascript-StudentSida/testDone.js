@@ -128,10 +128,11 @@ function saveDoneTest() {
         vgProcentArray.push(parsed.vgProcent[testindex][i]);
     }
 
+    /*
     var autocorrectArray = [];
     for(var i = 0 ; i<parsed.autoCorrect[testindex].length ; i++){
         autocorrectArray.push(parsed.autoCorrect[testindex][i]);
-    }
+    }*/
 
     var mailArray = [];
     var userMail = sessionStorage.getItem('loggedInAs');
@@ -175,7 +176,7 @@ function saveDoneTest() {
     parsed2.correctAnswers.push(parsed.correctAnswers[testindex]);
     parsed2.gProcent.push(gProcentArray);
     parsed2.vgProcent.push(vgProcentArray);
-    parsed2.autoCorrect.push(autocorrectArray);
+    parsed2.autoCorrect.push(parsed.autoCorrect[testindex]);
     parsed2.studentmail.push(mailArray);
     parsed2.studentAnswers.push(studentAnswerArrayAsText);
 
