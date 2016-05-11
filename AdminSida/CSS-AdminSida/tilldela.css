@@ -2,6 +2,8 @@
    text-align: center;
 }
 
+
+
 #studenter{
     width: 800px;
     height: 350px;
@@ -62,4 +64,55 @@ background-color: lightgray;
 .handle-item{
     padding:8px;
     cursor: pointer;
+}
+
+.sectionInline{
+    margin-top: 15px;
+
+}
+
+.textInline{
+   margin-top: 15px;
+
+}
+
+#studentNav, #testNav{
+    width: 450px;
+    height: 300px;
+    border-color: lightgrey;
+    border-style: solid;
+    border-width: 1px;
+    overflow: scroll;
+    resize: none;
+}
+
+#txtResult, #txtComment{
+    width: 450px;
+    height: 300px;
+    border-color: lightgrey;
+    border-width: 1px;
+    overflow: scroll;
+    resize: none;
+}
+
+.label1{
+    float: inherit;
+}
+
+#sendMail {
+    margin-left: 910px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    color: #ffffff;
+    background: darkorange;
+    padding: 10px 20px 10px 20px;
+    border-style: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+#sendMail:hover {
+    background: orange;
+    text-decoration: none;
 }

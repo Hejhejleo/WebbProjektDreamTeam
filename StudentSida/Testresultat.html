@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Testresultat</title>
     <link rel="stylesheet" type="text/css" href="CSS-StudentSida/unsemantic-grid-responsive-tablet.css">
+    <link rel="stylesheet" type="text/css" href="CSS-StudentSida/studenttestcss.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="Javascript-StudentSida/setLoggedIn.js"></script>
 
 
 </head>
-<body onload="getTestBreakdown()">
+<body onload="getTestBreakdown()" class="grid-container">
 
 
 <section id="backgroundSection">
@@ -21,21 +22,20 @@
         </div>
     </section>
 
-    <section class="grid-100">
+    <section class="grid-100 headSection2">
         <p>
             Ditt Testresultat är <div id="res"></div>
         </p>
     </section>
 
-    <section class="grid-100">
+    <section class="grid-100 headSection2">
         <p id="breakdown">
         <script src="Javascript-StudentSida/TestBreakdown.js"></script>
-
-
         </p>
     </section>
 
 </section>
+
 <div class="storres">
 
 

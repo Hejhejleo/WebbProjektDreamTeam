@@ -2,7 +2,6 @@ body{
     background-color: lightgrey;
 }
 
-
 #backgroundSection{
     background-color: white;
 }
@@ -17,6 +16,10 @@ body{
     text-align: center;
     margin-top: 20px;
     background-color: #EE7202;
+}
+
+.headSection2{
+    background-color: white;
 }
 
 #timer{

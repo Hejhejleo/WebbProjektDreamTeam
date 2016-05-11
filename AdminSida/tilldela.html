@@ -9,18 +9,19 @@
     <script src="Javascript-AdminSida/assignTest.js"></script>
     <script src="Javascript-AdminSida/getClasses.js"></script>
 
+
 </head>
 <body>
 
 
-    <div class="grid-90 prefix-20 grid-parent">
+<div class="grid-90 prefix-20 grid-parent">
 
-        <ul class="tab-list">
-            <li class="grid-20 prefix-5 userButton getClasses"><a href="#tilldelaProv" class="userA tab-control">Tilldela prov</a></li>
-            <li class="grid-20 prefix-5 userButton"><a href="#rättaProv" class="userA tab-control">Rätta prov</a></li>
-        </ul>
-    </div>
-
+    <ul class="tab-list">
+        <li class="grid-20 prefix-5 userButton getClasses"><a href="#tilldelaProv" class="userA tab-control">Tilldela
+            prov</a></li>
+        <li class="grid-20 prefix-5 userButton"><a href="#rattaProv" class="userA tab-control">Rätta prov</a></li>
+    </ul>
+</div>
 
 
 <section class="grid-100 tab-panel" id="tilldelaProv">
@@ -32,15 +33,14 @@
             </select>
         </section>
 
-    <section class="grid-75 prefix-10" id="tilldelaSection">
-        <label for="studenter">Studenter</label>
-        <div id="studenter" class="grid-100">
-            <ul class="grid-100" id="studentList">
+        <section class="grid-75 prefix-10" id="tilldelaSection">
+            <label for="studenter">Studenter</label>
+            <div id="studenter" class="grid-100">
+                <ul class="grid-100" id="studentList">
 
-            </ul>
-
-        </div>
-    </section>
+                </ul>
+            </div>
+        </section>
 
         <section class="grid-70 prefix-15 inlineSection">
             <label for="selectKlass">Tilldela prov eller ta bort tilldelning av prov:</label>
@@ -55,14 +55,51 @@
     </form>
 </section>
 
-<section class="grid-100 tab-panel" id="rättaProv">
+<section class="grid-100 tab-panel" id="rattaProv">
 
 
+    <section class="grid-90 prefix-5">
+
+
+        <section class="grid-50">
+            <label for="label1" class="label1">Studenter</label>
+            <section class="sectionInline" id="label1">
+                <div id="studentNav"></div>
+            </section>
+        </section>
+
+        <section class="grid-50">
+            <label for="label2" class="label1">Provnamn</label>
+            <section class="sectionInline" id="label2">
+                <div id="testNav"></div>
+            </section>
+        </section>
+
+    </section>
+
+    <section class="grid-90 prefix-5">
+
+        <section class="grid-50">
+            <label for="label3" class="label1">Prov resultat</label>
+            <section class="textInline" id="label3">
+                <textarea id="txtResult"></textarea>
+            </section>
+        </section>
+
+        <section class="grid-50" id="txt1">
+            <label for="label4" class="label1">Kommentar</label>
+            <section class="textInline" id="label4">
+                <textarea id="txtComment"></textarea>
+            </section>
+        </section>
+    </section>
+
+
+    <input type="button" id="sendMail" value="Skicka feedback">
 
 </section>
 
-
-    <script type="text/javascript" src="Javascript-AdminSida/användareTabs.js"></script>
+<script type="text/javascript" src="Javascript-AdminSida/användareTabs.js"></script>
 
 </body>
 </html>
