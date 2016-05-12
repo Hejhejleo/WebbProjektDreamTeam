@@ -49,7 +49,7 @@ function drawList() {
                 console.log("found it on: " + i);
                 indexChosenTest = i;
             } else {
-                indexChosenTest = 0;
+
             }
         }
         console.log("Chosen index: " + indexChosenTest);
