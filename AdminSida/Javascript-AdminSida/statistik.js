@@ -54,6 +54,10 @@ bar3.animate(0.0);
 bar4.animate(0.0);
 
 $(".getClasses2").click(function () {
+getClasses();
+});
+
+function getClasses() {
     console.log("getClasses2");
     testData = JSON.parse(localStorage.getItem("testdata"));
     $("#selectProv").empty();
@@ -62,14 +66,16 @@ $(".getClasses2").click(function () {
     $("#selectProv").append($options)
     for (var i = 0; i < testData.testName.length; i++) {
         var $options = null;
-        if(testData.autoCorrect[i] == 1){
+        if (testData.autoCorrect[i] == 1) {
             $options = $("<option> " + testData.testName[i] + "</option>")
             $("#selectProv").append($options)
         }
 
     }
+};
 
-
+$(document).ready(function () {
+   getClasses();
 });
 
 $("#selectProv").change(function () {
@@ -83,8 +89,8 @@ function getStats() {
     var numberOfTestsDone = 0;
     var indexOfChosenTest = -1;
 
-    for(var i = 0 ; i<correctedTest.testName.length ; i++){
-        if(correctedTest.testName[i] == chosenTest){
+    for (var i = 0; i < correctedTest.testName.length; i++) {
+        if (correctedTest.testName[i] == chosenTest) {
             indexOfChosenTest = i;
             numberOfTestsDone++;
         }
@@ -95,7 +101,7 @@ function getStats() {
     labelAmount.innerHTML = numberOfTestsDone;
 
     var totalTestPoints = 0;
-    for(var i = 0 ; i<correctedTest.points[indexOfChosenTest].length ; i++){
+    for (var i = 0; i < correctedTest.points[indexOfChosenTest].length; i++) {
         totalTestPoints += correctedTest.points[indexOfChosenTest][i];
 
     }
@@ -104,7 +110,7 @@ function getStats() {
     max.innerHTML = totalTestPoints;
 
     var numberOfIGs = 0;
-    for(var i = 0 ; i<correctedTest.studentGrade.length ; i++) {
+    for (var i = 0; i < correctedTest.studentGrade.length; i++) {
         if (correctedTest.testName[i] == chosenTest) {
 
             if (correctedTest.studentGrade[i] == 'IG') {
@@ -124,10 +130,8 @@ function getStats() {
     bar.animate(percentIG / 100);
 
 
-
-
     var numberOfGs = 0;
-    for(var i = 0 ; i<correctedTest.studentGrade.length ; i++) {
+    for (var i = 0; i < correctedTest.studentGrade.length; i++) {
         if (correctedTest.testName[i] == chosenTest) {
 
             if (correctedTest.studentGrade[i] == 'G') {
@@ -147,7 +151,7 @@ function getStats() {
     bar2.animate(percentG / 100);
 
     var numberOfVGs = 0;
-    for(var i = 0 ; i<correctedTest.studentGrade.length ; i++) {
+    for (var i = 0; i < correctedTest.studentGrade.length; i++) {
         if (correctedTest.testName[i] == chosenTest) {
 
             if (correctedTest.studentGrade[i] == 'VG') {
@@ -180,7 +184,7 @@ function getStats() {
     ppLabel.innerHTML = passesProcent.toFixed(2) + '%';
 
     var averagePoints = 0;
-    for(var i = 0 ; i<correctedTest.totalStudentPoints.length ; i++) {
+    for (var i = 0; i < correctedTest.totalStudentPoints.length; i++) {
         if (correctedTest.testName[i] == chosenTest) {
             averagePoints += correctedTest.totalStudentPoints[i][0];
             //console.log(correctedTest.totalStudentPoints[i]);
@@ -190,7 +194,6 @@ function getStats() {
 
     var averageLabel = document.getElementById('average');
     averageLabel.innerHTML = averagePoints;
-
 
 
 }

@@ -1,7 +1,7 @@
 /**
  * Created by LeoAsp on 2016-04-29.
  */
-
+//Här är all logik för delen på admin sidan där man tilldelar prov till klass/elev
 var chosenTest;
 var chosenClass;
 var indexChosenTest = null;
