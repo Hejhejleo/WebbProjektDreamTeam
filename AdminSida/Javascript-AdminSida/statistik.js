@@ -54,7 +54,7 @@ bar3.animate(0.0);
 bar4.animate(0.0);
 
 $(".getClasses2").click(function () {
-getClasses();
+    getClasses();
 });
 
 function getClasses() {
@@ -75,10 +75,11 @@ function getClasses() {
 };
 
 $(document).ready(function () {
-   getClasses();
+    getClasses();
 });
 
 $("#selectProv").change(function () {
+
     chosenTest = $("#selectProv").val();
     getStats();
 });
@@ -94,6 +95,10 @@ function getStats() {
             indexOfChosenTest = i;
             numberOfTestsDone++;
         }
+    }
+    if (numberOfTestsDone==0) {
+        console.log("reset ANIM")
+        reset();
     }
     console.log(numberOfTestsDone);
 
@@ -198,6 +203,26 @@ function getStats() {
 
 }
 
+$(document).ready(function () {
+   reset();
+});
+function reset() {
+    bar.animate(0);
+    bar2.animate(0);
+    bar3.animate(0);
+    bar4.animate(0);
+    $("#amount").html("0");
+    $("#maxPoints").html("0");
+    $("#average").html("0");
+    $("#IGs").html("0");
+    $("#procentIG").html("0%");
+    $("#Gs").html("0");
+    $("#procentG").html("0%");
+    $("#VGs").html("0");
+    $("#procentVG").html("0%");
+    $("#passes").html("0");
+    $("#procentPasses").html("0%");
 
 
+}
 
