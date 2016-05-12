@@ -87,7 +87,9 @@ i{
     border-bottom-right-radius: 10px;
 }
 
-
+.testInfo{
+    font-family: arial, Helvetica, Sans-serif;
+}
 
 .student-status{
     color: white;
