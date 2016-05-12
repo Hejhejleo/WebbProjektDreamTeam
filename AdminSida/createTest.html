@@ -11,6 +11,9 @@
 <body data-ng-app="">
 <header>
     <h1 id="headlineCreateForm">Skapa test</h1>
+    <!--
+    Formulär för information om testet
+    -->
     <form id="testHeaderForm" name="testHeader">
         <fieldset>
             <legend id="testLegend">Testinformation</legend>
@@ -39,23 +42,21 @@
 </header>
 <br/>
 <!--
-<button class="accordion">Fråga 1</button>
-<div class="panel">
+Testinfo måste sparas innan frågemallen blir synlig
 -->
-<!--testinfo måste sparas innan frågemallen blir synlig -->
-<!--<div data-ng-app="createQuestion" data-ng-controller="questionController">-->
 <div data-ng-app="">
+    <!--
+    Formulär för att skapa en fråga
+    -->
     <form id="createQuestionForm" name="createQuestion">
         <fieldset>
             <legend id="questionId"></legend>
             <label for="questionText">Frågetext: </label>
             <textarea rows="6" cols="50" id="questionText"></textarea>
             <br/> <br/>
-
             <label for="imageURL">Bild: </label>
-            <input size="50" maxlength="200" id="imageURL" name="imageURL" placeholder="URL"></input>
+            <input size="50" maxlength="200" id="imageURL" name="imageURL" placeholder="URL">
             <br/> <br/>
-
             <label for="typeId">Välj typ av fråga: </label>
             <select data-ng-model="typeOfQuestion" id="typeId">
                 <option value=""></option>
@@ -340,16 +341,16 @@
                     </div>
                 </div>
             </div>
- <!--           <div data-ng-switch="typeOfQuestion">
-                <div id="open" data-ng-switch-when="open">
-                    <label for="answerOpen">Noteringar om svar: </label>
-                    &lt;!&ndash; Här kan admin t.ex. skriva vilka element som ska ingå i svaret &ndash;&gt;
-                    &lt;!&ndash; den här typen av frågor ingår inte i automatisk rättning &ndash;&gt;
-                    <textarea rows="6" cols="50" id="answerOpen" name="answerOpen"></textarea>
-                    <br/><br/>
-                </div>
-            </div>
--->
+            <!--           <div data-ng-switch="typeOfQuestion">
+                           <div id="open" data-ng-switch-when="open">
+                               <label for="answerOpen">Noteringar om svar: </label>
+                               &lt;!&ndash; Här kan admin t.ex. skriva vilka element som ska ingå i svaret &ndash;&gt;
+                               &lt;!&ndash; den här typen av frågor ingår inte i automatisk rättning &ndash;&gt;
+                               <textarea rows="6" cols="50" id="answerOpen" name="answerOpen"></textarea>
+                               <br/><br/>
+                           </div>
+                       </div>
+           -->
             <br/>
             <label>Maxpoäng på frågan: </label>
             <input type="number" min="0" max="10" id="maxPoint">
@@ -359,19 +360,19 @@
             <br/>
         </fieldset>
     </form>
+    <!--
+    Extra radbrytningar för att få större avstånd mellan knapparna, minskar risken för feltryckning
+    -->
     <br/><br/><br/><br/>
+    <!--
+    En fråga måste skapas och sparas för att spara test-knappen ska bli synlig
+    -->
     <div id="saveTestBtnAlign">
         <input type="button" value="Spara test" id="saveTest" onclick="saveTest()">
     </div>
 </div>
+
 </div>
-<!--
-<button class="accordion">Fråga 2</button>
-<div class="panel">
-    <p>Nästa fråga.</p>
-</div>
--->
 <script src="Javascript-AdminSida/saveTest.js"></script>
-<!--<script src="Javascript-AdminSida/js-accordion.js"></script>-->
 </body>
 </html>
