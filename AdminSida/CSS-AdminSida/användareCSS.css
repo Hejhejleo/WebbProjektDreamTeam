@@ -80,7 +80,7 @@ form{
 }
 
 
-.userButton {
+.userButton, #handleButton, #createQuestionForm, #createClass, #createUser {
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
@@ -92,7 +92,7 @@ form{
     list-style: none;
 }
 
-.userButton:hover {
+.userButton:hover, #handleButton:hover, #createQuestionForm:hover, #createClass:hover, #createUser:hover {
     background: orange;
     text-decoration: none;
 }
