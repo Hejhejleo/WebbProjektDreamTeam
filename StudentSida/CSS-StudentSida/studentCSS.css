@@ -87,8 +87,15 @@ i{
     border-bottom-right-radius: 10px;
 }
 
+
+
 .student-status{
+    color: white;
     font-size: 20px;
+}
+
+#student-name{
+    margin-left: 20px;
 }
 
 #logout-button, #start-test, #choose-test{

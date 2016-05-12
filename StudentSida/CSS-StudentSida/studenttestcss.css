@@ -2,6 +2,10 @@ body{
     background-color: lightgrey;
 }
 
+p{
+    font-size: 20px;
+}
+
 #backgroundSection{
     background-color: white;
 }
@@ -18,8 +22,13 @@ body{
     background-color: #EE7202;
 }
 
+#res{
+    font-size: 20px;
+}
+
 .headSection2{
     background-color: white;
+    margin-top: 40px;
 }
 
 #timer{
@@ -88,4 +97,23 @@ button.accordion:after {
 
 button.accordion.active:after {
     content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+
+#logoutButton {
+    margin-bottom: 30px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    color: #ffffff;
+    background: darkorange;
+    padding: 10px 20px 10px 20px;
+    border-style: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+#logoutButton:hover {
+    background: orange;
+    text-decoration: none;
 }

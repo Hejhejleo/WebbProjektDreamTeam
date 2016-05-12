@@ -5,7 +5,7 @@
     <title>Testresultat</title>
     <link rel="stylesheet" type="text/css" href="CSS-StudentSida/unsemantic-grid-responsive-tablet.css">
     <link rel="stylesheet" type="text/css" href="CSS-StudentSida/studenttestcss.css">
-    <link rel="stylesheet" type="text/css" href="CSS-AdminSida/Font.css">
+    <link rel="stylesheet" type="text/css" href="../AdminSida/CSS-AdminSida/Font.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="Javascript-StudentSida/setLoggedIn.js"></script>
     <script src="../Logout.js"></script>
@@ -24,16 +24,18 @@
         </div>
     </section>
 
-    <section class="grid-100 headSection2">
+    <section class="grid-40 prefix-35 headSection2">
         <p>Ditt Testresultat är </p><div id="res"></div>
     </section>
 
-    <section class="grid-100 headSection2">
+    <section class="grid-40 prefix-35 headSection2">
         <p id="breakdown">
         <script src="Javascript-StudentSida/TestBreakdown.js"></script>
         </p>
     </section>
-<button onclick="logout()">Logout</button>
+
+<button class="prefix-90" onclick="logout()" id="logoutButton">Logout</button class="prefix-90">
+
 </section>
 
 <div class="storres">
