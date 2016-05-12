@@ -75,16 +75,16 @@ function drawList() {
             }
             if (i % 2 == 0) {
                 if (checked) {
-                    $li = $("<li class='grid-100 handle-item gray' id='" + users.mail[i] + "'><div class='grid-10'><input id=" + users.mail[i] + "checkbox type='checkbox' checked></div><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-25 handle-div'>" + users.className[i] + "</div><div class='grid-25 handle-div'>" + users.mail[i] + "</div></li>");
+                    $li = $("<li class='grid-100 handle-item gray' id='" + users.mail[i] + "'><div class='grid-10'><input class='checkbox' id=" + users.mail[i] + "checkbox type='checkbox' checked></div><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-25 handle-div'>" + users.className[i] + "</div><div class='grid-25 handle-div'>" + users.mail[i] + "</div></li>");
                 } else {
-                    $li = $("<li class='grid-100 handle-item gray' id='" + users.mail[i] + "'><div class='grid-10'><input id=" + users.mail[i] + "checkbox type='checkbox'></div><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-25 handle-div'>" + users.className[i] + "</div><div class='grid-25 handle-div'>" + users.mail[i] + "</div></li>");
+                    $li = $("<li class='grid-100 handle-item gray' id='" + users.mail[i] + "'><div class='grid-10'><input class='checkbox' id=" + users.mail[i] + "checkbox type='checkbox'></div><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-25 handle-div'>" + users.className[i] + "</div><div class='grid-25 handle-div'>" + users.mail[i] + "</div></li>");
                 }
 
             } else {
                 if (checked) {
-                    $li = $("<li class='grid-100 handle-item white' id='" + users.mail[i] + "'><div class='grid-10'><input id=" + users.mail[i] + "checkbox type='checkbox' checked></div><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-25 handle-div'>" + users.className[i] + "</div><div class='grid-25 handle-div'>" + users.mail[i] + "</div></li>");
+                    $li = $("<li class='grid-100 handle-item white' id='" + users.mail[i] + "'><div class='grid-10'><input class='checkbox' id=" + users.mail[i] + "checkbox type='checkbox' checked></div><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-25 handle-div'>" + users.className[i] + "</div><div class='grid-25 handle-div'>" + users.mail[i] + "</div></li>");
                 } else {
-                    $li = $("<li class='grid-100 handle-item white' id='" + users.mail[i] + "'><div class='grid-10'><input id=" + users.mail[i] + "checkbox type='checkbox'></div><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-25 handle-div'>" + users.className[i] + "</div><div class='grid-25 handle-div'>" + users.mail[i] + "</div></li>");
+                    $li = $("<li class='grid-100 handle-item white' id='" + users.mail[i] + "'><div class='grid-10'><input class='checkbox' id=" + users.mail[i] + "checkbox type='checkbox'></div><div class='grid-20 handle-div'>" + users.firstName[i] + "</div><div class='grid-20 handle-div'>" + users.lastName[i] + "</div><div class='grid-25 handle-div'>" + users.className[i] + "</div><div class='grid-25 handle-div'>" + users.mail[i] + "</div></li>");
                 }
             }
 

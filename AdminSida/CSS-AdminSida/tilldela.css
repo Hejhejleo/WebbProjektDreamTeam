@@ -146,3 +146,7 @@ cursor: pointer;
 cursor: pointer;
 margin: 5px;
 }
+
+.checkbox{
+pointer-events: none;
+}
