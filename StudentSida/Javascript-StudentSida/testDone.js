@@ -290,17 +290,24 @@ function correctTest() {
             s++;
         }
         else if(savedTest.answerType[savedTestIndex][s] == 'multiChoice'){
-
+            console.log('ny : ' + studentAnswerArrayAsText);
             for(var j = 0 ; j< studentAnsArray[s].length ; j++){
-                console.log('ny : ' + studentAnswerArrayAsText[s][j]);
-                console.log('ny : ' + savedTest.correctAnswers[savedTestIndex][s][j]);
-                for(var k = 0 ; k<studentAnsArray[s].length ; k++) {
+                //console.log('ny : ' + studentAnswerArrayAsText[s][j]);
+                //console.log('ny : ' + savedTest.correctAnswers[savedTestIndex][s][j]);
+                for(var k = 0 ; k<savedTest.correctAnswers[savedTestIndex][s].length ; k++) {
+                    console.log('ny : ' + studentAnswerArrayAsText[s]);
+                    console.log('ny : ' + savedTest.correctAnswers[savedTestIndex][s][k]);
                     if (studentAnswerArrayAsText[s][j] == savedTest.correctAnswers[savedTestIndex][s][k]) {
 
                         multiQuePoints++;
                     }
                 }
             }
+
+            if(studentAnswerArrayAsText[s].length > savedTest.correctAnswers[savedTestIndex][s].length){
+                multiQuePoints = 0;
+            }
+
             studentPointsPerQueArray.push(multiQuePoints);
             s++;
         }

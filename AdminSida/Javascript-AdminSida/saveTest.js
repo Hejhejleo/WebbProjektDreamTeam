@@ -369,6 +369,7 @@ function saveQuestion() {
         }
         else if (questionType === 'open') {
             autoCorr = 0;
+            correctAnswersArray.push("");
         }
         answerNotChecked = ((!isChecked) && (questionType !== 'open'));
         if (answerNotChecked) {
@@ -422,7 +423,7 @@ function saveTest() {
     var data = JSON.stringify(parsed);
     localStorage.setItem(testStorageName, data);
     userTest = JSON.parse(localStorage.getItem("usertest"));
-    userTest.testName.push(testNameArray);
+    userTest.testName.push(testName);
     var emptyArray = [];
     userTest.mail.push(emptyArray);
 
