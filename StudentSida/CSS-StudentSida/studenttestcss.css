@@ -1,3 +1,11 @@
+img{
+   margin-bottom: 40px;
+}
+
+form{
+    padding: 20px;
+}
+
 body{
     background-color: lightgrey;
 }
@@ -100,7 +108,7 @@ button.accordion.active:after {
 }
 
 
-#logoutButton {
+#logoutButton, #turnIn {
     margin-bottom: 30px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -113,7 +121,7 @@ button.accordion.active:after {
     list-style: none;
 }
 
-#logoutButton:hover {
+#logoutButton:hover, #turnIn:hover {
     background: orange;
     text-decoration: none;
 }
