@@ -4,7 +4,7 @@
 
 var chosenTest;
 var chosenClass;
-var indexChosenTest = 0;
+var indexChosenTest = null;
 var userTest;
 var users;
 $(document).ready(function () {
