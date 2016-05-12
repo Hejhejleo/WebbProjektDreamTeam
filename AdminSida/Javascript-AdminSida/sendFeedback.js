@@ -14,9 +14,9 @@ $(document).ready(function () {
         for (var i = 0; i < users.mail.length; i++) {
             var $li = "";
             if (i % 2 == 0) {
-                $li = $("<div class='grid-100 student gray' id='" + users.mail[i] + "'><div class='grid-33'>" + users.firstName[i] + "</div><div class='grid-33'>" + users.lastName[i] + "</div><div class='grid-33'>" + users.mail[i] + "</div></div>");
+                $li = $("<div class='grid-100 student' id='" + users.mail[i] + "'><div class='grid-33'>" + users.firstName[i] + "</div><div class='grid-33'>" + users.lastName[i] + "</div><div class='grid-33'>" + users.mail[i] + "</div></div>");
             } else {
-                $li = $("<div class='grid-100 student white' id='" + users.mail[i] + "'><div class='grid-33'>" + users.firstName[i] + "</div><div class='grid-33'>" + users.lastName[i] + "</div><div class='grid-33'>" + users.mail[i] + "</div></div>");
+                $li = $("<div class='grid-100 student' id='" + users.mail[i] + "'><div class='grid-33'>" + users.firstName[i] + "</div><div class='grid-33'>" + users.lastName[i] + "</div><div class='grid-33'>" + users.mail[i] + "</div></div>");
             }
             $("#studentNav").append($li);
         }
