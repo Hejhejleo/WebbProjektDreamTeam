@@ -1,3 +1,8 @@
+body{
+    font-family: arial, Helvetica, Sans-serif;
+}
+
+
 .userButton{
    text-align: center;
 }
@@ -99,20 +104,27 @@ background-color: lightgray;
     float: inherit;
 }
 
-#sendMail {
+#sendMail{
     margin-left: 910px;
+    padding: 10px 20px 10px 20px;
+}
+
+#tilldelaButton, #deleteButton{
+    padding: 10px 10px 10px 10px;
+}
+
+#sendMail, #tilldelaButton, #deleteButton {
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
     color: #ffffff;
     background: darkorange;
-    padding: 10px 20px 10px 20px;
     border-style: none;
     text-decoration: none;
     list-style: none;
 }
 
-#sendMail:hover {
+#sendMail:hover, #tilldelaButton:hover, #deleteButton:hover {
     background: orange;
     text-decoration: none;
 }
