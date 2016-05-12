@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="angularAdmin">
+<html lang="en" data-ng-app="angularAdmin">
 <head>
     <meta charset="UTF-8">
     <title>Webbprojekt</title>
@@ -30,7 +30,7 @@
     <nav>
         <ul class="grid-100" id="adminUl">
             <li class="grid-15 liLeft"><a href="#framsida"><span>Framsida</span></a></li>
-            <li class="grid-15 liLeft"><a href="#createTest"><span>Skapa</span></a></li>
+            <li class="grid-15 liLeft"><a href="#createTest"><span>Skapa prov</span></a></li>
             <li class="grid-20 liLeft"><a href="#tilldela"><span>Tilldela / rätta prov</span></a></li>
             <li class="grid-15 liLeft getClasses2"><a href="#statistik" ><span>Se statistik</span></a></li>
             <li class="grid-30 liLeft"><a href="#anvandare"><span class="reload-list">Skapa / hantera användare</span></a></li>
@@ -43,7 +43,7 @@
 <section class="grid-100">
     <div id="main">
 
-        <div ng-view></div>
+        <div data-ng-view></div>
     </div>
 </section>
 
