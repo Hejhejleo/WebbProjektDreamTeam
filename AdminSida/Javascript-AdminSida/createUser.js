@@ -50,8 +50,9 @@
                 $("#klass").val("");
                 $("#email").val("");
                 $("#password").val("");
-   console.log("empty")
+   console.log("empty");
             localStorage.setItem("users",JSON.stringify(users));
+            alert("Nu har en ny användare skapats( "+FName+" "+LName+" )");
 
             }
         }

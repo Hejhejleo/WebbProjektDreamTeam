@@ -16,7 +16,7 @@ $(document).ready(function () {
         for (var i = 0; i < classes.className.length; i++) {
             console.log("Check if exists" + i);
             if (inputValue == classes.className[i]) {
-                alert("A class with that name allready exist!");
+                alert("En klass med det namnet finns redan!");
                 boolean = false;
             }
         }
@@ -25,6 +25,7 @@ $(document).ready(function () {
             className.push(inputValue);
             classes.className.push(className);
             localStorage.setItem("classes", JSON.stringify(classes));
+            alert("Du har nu skapat en ny klass med namnet: "+inputValue);
         }
     });
 
