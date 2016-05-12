@@ -24,11 +24,11 @@ function drawTestInfo() {
     $testArea.append("Test Tid: "+tests.testTime[testIndex]+"\n");
     $testArea.append("Antal Frågor: "+tests.questionString[testIndex].length+"\n");
     $testArea.append("Max poäng: "+maxPoints+"\n");
-    $testArea.append("Procent för G: "+tests.gProcent[testIndex]+"\n");
+    $testArea.append("Procent för G: "+tests.gProcent[testIndex]+"%\n");
     if(tests.vgProcent[testIndex] > 100){
 
     }else {
-        $testArea.append("Procent för VG: "+tests.vgProcent[testIndex]+"\n");
+        $testArea.append("Procent för VG: "+tests.vgProcent[testIndex]+"%\n");
     }
     $testArea.append(""+"\n");
 
