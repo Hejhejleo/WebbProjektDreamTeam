@@ -31,6 +31,8 @@
                        data-ng-disabled="onlyGSwitch"><br/>
                 <br/>
             </div>
+            <label id="selfTestInfo">Om testet innehåller en eller flera fritextfrågor så blir det
+                <span id="notSelfCorrecting">inte självrättande</span></label>
             <input type="button" value="Spara testinformation" id="saveTestInfoBtn" onclick="saveTestInfo()">
             <!--
             A test of if the value of vgPercent is larger than the value of gPercent is included in
@@ -341,23 +343,22 @@ Testinfo måste sparas innan frågemallen blir synlig
                     </div>
                 </div>
             </div>
-            <!--           <div data-ng-switch="typeOfQuestion">
-                           <div id="open" data-ng-switch-when="open">
-                               <label for="answerOpen">Noteringar om svar: </label>
-                               &lt;!&ndash; Här kan admin t.ex. skriva vilka element som ska ingå i svaret &ndash;&gt;
-                               &lt;!&ndash; den här typen av frågor ingår inte i automatisk rättning &ndash;&gt;
-                               <textarea rows="6" cols="50" id="answerOpen" name="answerOpen"></textarea>
-                               <br/><br/>
-                           </div>
-                       </div>
-           -->
-            <br/>
-            <label>Maxpoäng på frågan: </label>
-            <input type="number" min="0" max="10" id="maxPoint">
-            <br/><br/>
+            <div data-ng-switch="typeOfQuestion">
+                <div id="open" data-ng-switch-when="open">
+                                          &lt;!&ndash; Här kan admin t.ex. skriva vilka element som ska ingå i svaret &ndash;&gt;
+                                         &lt;!&ndash; den här typen av frågor ingår inte i automatisk rättning &ndash;&gt;
+                                         <textarea rows="6" cols="50" id="answerOpen" name="answerOpen"></textarea>
+                                         <br/><br/>
+                                     </div>
+                                 </div>
+                     -->
+                    <br/>
+                    <label>Maxpoäng på frågan: </label>
+                    <input type="number" min="0" max="10" id="maxPoint">
+                    <br/><br/>
 
-            <input type="button" value="Spara fråga" id="saveQuestionBtn" onclick="saveQuestion()">
-            <br/>
+                    <input type="button" value="Spara fråga" id="saveQuestionBtn" onclick="saveQuestion()">
+                    <br/>
         </fieldset>
     </form>
     <!--

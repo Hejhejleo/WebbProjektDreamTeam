@@ -40,7 +40,11 @@ label {
     padding-right: 10px;
 }
 
-#twoSCid, #threeSCid, #fourSCid, #twoMCid, #threeMCid, #fourMCid, #fiveMCid, #sixMCid{
+#notSelfCorrecting {
+    color: red;
+}
+
+#twoSCid, #threeSCid, #fourSCid, #twoMCid, #threeMCid, #fourMCid, #fiveMCid, #sixMCid {
     margin-left: 320px;
 }
 
